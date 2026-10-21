@@ -92,6 +92,8 @@ def main():
             crop=im.crop((0,bounds[part],im.width,bounds[part+1]))
             save(f'{name}-{part+1}',crop,path,{'segment':part+1,'total':parts},alt+f'，第 {part+1} 部分')
     (ROOT/'content/media.json').write_text(json.dumps(MEDIA,ensure_ascii=False,indent=2)+'\n')
+    from prepare_previews import main as prepare_previews
+    prepare_previews()
     print(f'Exported {len(MEDIA)} assets with source provenance.')
 
 if __name__=='__main__':main()

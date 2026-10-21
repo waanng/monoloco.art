@@ -9,6 +9,7 @@ from site_data import PROJECTS, WORKSHOPS, OBJECTS, MEMBERS
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
 MEDIA = json.loads((ROOT / 'content/media.json').read_text())
+PREVIEWS = json.loads((ROOT / 'content/previews.json').read_text())
 DOORS = json.loads((ROOT / 'content/works.json').read_text())
 DOMAIN = (DOCS / 'CNAME').read_text().strip() if (DOCS / 'CNAME').exists() else ''
 BASE_PATH = '/' if DOMAIN else '/monoloco.art/'
@@ -20,18 +21,19 @@ ARROW = '<span class="arrow" aria-hidden="true">↗</span>'
 def url(path, base):
     return base + path + ('index.html' if path.endswith('/') else '')
 
+def preview_picture(group,key,base,alt,width,height,attrs,sizes):
+    preview=PREVIEWS[f'{group}/{key}']
+    folder=base+f'assets/images/{group}/'
+    candidates=', '.join(f'{folder}{v["file"]} {v["width"]}w' for v in preview['sources'])
+    return f'<picture><source type="image/webp" srcset="{candidates}" sizes="{sizes}"><img src="{folder}{preview["fallback"]}" alt="{esc(alt)}" width="{width}" height="{height}" {attrs} decoding="async"></picture>'
+
 def image(key, base, eager=False, sizes='(max-width: 600px) calc(100vw - 40px), 640px'):
     attrs = 'loading="eager" fetchpriority="high"' if eager else 'loading="lazy"'
     if key == 'doors':
         w=DOORS[0]
-        folder=base+'assets/images/four-doors/'
-        return f'<picture><source type="image/webp" srcset="{folder}{w["thumbnail"]} 640w, {folder}{w["image"]} 1080w" sizes="{sizes}"><img src="{folder}{w["fallback"]}" alt="{esc(w["altZh"])}" width="{w["width"]}" height="{w["height"]}" {attrs} decoding="async"></picture>'
+        return preview_picture('four-doors',w['id'],base,w['altZh'],w['width'],w['height'],attrs,sizes)
     m=MEDIA[key]
-    folder=base+'assets/images/editorial/'
-    candidates=f'{folder}{m["image"]} {m["width"]}w'
-    if m['smallWidth'] < m['width']:
-        candidates=f'{folder}{m["small"]} {m["smallWidth"]}w, '+candidates
-    return f'<picture><source type="image/webp" srcset="{candidates}" sizes="{sizes}"><img src="{folder}{m["fallback"]}" alt="{esc(m["alt"])}" width="{m["width"]}" height="{m["height"]}" {attrs} decoding="async"></picture>'
+    return preview_picture('editorial',key,base,m['alt'],m['width'],m['height'],attrs,sizes)
 
 def arrow_link(href, text):
     return f'<a class="arrow-link" href="{href}">{esc(text)} {ARROW}</a>'
@@ -90,7 +92,8 @@ def card(item,section,base,index=None):
     if section=='workshops':
         kind='筹备中 · '+kind
     n=f'<span class="card-number">{index:02d}</span>' if index else ''
-    return f'<article class="editorial-card"><a href="{path}" class="card-media" aria-label="查看{esc(item["title"])}">{image(item["cover"],base)}</a><div class="card-caption"><div><p class="card-kind">{esc(kind)}</p><h3><a href="{path}">{esc(item["title"])}</a></h3><p class="card-subtitle">{esc(item["subtitle"])}</p></div>{n}</div></article>'
+    sizes='(max-width:420px) calc(100vw - 40px), (max-width:700px) calc((100vw - 60px) / 2), 420px'
+    return f'<article class="editorial-card"><a href="{path}" class="card-media" aria-label="查看{esc(item["title"])}">{image(item["cover"],base,sizes=sizes)}</a><div class="card-caption"><div><p class="card-kind">{esc(kind)}</p><h3><a href="{path}">{esc(item["title"])}</a></h3><p class="card-subtitle">{esc(item["subtitle"])}</p></div>{n}</div></article>'
 
 def section_top(number,en,title,href=None,label=None):
     action=arrow_link(href,label) if href else ''
@@ -128,7 +131,8 @@ def project_detail(project):
     if is_doors:
         for i,w in enumerate(DOORS):
             folder=base+'assets/images/four-doors/'
-            figures+=f'<figure class="work" id="{w["id"]}"><a href="{folder}{w["fallback"]}" data-work="{w["id"]}" data-title="{esc(w["titleZh"])}" aria-label="放大观看：{esc(w["titleZh"])}"><picture><source type="image/webp" srcset="{folder}{w["thumbnail"]} 640w, {folder}{w["image"]} 1080w" sizes="(max-width:600px) calc(100vw - 40px), 640px"><img src="{folder}{w["fallback"]}" alt="{esc(w["altZh"])}" width="{w["width"]}" height="{w["height"]}" loading="{"eager" if i<2 else "lazy"}"></picture><span class="open-label" aria-hidden="true">放大观看 ↗</span></a><figcaption><span class="index">{i+1:02d}</span><span>{esc(w["titleZh"])}</span><small>门之四重奏</small></figcaption></figure>'
+            pic=preview_picture('four-doors',w['id'],base,w['altZh'],w['width'],w['height'],f'loading="{"eager" if i<2 else "lazy"}"','(max-width:600px) calc(100vw - 40px), 640px')
+            figures+=f'<figure class="work" id="{w["id"]}"><a href="{folder}{w["fallback"]}" data-work="{w["id"]}" data-title="{esc(w["titleZh"])}" aria-label="放大观看：{esc(w["titleZh"])}">{pic}<span class="open-label" aria-hidden="true">放大观看 ↗</span></a><figcaption><span class="index">{i+1:02d}</span><span>{esc(w["titleZh"])}</span><small>门之四重奏</small></figcaption></figure>'
         content=f'<section class="gallery" aria-label="四门集作品">{figures}</section>'
     else:
         for i,(key,caption) in enumerate(project['media']):

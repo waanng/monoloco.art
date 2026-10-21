@@ -23,6 +23,7 @@ python3 -m http.server 8289
 - 页面文字、项目、工坊、文创及成员：scripts/site_data.py。
 - 四门集清单：content/works.json。
 - 提取后的图片与来源定位：content/media.json。
+- 普通页面的轻量预览图清单：content/previews.json。
 - 页面生成与公共布局：scripts/build.py。
 - 基础样式：docs/assets/css/site.css。
 - 四板块扩展样式：docs/assets/css/editorial.css。
@@ -45,6 +46,8 @@ python3 scripts/build.py
 第一个脚本从 素材/12.四门集/门之四重奏.pptx 导出四门集；第二个脚本从杂志和设计资料导出精选图片及工坊手绘过程。媒体清单记录源文件、PDF 页序、图片对象或裁切区域。包装图形导出时移除红色生产辅助线。
 
 公开图片清除 EXIF，提供 WebP 适配尺寸与 JPEG 回退。作品保留原始构图，刊物正文被重新编辑为可阅读的网页文字，未使用整刊截图代替网页。
+
+普通页面只加载最长边 360／720px 的压缩预览图，JPEG 回退同样为小图；高像素密度屏幕也不会自动请求全尺寸图。点击放大（包括无脚本时直接打开图片）才加载原有高分辨率 JPEG。重新导出素材时会自动更新预览，也可单独运行 `python3 scripts/prepare_previews.py` 从已有网页大图生成；原有大图不会被覆盖。
 
 ## 内容状态
 

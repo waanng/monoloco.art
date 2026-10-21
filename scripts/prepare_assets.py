@@ -55,6 +55,8 @@ def main():
     path = ROOT / 'content/works.json'
     path.parent.mkdir(exist_ok=True)
     path.write_text(json.dumps(works, ensure_ascii=False, indent=2) + '\n')
+    from prepare_previews import main as prepare_previews
+    prepare_previews()
     print(f'Exported {len(works)} works.')
 
 if __name__ == '__main__':

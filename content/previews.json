@@ -1,0 +1,1182 @@
+{
+  "editorial/lz": {
+    "sources": [
+      {
+        "file": "lz-preview-360.webp",
+        "width": 360,
+        "height": 347
+      },
+      {
+        "file": "lz-preview-720.webp",
+        "width": 379,
+        "height": 365
+      }
+    ],
+    "fallback": "lz-preview.jpg"
+  },
+  "editorial/kasa": {
+    "sources": [
+      {
+        "file": "kasa-preview-360.webp",
+        "width": 263,
+        "height": 237
+      }
+    ],
+    "fallback": "kasa-preview.jpg"
+  },
+  "editorial/wangan": {
+    "sources": [
+      {
+        "file": "wangan-preview-360.webp",
+        "width": 360,
+        "height": 347
+      },
+      {
+        "file": "wangan-preview-720.webp",
+        "width": 379,
+        "height": 365
+      }
+    ],
+    "fallback": "wangan-preview.jpg"
+  },
+  "editorial/plant-bananas": {
+    "sources": [
+      {
+        "file": "plant-bananas-preview-360.webp",
+        "width": 315,
+        "height": 360
+      },
+      {
+        "file": "plant-bananas-preview-720.webp",
+        "width": 630,
+        "height": 720
+      }
+    ],
+    "fallback": "plant-bananas-preview.jpg"
+  },
+  "editorial/plant-soil": {
+    "sources": [
+      {
+        "file": "plant-soil-preview-360.webp",
+        "width": 270,
+        "height": 360
+      },
+      {
+        "file": "plant-soil-preview-720.webp",
+        "width": 540,
+        "height": 720
+      }
+    ],
+    "fallback": "plant-soil-preview.jpg"
+  },
+  "editorial/plant-sign": {
+    "sources": [
+      {
+        "file": "plant-sign-preview-360.webp",
+        "width": 270,
+        "height": 360
+      },
+      {
+        "file": "plant-sign-preview-720.webp",
+        "width": 540,
+        "height": 720
+      }
+    ],
+    "fallback": "plant-sign-preview.jpg"
+  },
+  "editorial/plant-light": {
+    "sources": [
+      {
+        "file": "plant-light-preview-360.webp",
+        "width": 332,
+        "height": 360
+      },
+      {
+        "file": "plant-light-preview-720.webp",
+        "width": 664,
+        "height": 720
+      }
+    ],
+    "fallback": "plant-light-preview.jpg"
+  },
+  "editorial/plant-pigs": {
+    "sources": [
+      {
+        "file": "plant-pigs-preview-360.webp",
+        "width": 360,
+        "height": 270
+      },
+      {
+        "file": "plant-pigs-preview-720.webp",
+        "width": 720,
+        "height": 540
+      }
+    ],
+    "fallback": "plant-pigs-preview.jpg"
+  },
+  "editorial/plant-detail": {
+    "sources": [
+      {
+        "file": "plant-detail-preview-360.webp",
+        "width": 360,
+        "height": 255
+      },
+      {
+        "file": "plant-detail-preview-720.webp",
+        "width": 720,
+        "height": 510
+      }
+    ],
+    "fallback": "plant-detail-preview.jpg"
+  },
+  "editorial/travel-window": {
+    "sources": [
+      {
+        "file": "travel-window-preview-360.webp",
+        "width": 360,
+        "height": 255
+      },
+      {
+        "file": "travel-window-preview-720.webp",
+        "width": 720,
+        "height": 511
+      }
+    ],
+    "fallback": "travel-window-preview.jpg"
+  },
+  "editorial/travel-street": {
+    "sources": [
+      {
+        "file": "travel-street-preview-360.webp",
+        "width": 360,
+        "height": 207
+      },
+      {
+        "file": "travel-street-preview-720.webp",
+        "width": 720,
+        "height": 413
+      }
+    ],
+    "fallback": "travel-street-preview.jpg"
+  },
+  "editorial/travel-shop": {
+    "sources": [
+      {
+        "file": "travel-shop-preview-360.webp",
+        "width": 360,
+        "height": 270
+      },
+      {
+        "file": "travel-shop-preview-720.webp",
+        "width": 720,
+        "height": 540
+      }
+    ],
+    "fallback": "travel-shop-preview.jpg"
+  },
+  "editorial/travel-cat": {
+    "sources": [
+      {
+        "file": "travel-cat-preview-360.webp",
+        "width": 360,
+        "height": 270
+      },
+      {
+        "file": "travel-cat-preview-720.webp",
+        "width": 720,
+        "height": 540
+      }
+    ],
+    "fallback": "travel-cat-preview.jpg"
+  },
+  "editorial/travel-water": {
+    "sources": [
+      {
+        "file": "travel-water-preview-360.webp",
+        "width": 360,
+        "height": 329
+      },
+      {
+        "file": "travel-water-preview-720.webp",
+        "width": 720,
+        "height": 658
+      }
+    ],
+    "fallback": "travel-water-preview.jpg"
+  },
+  "editorial/travel-lane": {
+    "sources": [
+      {
+        "file": "travel-lane-preview-360.webp",
+        "width": 293,
+        "height": 360
+      },
+      {
+        "file": "travel-lane-preview-720.webp",
+        "width": 585,
+        "height": 720
+      }
+    ],
+    "fallback": "travel-lane-preview.jpg"
+  },
+  "editorial/travel-station": {
+    "sources": [
+      {
+        "file": "travel-station-preview-360.webp",
+        "width": 360,
+        "height": 270
+      },
+      {
+        "file": "travel-station-preview-720.webp",
+        "width": 720,
+        "height": 540
+      }
+    ],
+    "fallback": "travel-station-preview.jpg"
+  },
+  "editorial/travel-bridge": {
+    "sources": [
+      {
+        "file": "travel-bridge-preview-360.webp",
+        "width": 360,
+        "height": 270
+      },
+      {
+        "file": "travel-bridge-preview-720.webp",
+        "width": 720,
+        "height": 540
+      }
+    ],
+    "fallback": "travel-bridge-preview.jpg"
+  },
+  "editorial/five-city": {
+    "sources": [
+      {
+        "file": "five-city-preview-360.webp",
+        "width": 360,
+        "height": 346
+      },
+      {
+        "file": "five-city-preview-720.webp",
+        "width": 720,
+        "height": 693
+      }
+    ],
+    "fallback": "five-city-preview.jpg"
+  },
+  "editorial/five-window": {
+    "sources": [
+      {
+        "file": "five-window-preview-360.webp",
+        "width": 360,
+        "height": 288
+      },
+      {
+        "file": "five-window-preview-720.webp",
+        "width": 720,
+        "height": 577
+      }
+    ],
+    "fallback": "five-window-preview.jpg"
+  },
+  "editorial/five-reader": {
+    "sources": [
+      {
+        "file": "five-reader-preview-360.webp",
+        "width": 360,
+        "height": 290
+      },
+      {
+        "file": "five-reader-preview-720.webp",
+        "width": 720,
+        "height": 580
+      }
+    ],
+    "fallback": "five-reader-preview.jpg"
+  },
+  "editorial/five-portrait": {
+    "sources": [
+      {
+        "file": "five-portrait-preview-360.webp",
+        "width": 360,
+        "height": 289
+      },
+      {
+        "file": "five-portrait-preview-720.webp",
+        "width": 720,
+        "height": 577
+      }
+    ],
+    "fallback": "five-portrait-preview.jpg"
+  },
+  "editorial/five-building": {
+    "sources": [
+      {
+        "file": "five-building-preview-360.webp",
+        "width": 360,
+        "height": 289
+      },
+      {
+        "file": "five-building-preview-720.webp",
+        "width": 720,
+        "height": 579
+      }
+    ],
+    "fallback": "five-building-preview.jpg"
+  },
+  "editorial/five-door": {
+    "sources": [
+      {
+        "file": "five-door-preview-360.webp",
+        "width": 360,
+        "height": 256
+      },
+      {
+        "file": "five-door-preview-720.webp",
+        "width": 720,
+        "height": 512
+      }
+    ],
+    "fallback": "five-door-preview.jpg"
+  },
+  "editorial/five-branches": {
+    "sources": [
+      {
+        "file": "five-branches-preview-360.webp",
+        "width": 360,
+        "height": 336
+      },
+      {
+        "file": "five-branches-preview-720.webp",
+        "width": 720,
+        "height": 672
+      }
+    ],
+    "fallback": "five-branches-preview.jpg"
+  },
+  "editorial/five-library": {
+    "sources": [
+      {
+        "file": "five-library-preview-360.webp",
+        "width": 360,
+        "height": 239
+      },
+      {
+        "file": "five-library-preview-720.webp",
+        "width": 720,
+        "height": 478
+      }
+    ],
+    "fallback": "five-library-preview.jpg"
+  },
+  "editorial/five-seat": {
+    "sources": [
+      {
+        "file": "five-seat-preview-360.webp",
+        "width": 245,
+        "height": 360
+      },
+      {
+        "file": "five-seat-preview-720.webp",
+        "width": 490,
+        "height": 720
+      }
+    ],
+    "fallback": "five-seat-preview.jpg"
+  },
+  "editorial/five-studio": {
+    "sources": [
+      {
+        "file": "five-studio-preview-360.webp",
+        "width": 356,
+        "height": 360
+      },
+      {
+        "file": "five-studio-preview-720.webp",
+        "width": 712,
+        "height": 720
+      }
+    ],
+    "fallback": "five-studio-preview.jpg"
+  },
+  "editorial/five-room": {
+    "sources": [
+      {
+        "file": "five-room-preview-360.webp",
+        "width": 359,
+        "height": 360
+      },
+      {
+        "file": "five-room-preview-720.webp",
+        "width": 718,
+        "height": 720
+      }
+    ],
+    "fallback": "five-room-preview.jpg"
+  },
+  "editorial/film-camera": {
+    "sources": [
+      {
+        "file": "film-camera-preview-360.webp",
+        "width": 360,
+        "height": 225
+      },
+      {
+        "file": "film-camera-preview-720.webp",
+        "width": 720,
+        "height": 451
+      }
+    ],
+    "fallback": "film-camera-preview.jpg"
+  },
+  "editorial/journey-map": {
+    "sources": [
+      {
+        "file": "journey-map-preview-360.webp",
+        "width": 358,
+        "height": 360
+      },
+      {
+        "file": "journey-map-preview-720.webp",
+        "width": 717,
+        "height": 720
+      }
+    ],
+    "fallback": "journey-map-preview.jpg"
+  },
+  "editorial/journey-list": {
+    "sources": [
+      {
+        "file": "journey-list-preview-360.webp",
+        "width": 358,
+        "height": 360
+      },
+      {
+        "file": "journey-list-preview-720.webp",
+        "width": 717,
+        "height": 720
+      }
+    ],
+    "fallback": "journey-list-preview.jpg"
+  },
+  "editorial/journey-road": {
+    "sources": [
+      {
+        "file": "journey-road-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "journey-road-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "journey-road-preview.jpg"
+  },
+  "editorial/journey-trees": {
+    "sources": [
+      {
+        "file": "journey-trees-preview-360.webp",
+        "width": 360,
+        "height": 353
+      },
+      {
+        "file": "journey-trees-preview-720.webp",
+        "width": 720,
+        "height": 705
+      }
+    ],
+    "fallback": "journey-trees-preview.jpg"
+  },
+  "editorial/journey-texas": {
+    "sources": [
+      {
+        "file": "journey-texas-preview-360.webp",
+        "width": 360,
+        "height": 179
+      },
+      {
+        "file": "journey-texas-preview-720.webp",
+        "width": 720,
+        "height": 358
+      }
+    ],
+    "fallback": "journey-texas-preview.jpg"
+  },
+  "editorial/journey-family": {
+    "sources": [
+      {
+        "file": "journey-family-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "journey-family-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "journey-family-preview.jpg"
+  },
+  "editorial/journey-west": {
+    "sources": [
+      {
+        "file": "journey-west-preview-360.webp",
+        "width": 360,
+        "height": 179
+      },
+      {
+        "file": "journey-west-preview-720.webp",
+        "width": 720,
+        "height": 358
+      }
+    ],
+    "fallback": "journey-west-preview.jpg"
+  },
+  "editorial/journey-house": {
+    "sources": [
+      {
+        "file": "journey-house-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "journey-house-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "journey-house-preview.jpg"
+  },
+  "editorial/journey-east": {
+    "sources": [
+      {
+        "file": "journey-east-preview-360.webp",
+        "width": 360,
+        "height": 179
+      },
+      {
+        "file": "journey-east-preview-720.webp",
+        "width": 720,
+        "height": 357
+      }
+    ],
+    "fallback": "journey-east-preview.jpg"
+  },
+  "editorial/journey-campus": {
+    "sources": [
+      {
+        "file": "journey-campus-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "journey-campus-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "journey-campus-preview.jpg"
+  },
+  "editorial/journey-bookshop": {
+    "sources": [
+      {
+        "file": "journey-bookshop-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "journey-bookshop-preview-720.webp",
+        "width": 502,
+        "height": 502
+      }
+    ],
+    "fallback": "journey-bookshop-preview.jpg"
+  },
+  "editorial/journey-balloon": {
+    "sources": [
+      {
+        "file": "journey-balloon-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "journey-balloon-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "journey-balloon-preview.jpg"
+  },
+  "editorial/notebooks": {
+    "sources": [
+      {
+        "file": "notebooks-preview-360.webp",
+        "width": 331,
+        "height": 360
+      },
+      {
+        "file": "notebooks-preview-720.webp",
+        "width": 662,
+        "height": 720
+      }
+    ],
+    "fallback": "notebooks-preview.jpg"
+  },
+  "editorial/notebook-map": {
+    "sources": [
+      {
+        "file": "notebook-map-preview-360.webp",
+        "width": 196,
+        "height": 360
+      },
+      {
+        "file": "notebook-map-preview-720.webp",
+        "width": 392,
+        "height": 720
+      }
+    ],
+    "fallback": "notebook-map-preview.jpg"
+  },
+  "editorial/notebook-writing": {
+    "sources": [
+      {
+        "file": "notebook-writing-preview-360.webp",
+        "width": 360,
+        "height": 158
+      },
+      {
+        "file": "notebook-writing-preview-720.webp",
+        "width": 604,
+        "height": 265
+      }
+    ],
+    "fallback": "notebook-writing-preview.jpg"
+  },
+  "editorial/notebook-coffee": {
+    "sources": [
+      {
+        "file": "notebook-coffee-preview-360.webp",
+        "width": 360,
+        "height": 159
+      },
+      {
+        "file": "notebook-coffee-preview-720.webp",
+        "width": 604,
+        "height": 266
+      }
+    ],
+    "fallback": "notebook-coffee-preview.jpg"
+  },
+  "editorial/notebook-photo": {
+    "sources": [
+      {
+        "file": "notebook-photo-preview-360.webp",
+        "width": 360,
+        "height": 163
+      },
+      {
+        "file": "notebook-photo-preview-720.webp",
+        "width": 604,
+        "height": 273
+      }
+    ],
+    "fallback": "notebook-photo-preview.jpg"
+  },
+  "editorial/vinyl-cover": {
+    "sources": [
+      {
+        "file": "vinyl-cover-preview-360.webp",
+        "width": 360,
+        "height": 229
+      },
+      {
+        "file": "vinyl-cover-preview-720.webp",
+        "width": 720,
+        "height": 458
+      }
+    ],
+    "fallback": "vinyl-cover-preview.jpg"
+  },
+  "editorial/vinyl-label": {
+    "sources": [
+      {
+        "file": "vinyl-label-preview-360.webp",
+        "width": 360,
+        "height": 230
+      },
+      {
+        "file": "vinyl-label-preview-720.webp",
+        "width": 720,
+        "height": 459
+      }
+    ],
+    "fallback": "vinyl-label-preview.jpg"
+  },
+  "editorial/vinyl-city-1": {
+    "sources": [
+      {
+        "file": "vinyl-city-1-preview-360.webp",
+        "width": 284,
+        "height": 360
+      },
+      {
+        "file": "vinyl-city-1-preview-720.webp",
+        "width": 567,
+        "height": 720
+      }
+    ],
+    "fallback": "vinyl-city-1-preview.jpg"
+  },
+  "editorial/vinyl-city-2": {
+    "sources": [
+      {
+        "file": "vinyl-city-2-preview-360.webp",
+        "width": 284,
+        "height": 360
+      },
+      {
+        "file": "vinyl-city-2-preview-720.webp",
+        "width": 567,
+        "height": 720
+      }
+    ],
+    "fallback": "vinyl-city-2-preview.jpg"
+  },
+  "editorial/vinyl-city-3": {
+    "sources": [
+      {
+        "file": "vinyl-city-3-preview-360.webp",
+        "width": 284,
+        "height": 360
+      },
+      {
+        "file": "vinyl-city-3-preview-720.webp",
+        "width": 567,
+        "height": 720
+      }
+    ],
+    "fallback": "vinyl-city-3-preview.jpg"
+  },
+  "editorial/vinyl-city-4": {
+    "sources": [
+      {
+        "file": "vinyl-city-4-preview-360.webp",
+        "width": 284,
+        "height": 360
+      },
+      {
+        "file": "vinyl-city-4-preview-720.webp",
+        "width": 567,
+        "height": 720
+      }
+    ],
+    "fallback": "vinyl-city-4-preview.jpg"
+  },
+  "editorial/vinyl-city-5": {
+    "sources": [
+      {
+        "file": "vinyl-city-5-preview-360.webp",
+        "width": 284,
+        "height": 360
+      },
+      {
+        "file": "vinyl-city-5-preview-720.webp",
+        "width": 567,
+        "height": 720
+      }
+    ],
+    "fallback": "vinyl-city-5-preview.jpg"
+  },
+  "editorial/vinyl-city-6": {
+    "sources": [
+      {
+        "file": "vinyl-city-6-preview-360.webp",
+        "width": 284,
+        "height": 360
+      },
+      {
+        "file": "vinyl-city-6-preview-720.webp",
+        "width": 567,
+        "height": 720
+      }
+    ],
+    "fallback": "vinyl-city-6-preview.jpg"
+  },
+  "editorial/vinyl-city-7": {
+    "sources": [
+      {
+        "file": "vinyl-city-7-preview-360.webp",
+        "width": 284,
+        "height": 360
+      },
+      {
+        "file": "vinyl-city-7-preview-720.webp",
+        "width": 567,
+        "height": 720
+      }
+    ],
+    "fallback": "vinyl-city-7-preview.jpg"
+  },
+  "editorial/vinyl-band": {
+    "sources": [
+      {
+        "file": "vinyl-band-preview-360.webp",
+        "width": 360,
+        "height": 76
+      },
+      {
+        "file": "vinyl-band-preview-720.webp",
+        "width": 720,
+        "height": 152
+      }
+    ],
+    "fallback": "vinyl-band-preview.jpg"
+  },
+  "editorial/ucas-scroll": {
+    "sources": [
+      {
+        "file": "ucas-scroll-preview-360.webp",
+        "width": 360,
+        "height": 69
+      },
+      {
+        "file": "ucas-scroll-preview-720.webp",
+        "width": 720,
+        "height": 137
+      }
+    ],
+    "fallback": "ucas-scroll-preview.jpg"
+  },
+  "editorial/ucas-sketch": {
+    "sources": [
+      {
+        "file": "ucas-sketch-preview-360.webp",
+        "width": 360,
+        "height": 80
+      },
+      {
+        "file": "ucas-sketch-preview-720.webp",
+        "width": 720,
+        "height": 160
+      }
+    ],
+    "fallback": "ucas-sketch-preview.jpg"
+  },
+  "editorial/ucas-package": {
+    "sources": [
+      {
+        "file": "ucas-package-preview-360.webp",
+        "width": 360,
+        "height": 122
+      },
+      {
+        "file": "ucas-package-preview-720.webp",
+        "width": 720,
+        "height": 244
+      }
+    ],
+    "fallback": "ucas-package-preview.jpg"
+  },
+  "editorial/ucas-cup": {
+    "sources": [
+      {
+        "file": "ucas-cup-preview-360.webp",
+        "width": 360,
+        "height": 215
+      },
+      {
+        "file": "ucas-cup-preview-720.webp",
+        "width": 720,
+        "height": 431
+      }
+    ],
+    "fallback": "ucas-cup-preview.jpg"
+  },
+  "editorial/cyanotype-process-1": {
+    "sources": [
+      {
+        "file": "cyanotype-process-1-preview-360.webp",
+        "width": 360,
+        "height": 240
+      },
+      {
+        "file": "cyanotype-process-1-preview-720.webp",
+        "width": 720,
+        "height": 480
+      }
+    ],
+    "fallback": "cyanotype-process-1-preview.jpg"
+  },
+  "editorial/cyanotype-process-2": {
+    "sources": [
+      {
+        "file": "cyanotype-process-2-preview-360.webp",
+        "width": 360,
+        "height": 268
+      },
+      {
+        "file": "cyanotype-process-2-preview-720.webp",
+        "width": 720,
+        "height": 535
+      }
+    ],
+    "fallback": "cyanotype-process-2-preview.jpg"
+  },
+  "editorial/cyanotype-process-3": {
+    "sources": [
+      {
+        "file": "cyanotype-process-3-preview-360.webp",
+        "width": 360,
+        "height": 303
+      },
+      {
+        "file": "cyanotype-process-3-preview-720.webp",
+        "width": 720,
+        "height": 605
+      }
+    ],
+    "fallback": "cyanotype-process-3-preview.jpg"
+  },
+  "editorial/cyanotype-print-1": {
+    "sources": [
+      {
+        "file": "cyanotype-print-1-preview-360.webp",
+        "width": 286,
+        "height": 360
+      },
+      {
+        "file": "cyanotype-print-1-preview-720.webp",
+        "width": 572,
+        "height": 720
+      }
+    ],
+    "fallback": "cyanotype-print-1-preview.jpg"
+  },
+  "editorial/binding-process-1": {
+    "sources": [
+      {
+        "file": "binding-process-1-preview-360.webp",
+        "width": 239,
+        "height": 360
+      },
+      {
+        "file": "binding-process-1-preview-720.webp",
+        "width": 478,
+        "height": 720
+      }
+    ],
+    "fallback": "binding-process-1-preview.jpg"
+  },
+  "editorial/binding-process-2": {
+    "sources": [
+      {
+        "file": "binding-process-2-preview-360.webp",
+        "width": 280,
+        "height": 360
+      },
+      {
+        "file": "binding-process-2-preview-720.webp",
+        "width": 560,
+        "height": 720
+      }
+    ],
+    "fallback": "binding-process-2-preview.jpg"
+  },
+  "editorial/binding-process-3": {
+    "sources": [
+      {
+        "file": "binding-process-3-preview-360.webp",
+        "width": 324,
+        "height": 360
+      },
+      {
+        "file": "binding-process-3-preview-720.webp",
+        "width": 648,
+        "height": 720
+      }
+    ],
+    "fallback": "binding-process-3-preview.jpg"
+  },
+  "four-doors/doors-01": {
+    "sources": [
+      {
+        "file": "doors-01-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "doors-01-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "doors-01-preview.jpg"
+  },
+  "four-doors/doors-02": {
+    "sources": [
+      {
+        "file": "doors-02-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "doors-02-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "doors-02-preview.jpg"
+  },
+  "four-doors/doors-03": {
+    "sources": [
+      {
+        "file": "doors-03-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "doors-03-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "doors-03-preview.jpg"
+  },
+  "four-doors/doors-04": {
+    "sources": [
+      {
+        "file": "doors-04-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "doors-04-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "doors-04-preview.jpg"
+  },
+  "four-doors/doors-05": {
+    "sources": [
+      {
+        "file": "doors-05-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "doors-05-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "doors-05-preview.jpg"
+  },
+  "four-doors/doors-06": {
+    "sources": [
+      {
+        "file": "doors-06-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "doors-06-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "doors-06-preview.jpg"
+  },
+  "four-doors/doors-07": {
+    "sources": [
+      {
+        "file": "doors-07-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "doors-07-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "doors-07-preview.jpg"
+  },
+  "four-doors/doors-08": {
+    "sources": [
+      {
+        "file": "doors-08-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "doors-08-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "doors-08-preview.jpg"
+  },
+  "four-doors/doors-09": {
+    "sources": [
+      {
+        "file": "doors-09-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "doors-09-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "doors-09-preview.jpg"
+  },
+  "four-doors/doors-10": {
+    "sources": [
+      {
+        "file": "doors-10-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "doors-10-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "doors-10-preview.jpg"
+  },
+  "four-doors/doors-11": {
+    "sources": [
+      {
+        "file": "doors-11-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "doors-11-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "doors-11-preview.jpg"
+  },
+  "four-doors/doors-12": {
+    "sources": [
+      {
+        "file": "doors-12-preview-360.webp",
+        "width": 360,
+        "height": 360
+      },
+      {
+        "file": "doors-12-preview-720.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "fallback": "doors-12-preview.jpg"
+  }
+}
