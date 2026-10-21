@@ -999,6 +999,291 @@
     ],
     "fallback": "binding-process-3-preview.jpg"
   },
+  "editorial/qianmo-01": {
+    "sources": [
+      {
+        "file": "qianmo-01-preview-360.webp",
+        "width": 270,
+        "height": 360
+      },
+      {
+        "file": "qianmo-01-preview-720.webp",
+        "width": 540,
+        "height": 720
+      }
+    ],
+    "fallback": "qianmo-01-preview.jpg"
+  },
+  "editorial/qianmo-02": {
+    "sources": [
+      {
+        "file": "qianmo-02-preview-360.webp",
+        "width": 270,
+        "height": 360
+      },
+      {
+        "file": "qianmo-02-preview-720.webp",
+        "width": 540,
+        "height": 720
+      }
+    ],
+    "fallback": "qianmo-02-preview.jpg"
+  },
+  "editorial/qianmo-03": {
+    "sources": [
+      {
+        "file": "qianmo-03-preview-360.webp",
+        "width": 270,
+        "height": 360
+      },
+      {
+        "file": "qianmo-03-preview-720.webp",
+        "width": 540,
+        "height": 720
+      }
+    ],
+    "fallback": "qianmo-03-preview.jpg"
+  },
+  "editorial/qianmo-04": {
+    "sources": [
+      {
+        "file": "qianmo-04-preview-360.webp",
+        "width": 270,
+        "height": 360
+      },
+      {
+        "file": "qianmo-04-preview-720.webp",
+        "width": 540,
+        "height": 720
+      }
+    ],
+    "fallback": "qianmo-04-preview.jpg"
+  },
+  "editorial/qianmo-05": {
+    "sources": [
+      {
+        "file": "qianmo-05-preview-360.webp",
+        "width": 270,
+        "height": 360
+      },
+      {
+        "file": "qianmo-05-preview-720.webp",
+        "width": 540,
+        "height": 720
+      }
+    ],
+    "fallback": "qianmo-05-preview.jpg"
+  },
+  "editorial/qianmo-06": {
+    "sources": [
+      {
+        "file": "qianmo-06-preview-360.webp",
+        "width": 360,
+        "height": 270
+      },
+      {
+        "file": "qianmo-06-preview-720.webp",
+        "width": 720,
+        "height": 540
+      }
+    ],
+    "fallback": "qianmo-06-preview.jpg"
+  },
+  "editorial/qianmo-07": {
+    "sources": [
+      {
+        "file": "qianmo-07-preview-360.webp",
+        "width": 360,
+        "height": 270
+      },
+      {
+        "file": "qianmo-07-preview-720.webp",
+        "width": 720,
+        "height": 540
+      }
+    ],
+    "fallback": "qianmo-07-preview.jpg"
+  },
+  "editorial/qianmo-08": {
+    "sources": [
+      {
+        "file": "qianmo-08-preview-360.webp",
+        "width": 270,
+        "height": 360
+      },
+      {
+        "file": "qianmo-08-preview-720.webp",
+        "width": 540,
+        "height": 720
+      }
+    ],
+    "fallback": "qianmo-08-preview.jpg"
+  },
+  "editorial/qianmo-09": {
+    "sources": [
+      {
+        "file": "qianmo-09-preview-360.webp",
+        "width": 360,
+        "height": 162
+      },
+      {
+        "file": "qianmo-09-preview-720.webp",
+        "width": 720,
+        "height": 324
+      }
+    ],
+    "fallback": "qianmo-09-preview.jpg"
+  },
+  "editorial/qianmo-10": {
+    "sources": [
+      {
+        "file": "qianmo-10-preview-360.webp",
+        "width": 360,
+        "height": 270
+      },
+      {
+        "file": "qianmo-10-preview-720.webp",
+        "width": 720,
+        "height": 540
+      }
+    ],
+    "fallback": "qianmo-10-preview.jpg"
+  },
+  "editorial/qianmo-11": {
+    "sources": [
+      {
+        "file": "qianmo-11-preview-360.webp",
+        "width": 270,
+        "height": 360
+      },
+      {
+        "file": "qianmo-11-preview-720.webp",
+        "width": 540,
+        "height": 720
+      }
+    ],
+    "fallback": "qianmo-11-preview.jpg"
+  },
+  "editorial/qianmo-12": {
+    "sources": [
+      {
+        "file": "qianmo-12-preview-360.webp",
+        "width": 360,
+        "height": 270
+      },
+      {
+        "file": "qianmo-12-preview-720.webp",
+        "width": 720,
+        "height": 540
+      }
+    ],
+    "fallback": "qianmo-12-preview.jpg"
+  },
+  "editorial/qianmo-13": {
+    "sources": [
+      {
+        "file": "qianmo-13-preview-360.webp",
+        "width": 270,
+        "height": 360
+      },
+      {
+        "file": "qianmo-13-preview-720.webp",
+        "width": 540,
+        "height": 720
+      }
+    ],
+    "fallback": "qianmo-13-preview.jpg"
+  },
+  "editorial/qianmo-14": {
+    "sources": [
+      {
+        "file": "qianmo-14-preview-360.webp",
+        "width": 360,
+        "height": 270
+      },
+      {
+        "file": "qianmo-14-preview-720.webp",
+        "width": 720,
+        "height": 540
+      }
+    ],
+    "fallback": "qianmo-14-preview.jpg"
+  },
+  "editorial/qianmo-15": {
+    "sources": [
+      {
+        "file": "qianmo-15-preview-360.webp",
+        "width": 360,
+        "height": 270
+      },
+      {
+        "file": "qianmo-15-preview-720.webp",
+        "width": 720,
+        "height": 540
+      }
+    ],
+    "fallback": "qianmo-15-preview.jpg"
+  },
+  "editorial/qianmo-16": {
+    "sources": [
+      {
+        "file": "qianmo-16-preview-360.webp",
+        "width": 270,
+        "height": 360
+      },
+      {
+        "file": "qianmo-16-preview-720.webp",
+        "width": 540,
+        "height": 720
+      }
+    ],
+    "fallback": "qianmo-16-preview.jpg"
+  },
+  "editorial/qianmo-17": {
+    "sources": [
+      {
+        "file": "qianmo-17-preview-360.webp",
+        "width": 360,
+        "height": 270
+      },
+      {
+        "file": "qianmo-17-preview-720.webp",
+        "width": 720,
+        "height": 540
+      }
+    ],
+    "fallback": "qianmo-17-preview.jpg"
+  },
+  "editorial/qianmo-18": {
+    "sources": [
+      {
+        "file": "qianmo-18-preview-360.webp",
+        "width": 360,
+        "height": 270
+      },
+      {
+        "file": "qianmo-18-preview-720.webp",
+        "width": 720,
+        "height": 540
+      }
+    ],
+    "fallback": "qianmo-18-preview.jpg"
+  },
+  "editorial/qianmo-19": {
+    "sources": [
+      {
+        "file": "qianmo-19-preview-360.webp",
+        "width": 360,
+        "height": 270
+      },
+      {
+        "file": "qianmo-19-preview-720.webp",
+        "width": 720,
+        "height": 540
+      }
+    ],
+    "fallback": "qianmo-19-preview.jpg"
+  },
   "four-doors/doors-01": {
     "sources": [
       {

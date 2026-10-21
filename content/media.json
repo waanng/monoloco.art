@@ -1010,5 +1010,233 @@
       "segment": 3,
       "total": 6
     }
+  },
+  "qianmo-01": {
+    "image": "qianmo-01.jpg",
+    "fallback": "qianmo-01.jpg",
+    "width": 3072,
+    "height": 4096,
+    "alt": "阡陌集现场记录 01：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20251222_111319.jpg",
+    "locator": {
+      "file": "IMG_20251222_111319.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-02": {
+    "image": "qianmo-02.jpg",
+    "fallback": "qianmo-02.jpg",
+    "width": 3072,
+    "height": 4096,
+    "alt": "阡陌集现场记录 02：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20251229_111851.jpg",
+    "locator": {
+      "file": "IMG_20251229_111851.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-03": {
+    "image": "qianmo-03.jpg",
+    "fallback": "qianmo-03.jpg",
+    "width": 3072,
+    "height": 4096,
+    "alt": "阡陌集现场记录 03：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20251229_112333.jpg",
+    "locator": {
+      "file": "IMG_20251229_112333.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-04": {
+    "image": "qianmo-04.jpg",
+    "fallback": "qianmo-04.jpg",
+    "width": 3072,
+    "height": 4096,
+    "alt": "阡陌集现场记录 04：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20251229_113319.jpg",
+    "locator": {
+      "file": "IMG_20251229_113319.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-05": {
+    "image": "qianmo-05.jpg",
+    "fallback": "qianmo-05.jpg",
+    "width": 3072,
+    "height": 4096,
+    "alt": "阡陌集现场记录 05：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20251230_092445_1767076531715edit.jpg",
+    "locator": {
+      "file": "IMG_20251230_092445_1767076531715edit.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-06": {
+    "image": "qianmo-06.jpg",
+    "fallback": "qianmo-06.jpg",
+    "width": 4096,
+    "height": 3072,
+    "alt": "阡陌集现场记录 06：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20251231_083234.jpg",
+    "locator": {
+      "file": "IMG_20251231_083234.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-07": {
+    "image": "qianmo-07.jpg",
+    "fallback": "qianmo-07.jpg",
+    "width": 4096,
+    "height": 3072,
+    "alt": "阡陌集现场记录 07：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20251231_100723.jpg",
+    "locator": {
+      "file": "IMG_20251231_100723.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-08": {
+    "image": "qianmo-08.jpg",
+    "fallback": "qianmo-08.jpg",
+    "width": 3072,
+    "height": 4096,
+    "alt": "阡陌集现场记录 08：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20251231_100813.jpg",
+    "locator": {
+      "file": "IMG_20251231_100813.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-09": {
+    "image": "qianmo-09.jpg",
+    "fallback": "qianmo-09.jpg",
+    "width": 4096,
+    "height": 1844,
+    "alt": "阡陌集现场记录 09：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20260104_114053.jpg",
+    "locator": {
+      "file": "IMG_20260104_114053.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-10": {
+    "image": "qianmo-10.jpg",
+    "fallback": "qianmo-10.jpg",
+    "width": 4096,
+    "height": 3072,
+    "alt": "阡陌集现场记录 10：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20260105_133933.jpg",
+    "locator": {
+      "file": "IMG_20260105_133933.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-11": {
+    "image": "qianmo-11.jpg",
+    "fallback": "qianmo-11.jpg",
+    "width": 3072,
+    "height": 4096,
+    "alt": "阡陌集现场记录 11：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20260129_150904_1.jpg",
+    "locator": {
+      "file": "IMG_20260129_150904_1.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-12": {
+    "image": "qianmo-12.jpg",
+    "fallback": "qianmo-12.jpg",
+    "width": 4096,
+    "height": 3072,
+    "alt": "阡陌集现场记录 12：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20260129_160156_1.jpg",
+    "locator": {
+      "file": "IMG_20260129_160156_1.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-13": {
+    "image": "qianmo-13.jpg",
+    "fallback": "qianmo-13.jpg",
+    "width": 3072,
+    "height": 4096,
+    "alt": "阡陌集现场记录 13：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20260129_164407_1.jpg",
+    "locator": {
+      "file": "IMG_20260129_164407_1.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-14": {
+    "image": "qianmo-14.jpg",
+    "fallback": "qianmo-14.jpg",
+    "width": 4096,
+    "height": 3072,
+    "alt": "阡陌集现场记录 14：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20260129_180915_1.jpg",
+    "locator": {
+      "file": "IMG_20260129_180915_1.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-15": {
+    "image": "qianmo-15.jpg",
+    "fallback": "qianmo-15.jpg",
+    "width": 4096,
+    "height": 3072,
+    "alt": "阡陌集现场记录 15：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20260205_115140.jpg",
+    "locator": {
+      "file": "IMG_20260205_115140.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-16": {
+    "image": "qianmo-16.jpg",
+    "fallback": "qianmo-16.jpg",
+    "width": 3072,
+    "height": 4096,
+    "alt": "阡陌集现场记录 16：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20260205_122140.jpg",
+    "locator": {
+      "file": "IMG_20260205_122140.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-17": {
+    "image": "qianmo-17.jpg",
+    "fallback": "qianmo-17.jpg",
+    "width": 4096,
+    "height": 3072,
+    "alt": "阡陌集现场记录 17：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20260215_091142.jpg",
+    "locator": {
+      "file": "IMG_20260215_091142.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-18": {
+    "image": "qianmo-18.jpg",
+    "fallback": "qianmo-18.jpg",
+    "width": 4096,
+    "height": 3072,
+    "alt": "阡陌集现场记录 18：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20260215_095632.jpg",
+    "locator": {
+      "file": "IMG_20260215_095632.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "qianmo-19": {
+    "image": "qianmo-19.jpg",
+    "fallback": "qianmo-19.jpg",
+    "width": 4096,
+    "height": 3072,
+    "alt": "阡陌集现场记录 19：展开的旅行画册与现场风景，画页上保留速写、地图或邮票邮戳等记录。",
+    "source": "素材/15.阡陌集/IMG_20260219_134819.jpg",
+    "locator": {
+      "file": "IMG_20260219_134819.jpg"
+    },
+    "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
   }
 }
