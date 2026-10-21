@@ -51,6 +51,8 @@ def main():
             relative = unquote(part.path)
             if relative.startswith('/monoloco.art/'):
                 target = SITE / relative.removeprefix('/monoloco.art/')
+            elif relative.startswith('/'):
+                target = SITE / relative.lstrip('/')
             elif relative:
                 target = path.parent / relative
             else:

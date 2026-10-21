@@ -8,6 +8,9 @@ import shutil
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
 WORKS = json.loads((ROOT / 'content/works.json').read_text())
+DOMAIN = (DOCS / 'CNAME').read_text().strip() if (DOCS / 'CNAME').exists() else ''
+BASE_PATH = '/' if DOMAIN else '/monoloco.art/'
+PUBLIC_URL = f'https://{DOMAIN}' if DOMAIN else 'https://waanng.github.io/monoloco.art'
 
 def image(work, base, eager=False, sizes='(max-width: 600px) calc(100vw - 40px), 600px'):
     folder = base + 'assets/images/four-doors/'
@@ -30,7 +33,7 @@ def page(title, description, body, base='./', current='', gallery=False):
 <meta property="og:description" content="{esc(description)}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://waanng.github.io/monoloco.art/assets/images/four-doors/doors-01.jpg">
+<meta property="og:image" content="{PUBLIC_URL}/assets/images/four-doors/doors-01.jpg">
 <link rel="icon" href="{base}assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="{base}assets/css/site.css">
 {script}
@@ -90,9 +93,9 @@ def build():
         path = DOCS / name
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(content)
-    # root-relative paths include this repository's base path so nested 404 URLs work.
-    body = '<main id="main" class="wrap error-page"><div class="eyebrow accent">404 / PAGE NOT FOUND</div><h1>走到了另一扇门。</h1><p>这个页面暂时不存在。回到作品，继续浏览。</p><a class="arrow-link" href="/monoloco.art/index.html">返回首页 <span class="arrow" aria-hidden="true">↗</span></a></main>'
-    (DOCS / '404.html').write_text(page('页面未找到 — monoloco', '回到 monoloco 作品档案。', body, '/monoloco.art/'))
+    # Resolve nested error URLs against the selected custom domain or project path.
+    body = f'<main id="main" class="wrap error-page"><div class="eyebrow accent">404 / PAGE NOT FOUND</div><h1>走到了另一扇门。</h1><p>这个页面暂时不存在。回到作品，继续浏览。</p><a class="arrow-link" href="{BASE_PATH}index.html">返回首页 <span class="arrow" aria-hidden="true">↗</span></a></main>'
+    (DOCS / '404.html').write_text(page('页面未找到 — monoloco', '回到 monoloco 作品档案。', body, BASE_PATH))
     # The preview copy is generated, never edited independently.
     preview = ROOT / 'opendesign/mockups/monoloco'
     shutil.copytree(DOCS, preview, dirs_exist_ok=True)

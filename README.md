@@ -2,7 +2,7 @@
 
 monoloco 三人艺术团体的摄影书风格网站 Demo。首个项目“四门集 / 门之四重奏”收录 12 组四联作品。
 
-公开网址：https://waanng.github.io/monoloco.art/
+主域名：https://monoloco.art/ （需完成域名 DNS 解析与 HTTPS 证书签发）。
 
 ## 本地浏览
 
@@ -44,9 +44,9 @@ GitHub → Settings → Pages：
 - Branch：main
 - Folder：/docs
 
-`.nojekyll` 保证直接发布静态文件。所有普通页面使用相对路径，404 页面专门使用 `/monoloco.art/` 基路径以适配不存在的深层地址。未来迁移自定义域名时，需同步修改 404 基路径、分享图绝对地址与相关部署配置。
+`.nojekyll` 保证直接发布静态文件。所有普通页面使用相对路径，构建脚本根据 docs/CNAME 自动决定 404 基路径和分享图的域名。修改域名后重新构建即可。
 
-目前没有设置自定义域名。仓库名 `monoloco.art` 不表示域名已绑定。
+GitHub Pages 已设置自定义域名 monoloco.art，并保存于 docs/CNAME。DNSPod 中根域名 @ 应添加四条 A 记录：185.199.108.153、185.199.109.153、185.199.110.153、185.199.111.153；www 的 CNAME 指向 waanng.github.io。DNS 检查通过、证书可用后启用 Enforce HTTPS。
 
 ## 检查
 
