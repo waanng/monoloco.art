@@ -5,3 +5,5 @@
 @media(max-width:420px){.cards-three,.cards-two{grid-template-columns:1fr}.card-media{aspect-ratio:4/3}.card-caption h3{font-size:25px}.card-kind{font-size:10px}.card-subtitle{font-size:12px}.member{grid-template-columns:88px 1fr;column-gap:20px}.people-preview span{font-size:16px}.masthead nav{gap:8px}.masthead nav a{font-size:11px}.project-end .arrow-link{gap:20px}}
 /* Photo project covers crop to a full square; diagrams and design panels retain their composition. */
 .card-projects .card-media{aspect-ratio:1/1}.card-projects .card-media img{object-fit:cover}
+/* Match the white ground of the object artwork and give each composition room. */
+.card-objects .card-media{background:#fff;padding:clamp(20px,4vw,44px)}
