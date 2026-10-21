@@ -1,5 +1,7 @@
 # monoloco.art 网站 Demo Spec
 
+> 下一版内容结构已由用户确定为“艺术项目 / 动手工坊 / 文创作品 / 关于我们”，以《网站内容规划.md》为准；杂志仅提取图文，不设置整刊阅读或下载入口。本文保留已有 Demo 的实现记录。
+
 版本：0.2 / 2026-10-21  
 状态：视觉方向已确认；Demo 已实现，部署验证结果见 README 与实际 Pages 状态。  
 目标仓库：https://github.com/waanng/monoloco.art  
