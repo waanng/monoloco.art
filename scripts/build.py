@@ -93,7 +93,7 @@ def card(item,section,base,index=None):
         kind='筹备中 · '+kind
     n=f'<span class="card-number">{index:02d}</span>' if index else ''
     sizes='(max-width:420px) calc(100vw - 40px), (max-width:700px) calc((100vw - 60px) / 2), 420px'
-    return f'<article class="editorial-card"><a href="{path}" class="card-media" aria-label="查看{esc(item["title"])}">{image(item["cover"],base,sizes=sizes)}</a><div class="card-caption"><div><p class="card-kind">{esc(kind)}</p><h3><a href="{path}">{esc(item["title"])}</a></h3><p class="card-subtitle">{esc(item["subtitle"])}</p></div>{n}</div></article>'
+    return f'<article class="editorial-card card-{section}"><a href="{path}" class="card-media" aria-label="查看{esc(item["title"])}">{image(item["cover"],base,sizes=sizes)}</a><div class="card-caption"><div><p class="card-kind">{esc(kind)}</p><h3><a href="{path}">{esc(item["title"])}</a></h3><p class="card-subtitle">{esc(item["subtitle"])}</p></div>{n}</div></article>'
 
 def section_top(number,en,title,href=None,label=None):
     action=arrow_link(href,label) if href else ''
