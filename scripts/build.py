@@ -1,26 +1,48 @@
-"""Generate the static site using only the Python standard library."""
+"""Build the four-section monoloco static site from edited copy and selected media."""
 from pathlib import Path
 from html import escape as esc
 from datetime import datetime, timezone
 import json
 import shutil
+from site_data import PROJECTS, WORKSHOPS, OBJECTS, MEMBERS
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
-WORKS = json.loads((ROOT / 'content/works.json').read_text())
+MEDIA = json.loads((ROOT / 'content/media.json').read_text())
+DOORS = json.loads((ROOT / 'content/works.json').read_text())
 DOMAIN = (DOCS / 'CNAME').read_text().strip() if (DOCS / 'CNAME').exists() else ''
 BASE_PATH = '/' if DOMAIN else '/monoloco.art/'
 PUBLIC_URL = f'https://{DOMAIN}' if DOMAIN else 'https://waanng.github.io/monoloco.art'
+NAV = [('projects','艺术项目','Projects'),('workshops','动手工坊','Workshops'),('objects','文创作品','Objects'),('about','关于我们','About')]
+OUTPUTS = {}
+ARROW = '<span class="arrow" aria-hidden="true">↗</span>'
 
-def image(work, base, eager=False, sizes='(max-width: 600px) calc(100vw - 40px), 600px'):
-    folder = base + 'assets/images/four-doors/'
+def url(path, base):
+    return base + path + ('index.html' if path.endswith('/') else '')
+
+def image(key, base, eager=False, sizes='(max-width: 600px) calc(100vw - 40px), 640px'):
     attrs = 'loading="eager" fetchpriority="high"' if eager else 'loading="lazy"'
-    return f'''<picture><source type="image/webp" srcset="{folder}{work['thumbnail']} 640w, {folder}{work['image']} 1080w" sizes="{sizes}"><img src="{folder}{work['fallback']}" alt="{esc(work['altZh'])}" width="{work['width']}" height="{work['height']}" {attrs} decoding="async"></picture>'''
+    if key == 'doors':
+        w=DOORS[0]
+        folder=base+'assets/images/four-doors/'
+        return f'<picture><source type="image/webp" srcset="{folder}{w["thumbnail"]} 640w, {folder}{w["image"]} 1080w" sizes="{sizes}"><img src="{folder}{w["fallback"]}" alt="{esc(w["altZh"])}" width="{w["width"]}" height="{w["height"]}" {attrs} decoding="async"></picture>'
+    m=MEDIA[key]
+    folder=base+'assets/images/editorial/'
+    candidates=f'{folder}{m["image"]} {m["width"]}w'
+    if m['smallWidth'] < m['width']:
+        candidates=f'{folder}{m["small"]} {m["smallWidth"]}w, '+candidates
+    return f'<picture><source type="image/webp" srcset="{candidates}" sizes="{sizes}"><img src="{folder}{m["fallback"]}" alt="{esc(m["alt"])}" width="{m["width"]}" height="{m["height"]}" {attrs} decoding="async"></picture>'
+
+def arrow_link(href, text):
+    return f'<a class="arrow-link" href="{href}">{esc(text)} {ARROW}</a>'
 
 def page(title, description, body, base='./', current='', gallery=False):
-    work_current = ' aria-current="page"' if current == 'works' else ''
-    about_current = ' aria-current="page"' if current == 'about' else ''
-    script = f'<script src="{base}assets/js/gallery.js" defer></script>' if gallery else ''
+    nav=''
+    for slug,zh,en in NAV:
+        active=' aria-current="page"' if current==slug else ''
+        nav+=f'<a href="{url(slug+"/",base)}"{active}>{zh} <small>{en}</small></a>'
+    footnav=''.join(f'<a href="{url(slug+"/",base)}">{zh}</a>' for slug,zh,en in NAV)
+    script=f'<script src="{base}assets/js/gallery.js" defer></script>' if gallery else ''
     return f'''<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -36,84 +58,158 @@ def page(title, description, body, base='./', current='', gallery=False):
 <meta property="og:image" content="{PUBLIC_URL}/assets/images/four-doors/doors-01.jpg">
 <link rel="icon" href="{base}assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="{base}assets/css/site.css">
+<link rel="stylesheet" href="{base}assets/css/editorial.css">
 {script}
 </head>
 <body id="top">
 <a class="skip" href="#main">跳到正文</a>
-<header class="masthead wrap">
-<a class="wordmark" href="{base}index.html" aria-label="monoloco 首页">monoloco<span>.</span></a>
-<nav aria-label="主导航"><a href="{base}index.html#works"{work_current}>作品 <small>Works</small></a><a href="{base}about/index.html"{about_current}>关于 <small>About</small></a></nav>
-</header>
+<header class="masthead wrap"><a class="wordmark" href="{base}index.html" aria-label="monoloco 首页">monoloco<span>.</span></a><nav aria-label="主导航">{nav}</nav></header>
 {body}
-<footer class="site-footer wrap"><a class="footer-brand" href="{base}index.html">monoloco.</a><div class="footer-end"><span>三人艺术团体 · 作品与共同的观察</span><a href="#top">回到顶部 ↑</a></div></footer>
+<footer class="footer-four wrap"><div class="footer-top"><a class="footer-brand" href="{base}index.html">monoloco.</a><nav aria-label="页脚导航">{footnav}</nav></div><div class="footer-bottom"><span>观察 · 记录 · 制作 · 分享</span><a href="#top">回到顶部 ↑</a></div></footer>
 </body>
 </html>
 '''
 
-def home():
-    base = './'
-    previews = ''
-    for w in WORKS[:3]:
-        previews += f'''<figure><a class="art-link" href="./projects/four-doors/index.html#{w['id']}" aria-label="观看四门集：{esc(w['titleZh'])}">{image(w, base, sizes='(max-width: 600px) 45vw, 400px')}</a><figcaption class="caption"><span>{esc(w['titleZh'])}</span><span class="index">{w['order']:02d}</span></figcaption></figure>'''
-    body = f'''<main id="main">
-<section class="hero wrap" aria-labelledby="hero-title">
-<div class="hero-copy"><div class="eyebrow">MONOLOCO / ART COLLECTIVE</div><h1 id="hero-title">在门与门<br>之间<span class="stop">。</span></h1><p>四扇门，四种形态。<br>在不同的地方，寻找相通的风格与记忆。</p><a class="arrow-link" href="./projects/four-doors/index.html">走进四门集 <span class="arrow" aria-hidden="true">↗</span></a></div>
-<figure class="hero-art"><a class="art-link" href="./projects/four-doors/index.html" aria-label="进入四门集项目">{image(WORKS[0],base,True)}</a><figcaption><span>四门集 <span class="muted">/ 门之四重奏</span></span><span>FOUR DOORS, A QUARTET</span></figcaption></figure>
-</section>
-<div class="hero-meta wrap"><span>摄影 · 地方 · 日常观察</span><span class="intro">monoloco，一个由三人组成的艺术团体。</span><span>向下浏览 ↓</span></div>
-<section id="works" class="section featured wrap" aria-labelledby="works-title"><div class="section-top"><div><div class="eyebrow accent">SELECTED PROJECT / 作品</div><h2 class="section-title" id="works-title">四门集</h2></div><span class="section-count">01 — 门之四重奏</span></div><div class="project-grid">{previews}</div><div class="project-bottom"><p>门连接建筑的内与外。四幅影像彼此并置，记录一处地方，也留住一次相遇。</p><a class="arrow-link" href="./projects/four-doors/index.html">浏览完整选集 <span class="arrow" aria-hidden="true">↗</span></a></div></section>
-<section class="about-strip" aria-labelledby="about-title"><div class="wrap"><div><div class="eyebrow">ABOUT MONOLOCO</div><h2 id="about-title">三个人，共同的目光。</h2></div><div><p>这里收录 monoloco 的作品。<br>从一扇门开始，看看日常还有哪些值得驻足的地方。</p><a class="arrow-link" href="./about/index.html">关于我们 <span class="arrow" aria-hidden="true">↗</span></a></div></div></section>
-</main>'''
-    return page('monoloco — 三人艺术团体', 'monoloco 是一个由三人组成的艺术团体。进入四门集，在门与门之间观看地方、建筑与日常。', body)
+def breadcrumb(base, section, title):
+    return f'<a class="breadcrumb" href="{url(section+"/",base)}"><span aria-hidden="true">←</span> 返回{title}</a>'
 
-def project():
-    base = '../../'
-    figures = ''
-    for i, w in enumerate(WORKS):
-        folder = base + 'assets/images/four-doors/'
-        figures += f'''<figure class="work" id="{w['id']}"><a href="{folder}{w['fallback']}" data-work="{w['id']}" data-title="{esc(w['titleZh'])}" aria-label="放大观看：{esc(w['titleZh'])}">{image(w,base,i<2)}<span class="open-label" aria-hidden="true">放大观看 ↗</span></a><figcaption><span class="index">{i+1:02d}</span><span>{esc(w['titleZh'])}</span><small>门之四重奏</small></figcaption></figure>'''
-    body = f'''<main id="main" class="wrap">
-<a class="breadcrumb" href="../../index.html#works"><span aria-hidden="true">←</span> 返回作品</a>
-<section class="project-head" aria-labelledby="project-title"><div><div class="eyebrow accent">PHOTOGRAPHIC SERIES / 摄影项目</div><h1 id="project-title">四门集<span class="accent">。</span></h1><p class="subtitle">门之四重奏</p></div><p class="statement">门，连接着建筑的内部与外部。<br>在不同地方，四张门头被放在一起：形式各异，又有相通的风格与主题。<br>以一组影像，记住一个地方。</p></section>
-<div class="gallery-bar"><span>SELECTED WORKS / 精选 {len(WORKS):02d} 组</span><span>点击作品，进入大图观看 ↗</span></div>
-<section class="gallery" aria-label="四门集精选作品">{figures}</section>
-<div class="project-end"><p>一扇门，也是一种观看。</p><a class="arrow-link" href="../../about/index.html">认识 monoloco <span class="arrow" aria-hidden="true">↗</span></a></div>
-</main>
-<dialog class="viewer" id="viewer" aria-labelledby="viewer-title"><div class="viewer-shell"><div class="viewer-top"><span class="eyebrow">四门集 / 门之四重奏</span><button type="button" data-close aria-label="关闭大图">关闭 ×</button></div><div class="viewer-stage"><img alt=""><p class="viewer-error" role="alert" hidden>图片暂时无法加载，请稍后重试。</p></div><div class="viewer-bottom"><button type="button" data-previous aria-label="上一组作品">← 上一组</button><div class="viewer-info" aria-live="polite" aria-atomic="true"><div id="viewer-title"></div><span id="viewer-count"></span></div><button type="button" data-next aria-label="下一组作品">下一组 →</button></div></div></dialog>'''
-    return page('四门集 · 门之四重奏 — monoloco', f'门连接建筑的内与外。浏览四门集的 {len(WORKS)} 组四联摄影，在不同的形态之间寻找相通的风格与记忆。', body, base, 'works', True)
+def heading(kicker,title,subtitle,description):
+    return f'<section class="project-head"><div><div class="eyebrow accent">{kicker}</div><h1>{title}<span class="accent">。</span></h1><p class="subtitle">{subtitle}</p></div><p class="statement">{description}</p></section>'
+
+def viewer():
+    return '''<dialog class="viewer" id="viewer" aria-labelledby="viewer-title"><div class="viewer-shell"><div class="viewer-top"><span class="eyebrow">MONOLOCO / 作品浏览</span><button type="button" data-close aria-label="关闭大图">关闭 ×</button></div><div class="viewer-stage"><img alt=""><p class="viewer-error" role="alert" hidden>图片暂时无法加载，请稍后重试。</p></div><div class="viewer-bottom"><button type="button" data-previous aria-label="上一组作品">← 上一组</button><div class="viewer-info" aria-live="polite" aria-atomic="true"><div id="viewer-title"></div><span id="viewer-count"></span></div><button type="button" data-next aria-label="下一组作品">下一组 →</button></div></div></dialog>'''
+
+def media_figure(key,base,caption='',eager=False,cls=''):
+    m=MEDIA[key]
+    title=caption or m['alt']
+    return f'<figure class="work {cls}"><a href="{base}assets/images/editorial/{m["fallback"]}" data-work="{key}" data-title="{esc(title)}" aria-label="放大观看：{esc(title)}">{image(key,base,eager)}<span class="open-label" aria-hidden="true">放大观看 ↗</span></a><figcaption>{esc(caption)}</figcaption></figure>'
+
+def card(item,section,base,index=None):
+    path=url(f'{section}/{item["slug"]}/',base)
+    kind=item.get('kind',item.get('tag',''))
+    if section=='workshops':
+        kind='筹备中 · '+kind
+    n=f'<span class="card-number">{index:02d}</span>' if index else ''
+    return f'<article class="editorial-card"><a href="{path}" class="card-media" aria-label="查看{esc(item["title"])}">{image(item["cover"],base)}</a><div class="card-caption"><div><p class="card-kind">{esc(kind)}</p><h3><a href="{path}">{esc(item["title"])}</a></h3><p class="card-subtitle">{esc(item["subtitle"])}</p></div>{n}</div></article>'
+
+def section_top(number,en,title,href=None,label=None):
+    action=arrow_link(href,label) if href else ''
+    return f'<div class="section-top"><div><div class="eyebrow accent">{number} / {en}</div><h2 class="section-title">{title}</h2></div>{action}</div>'
+
+def home():
+    base='./'
+    art=''.join(card(PROJECTS[i],'projects',base,i+1) for i in [0,2,1])
+    workshops=''.join(card(w,'workshops',base,i+1) for i,w in enumerate(WORKSHOPS))
+    objects=''.join(card(o,'objects',base,i+1) for i,o in enumerate(OBJECTS))
+    people=''.join(f'<a class="people-preview" href="./about/index.html#{p["image"]}">{image(p["image"],base)}<span>{p["name"]}</span></a>' for p in MEMBERS)
+    body=f'''<main id="main">
+<section class="hero hero-four wrap"><div class="hero-copy"><div class="eyebrow">MONOLOCO / 艺术与生活实践</div><h1>看见日常，<br>一起创造<span class="stop">。</span></h1><p>用摄影与速写记录观察，<br>以手作和设计，让创作进入生活。</p>{arrow_link('./projects/index.html','浏览艺术项目')}</div><figure class="hero-art"><a class="art-link" href="./projects/four-doors/index.html" aria-label="进入四门集">{image('doors',base,True)}</a><figcaption><span>四门集 <span class="muted">/ 门之四重奏</span></span><span>SELECTED PROJECT</span></figcaption></figure></section>
+<div class="hero-meta wrap"><span>影像可持续 / IMAGE & EVERYDAY</span><span class="intro">三个人，从观察、记录到共同制作。</span><span>向下浏览 ↓</span></div>
+<section class="section featured wrap" id="works">{section_top('01','ART PROJECTS','艺术项目','./projects/index.html','全部项目')}<div class="cards-three">{art}</div></section>
+<section class="workshop-home"><div class="wrap section">{section_top('02','HANDS-ON WORKSHOPS','动手工坊','./workshops/index.html','了解工坊')}<p class="section-intro">从观看到动手。一起做一本本子，让光留下影子，走近胶片显影的过程。</p><div class="cards-three">{workshops}</div></div></section>
+<section class="section wrap">{section_top('03','DESIGNED OBJECTS','文创作品','./objects/index.html','查看作品')}<p class="section-intro">让一幅画、一段旅程，成为可以带进日常的物件。</p><div class="cards-two">{objects}</div></section>
+<section class="collective-home"><div class="wrap collective-grid"><div><div class="eyebrow accent">04 / ABOUT US</div><h2>三个人，<br>共同的目光。</h2><p>monoloco 从社区营造出发，走向策展、创作与文创设计。以影像可持续为线索，在记录与制作之间持续探索。</p>{arrow_link('./about/index.html','认识我们')}</div><div class="people-previews">{people}</div></div></section>
+</main>'''
+    return page('monoloco — 艺术与生活实践','艺术项目、动手工坊与文创作品。monoloco 以摄影、速写、手工本和设计，记录日常并共同创造。',body)
+
+def index_page(section,title,en,subtitle,intro,items):
+    base='../'
+    grid='cards-two' if section=='objects' else 'cards-three'
+    cards=''.join(card(item,section,base,i+1) for i,item in enumerate(items))
+    body=f'<main id="main" class="wrap">{heading(en,title,subtitle,intro)}<section class="{grid} catalog" aria-label="{title}列表">{cards}</section></main>'
+    return page(f'{title} — monoloco',intro,body,base,section)
+
+def project_detail(project):
+    base='../../'
+    is_doors=project['slug']=='four-doors'
+    head=heading('ART PROJECT / '+project['kind'],project['title'],project['subtitle'],project['intro'])
+    byline=f'<div class="gallery-bar"><span>{esc(project["author"])}</span><span>点击作品，放大观看 ↗</span></div>'
+    figures=''
+    if is_doors:
+        for i,w in enumerate(DOORS):
+            folder=base+'assets/images/four-doors/'
+            figures+=f'<figure class="work" id="{w["id"]}"><a href="{folder}{w["fallback"]}" data-work="{w["id"]}" data-title="{esc(w["titleZh"])}" aria-label="放大观看：{esc(w["titleZh"])}"><picture><source type="image/webp" srcset="{folder}{w["thumbnail"]} 640w, {folder}{w["image"]} 1080w" sizes="(max-width:600px) calc(100vw - 40px), 640px"><img src="{folder}{w["fallback"]}" alt="{esc(w["altZh"])}" width="{w["width"]}" height="{w["height"]}" loading="{"eager" if i<2 else "lazy"}"></picture><span class="open-label" aria-hidden="true">放大观看 ↗</span></a><figcaption><span class="index">{i+1:02d}</span><span>{esc(w["titleZh"])}</span><small>门之四重奏</small></figcaption></figure>'
+        content=f'<section class="gallery" aria-label="四门集作品">{figures}</section>'
+    else:
+        for i,(key,caption) in enumerate(project['media']):
+            figures+=media_figure(key,base,caption,i<2)
+        paragraphs=''.join(f'<p>{p}</p>' for p in project['paragraphs'])
+        content=f'<div class="reading-intro"><p class="quote">{project["quote"]}</p><div>{paragraphs}</div></div><section class="gallery narrative-gallery" aria-label="{project["title"]}作品">{figures}</section><p class="source-note">图文整理自《忽独》第一期，影像与原文分别保留作者署名。</p>'
+    related=project.get('related')
+    if related:
+        ending=arrow_link(url(related[0],base),related[1])
+    else:
+        ending=arrow_link(url('projects/',base),'继续浏览艺术项目')
+    body=f'<main id="main" class="wrap">{breadcrumb(base,"projects","艺术项目")}{head}{byline}{content}<div class="project-end"><p>停下来，再看一眼。</p>{ending}</div></main>{viewer()}'
+    return page(f'{project["title"]} — monoloco',project['intro'],body,base,'projects',True)
+
+def workshop_detail(w):
+    base='../../'
+    stages=''.join(f'<div class="process-step"><span class="eyebrow accent">{n}</span><h3>{title}</h3><p>{text}</p></div>' for n,title,text in w['stages'])
+    opening=media_figure(w['cover'],base,w['subtitle'],True)
+    extras=''
+    if w['slug']=='handmade-books':
+        examples=''.join(media_figure(key,base,cap) for key,cap in [('notebook-writing','一句话，也可以是记录的开始。'),('notebook-coffee','把文字、速写和贴纸放在一起。'),('notebook-photo','为照片留一个位置。'),('notebook-map','把走过的路画下来。')])
+        bindings=''.join(media_figure(f'binding-process-{i}',base,caption) for i,caption in [(1,'缝线本'),(2,'环装本'),(3,'风琴本')])
+        extras=f'<section class="chapter"><div class="chapter-heading"><div class="eyebrow accent">MAKE A BOOK</div><h2>先做一本。</h2><p>让散页以不同的方式相连。每期工坊选取的结构与材料，将在场次中说明。</p></div><div class="cards-three instruction-gallery">{bindings}</div></section><section class="chapter" id="fill-it"><div class="chapter-heading"><div class="eyebrow accent">FILL IT WITH LIFE</div><h2>如何填满它？</h2><p>从朋友的废包装纸开始，裁成小小的方形，找身边的材料做封面。带在身边，轻巧纤薄，涂涂画画，没有压力。走过的路、见过的景、探过的店、遇到的人，慢慢成为一本自己的记忆。</p></div><div class="gallery">{examples}</div>{arrow_link(url("projects/journey-notes/",base),"看看旅途中的记录")}</section>'
+    elif w['slug']=='cyanotype':
+        steps=''.join(media_figure(f'cyanotype-process-{i}',base,cap) for i,cap in [(1,'材料准备与涂布'),(2,'避光晾干与构图准备'),(3,'曝光与水洗显影')])
+        extras=f'<section class="chapter"><div class="chapter-heading"><div class="eyebrow accent">THE MAKING PROCESS</div><h2>光，慢慢留下痕迹。</h2><p>用手绘图认识蓝晒的基本过程。实际材料与操作由现场方案和指导决定。</p></div><div class="cards-three instruction-gallery">{steps}</div></section>'
+    else:
+        extras=f'<section class="chapter split-chapter"><div><div class="eyebrow accent">OUR FILM PRACTICE</div><h2>从相机到影像。</h2><p>胶片也在我们的创作里。相机、底片和等待，让记录拥有另一种速度。</p>{arrow_link(url("projects/five-kilometers/",base),"看看胶片相关的城市观察")}</div>{media_figure("five-window",base,"窗边，留在胶片里的光。")}</section>'
+    body=f'''<main id="main" class="wrap">{breadcrumb(base,'workshops','动手工坊')}{heading('HANDS-ON WORKSHOP',w['title'],w['subtitle'],w['intro'])}<div class="gallery-bar"><span class="status-dot">筹备中</span><span>{w['tag']}</span></div><div class="workshop-opening">{opening}<aside><div class="eyebrow accent">TAKE PART / 一起动手</div><h2>不止观看，<br>也亲手试试看。</h2><p>{w['outcome']}</p><p class="muted">{w['preparation']}</p></aside></div><section class="process-grid" aria-label="工坊内容">{stages}</section>{extras}<section class="participation"><div><div class="eyebrow accent">UPCOMING / 参与方式</div><h2>下一次，一起做。</h2><p>工坊正在筹备。具体时间、地点、主讲人、材料和参与方式，将在场次确定后公布。</p></div><div><p>如果你是文化空间、社区或活动组织者，欢迎和我们交流工坊合作。</p>{arrow_link(url("about/",base)+"#contact","工坊合作与咨询")}</div></section></main>{viewer()}'''
+    return page(f'{w["title"]} — monoloco',w['intro'],body,base,'workshops',True)
+
+def object_detail(o):
+    base='../../'
+    chapters=''
+    for key,kicker,title,text in o['sections']:
+        chapters+=f'<section class="chapter object-chapter"><div class="chapter-heading"><div class="eyebrow accent">{kicker}</div><h2>{title}</h2><p>{text}</p></div>{media_figure(key,base,title)}</section>'
+    if o['slug']=='vinyl-notebook':
+        cities=['利物浦','阿姆斯特丹','柏林','布拉格','维也纳','米兰','巴黎']
+        cities_html=''.join(media_figure(f'vinyl-city-{i}',base,city) for i,city in enumerate(cities,1))
+        chapters+=f'<section class="chapter"><div class="chapter-heading"><div class="eyebrow accent">03 / CITIES & NOTES</div><h2>七座城市，七段音乐记忆。</h2><p>城市速写进入唱片的圆形结构，与音乐主题一起构成内页。翻过图像，空白的纸面等待新的记录。</p></div><div class="city-grid">{cities_html}</div></section><section class="chapter object-chapter"><div class="chapter-heading"><div class="eyebrow accent">04 / DETAILS</div><h2>从封面延续到腰封。</h2><p>把旅行路线、主题文字与唱片的视觉线索放在一起，成为一本完整的伴手本。</p></div>{media_figure("vinyl-band",base,"腰封图形局部")}</section>'
+    details=''.join(f'<div><dt>{label}</dt><dd>{value}</dd></div>' for label,value in o['details'])
+    body=f'<main id="main" class="wrap">{breadcrumb(base,"objects","文创作品")}{heading("DESIGNED OBJECT",o["title"],o["subtitle"],o["intro"])}<div class="gallery-bar"><span>{o["kind"]}</span><span>设计方案 / DESIGN STUDY</span></div><div class="object-hero">{media_figure(o["cover"],base,o["subtitle"],True)}</div>{chapters}<dl class="object-facts">{details}</dl><div class="project-end"><p>{o["closing"]}</p>{arrow_link(url("about/",base)+"#contact","交流设计合作")}</div></main>{viewer()}'
+    return page(f'{o["title"]} — monoloco',o['intro'],body,base,'objects',True)
 
 def about():
-    base = '../'
-    body = f'''<main id="main" class="wrap"><section class="about-head" aria-labelledby="about-heading"><div><div class="eyebrow accent">ABOUT / 关于我们</div><h1 id="about-heading">三个人，<br>共同的目光<span class="accent">。</span></h1></div><div class="about-copy"><p>monoloco 是一个由三人组成的艺术团体。</p><p>这里是一份持续展开的作品档案。<br>从《四门集》开始，记录不同地方的建筑入口，<br>让独立的影像在并置中相遇。</p></div></section><div class="about-divider"></div><figure class="about-photo">{image(WORKS[2],base,True)}<figcaption><div class="eyebrow">OUR FIRST CHAPTER / 作品档案</div><h2>从四扇门开始。</h2><p>一组四张，各不相同。<br>相通的风格、主题与地方记忆，<br>构成一首门的四重奏。</p><a class="arrow-link" href="../projects/four-doors/index.html">进入四门集 <span class="arrow" aria-hidden="true">↗</span></a></figcaption></figure></main>'''
-    return page('关于 monoloco — 三人艺术团体', 'monoloco，一个由三人组成的艺术团体。这里收录作品与共同的观察。', body, base, 'about')
+    base='../'
+    people=''
+    for p in MEMBERS:
+        people+=f'<article class="member" id="{p["image"]}"><div class="member-image">{image(p["image"],base)}</div><div class="eyebrow accent">{p["line"]}</div><h3>{p["name"]}</h3><p>{p["bio"]}</p><p class="member-handle">小红书 · {p["handle"]}</p>{arrow_link(url("projects/"+p["project"]+"/",base),"查看相关作品")}</article>'
+    history=''.join(f'<li>{x}</li>' for x in ['白塔寺街区 · 旧物改造花园与“药局”','胡同美术馆 · 插画展','《杯子在溜达》· CITYWALK 速写巡展','宣武门胡同 · monoloco 快闪咖啡馆'])
+    body=f'''<main id="main" class="wrap"><section class="about-head"><div><div class="eyebrow accent">ABOUT MONOLOCO / 关于我们</div><h1>三个人，<br>共同的目光<span class="accent">。</span></h1></div><div class="about-copy"><p>monoloco 始于 2017 年，从社区营造出发，逐渐走向策展、文创设计与持续的艺术实践。</p><p>我们用胶片、速写和手工本记录城市，也通过共同制作，让创作进入日常。影像可持续，是连接这些探索的一条线索。</p></div></section><section class="members" aria-label="三位成员">{people}</section><section class="chapter about-practice"><div class="chapter-heading"><div class="eyebrow accent">OUR PRACTICE</div><h2>从街区出发，<br>让创作继续发生。</h2><p>我们曾在胡同里做花园、办展览、记录行走，也尝试用一间快闪咖啡馆让人相遇。那些实践留下的线索，继续进入今天的作品、工坊与物件。</p></div><ul class="history-list">{history}</ul></section><section class="contact-section" id="contact"><div><div class="eyebrow accent">LET'S MAKE SOMETHING</div><h2>一起做些有意思的事。</h2><p>欢迎交流工坊邀请、文化空间合作、展览与文创设计。</p></div><div class="contact-handles"><div><span>小红书</span><strong>MONOLOCO</strong></div><div><span>微博</span><strong>MONOLOCO生活实验</strong></div><p>可在相应平台搜索以上账号名，与我们联系。</p></div></section></main>'''
+    return page('关于我们 — monoloco','认识 LZ、KASA 和王安。monoloco 从社区营造出发，以摄影、速写、动手工坊与文创设计持续探索。',body,base,'about')
 
 def build():
-    outputs = {'index.html': home(), 'projects/four-doors/index.html': project(), 'about/index.html': about()}
-    for name, content in outputs.items():
-        path = DOCS / name
-        path.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUTS['index.html']=home()
+    OUTPUTS['projects/index.html']=index_page('projects','艺术项目','ART PROJECTS','观察，记录，留下片刻。','从门头、土壤、城市与旅途出发，用摄影、速写和文字，留下与世界相遇的方式。',PROJECTS)
+    OUTPUTS['workshops/index.html']=index_page('workshops','动手工坊','HANDS-ON WORKSHOPS','从观看，到一起动手。','把创作的方法带到一起。做一本手工本，尝试蓝晒，走近胶片显影，让自己的日常成为作品的起点。',WORKSHOPS)
+    OUTPUTS['objects/index.html']=index_page('objects','文创作品','DESIGNED OBJECTS','让创作，进入日常。','从城市速写到随身本，从校园长卷到礼品杯。让创作离开纸面，在日常物件中继续生长。',OBJECTS)
+    for p in PROJECTS:OUTPUTS[f'projects/{p["slug"]}/index.html']=project_detail(p)
+    for w in WORKSHOPS:OUTPUTS[f'workshops/{w["slug"]}/index.html']=workshop_detail(w)
+    for o in OBJECTS:OUTPUTS[f'objects/{o["slug"]}/index.html']=object_detail(o)
+    OUTPUTS['about/index.html']=about()
+    body=f'<main id="main" class="wrap error-page"><div class="eyebrow accent">404 / PAGE NOT FOUND</div><h1>走到了另一扇门。</h1><p>这个页面暂时不存在。回到作品，继续浏览。</p>{arrow_link(BASE_PATH+"index.html","返回首页")}</main>'
+    OUTPUTS['404.html']=page('页面未找到 — monoloco','回到 monoloco 作品与共同实践。',body,BASE_PATH)
+    for name,content in OUTPUTS.items():
+        path=DOCS/name
+        path.parent.mkdir(parents=True,exist_ok=True)
         path.write_text(content)
-    # Resolve nested error URLs against the selected custom domain or project path.
-    body = f'<main id="main" class="wrap error-page"><div class="eyebrow accent">404 / PAGE NOT FOUND</div><h1>走到了另一扇门。</h1><p>这个页面暂时不存在。回到作品，继续浏览。</p><a class="arrow-link" href="{BASE_PATH}index.html">返回首页 <span class="arrow" aria-hidden="true">↗</span></a></main>'
-    (DOCS / '404.html').write_text(page('页面未找到 — monoloco', '回到 monoloco 作品档案。', body, BASE_PATH))
-    # The preview copy is generated, never edited independently.
-    preview = ROOT / 'opendesign/mockups/monoloco'
-    shutil.copytree(DOCS, preview, dirs_exist_ok=True)
-    sections = []
-    for folder, label in [('mockups','Mockups'),('design-systems','Design Systems')]:
-        groups = []
-        root = ROOT / 'opendesign' / folder
-        if root.exists():
-            for group in sorted(root.iterdir()):
-                if not group.is_dir():
-                    continue
-                files = sorted(group.rglob('*.html') if folder == 'mockups' else (p for p in group.rglob('*') if p.is_file()))
-                if files:
-                    groups.append({'slug':group.name,'files':[{'label':str(p.relative_to(group)), 'path':str(p.relative_to(ROOT/'opendesign'))} for p in files]})
+    preview=ROOT/'opendesign/mockups/monoloco'
+    shutil.copytree(DOCS,preview,dirs_exist_ok=True)
+    sections=[]
+    for folder,label in [('mockups','Mockups'),('design-systems','Design Systems')]:
+        groups=[]
+        root=ROOT/'opendesign'/folder
+        root.mkdir(parents=True,exist_ok=True)
+        for group in sorted(root.iterdir()):
+            if not group.is_dir():continue
+            files=sorted(group.rglob('*.html') if folder=='mockups' else (p for p in group.rglob('*') if p.is_file()))
+            if files:groups.append({'slug':group.name,'files':[{'label':str(p.relative_to(group)),'path':str(p.relative_to(ROOT/'opendesign'))} for p in files]})
         sections.append({'id':folder,'label':label,'groups':groups})
-    manifest = {'generated':datetime.now(timezone.utc).isoformat(),'sections':sections}
-    (ROOT / 'opendesign/manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
-    print('Built 4 static pages and refreshed OpenDesign preview.')
+    (ROOT/'opendesign/manifest.json').write_text(json.dumps({'generated':datetime.now(timezone.utc).isoformat(),'sections':sections},ensure_ascii=False,indent=2)+'\n')
+    print(f'Built {len(OUTPUTS)} static pages and refreshed the OpenDesign preview.')
 
-if __name__ == '__main__':
-    build()
+if __name__=='__main__':build()

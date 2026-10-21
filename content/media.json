@@ -1,0 +1,1084 @@
+{
+  "lz": {
+    "image": "lz.webp",
+    "small": "lz-small.webp",
+    "fallback": "lz.jpg",
+    "width": 379,
+    "height": 365,
+    "smallWidth": 379,
+    "alt": "LZ 的黑白肖像",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 3,
+      "xref": 7
+    }
+  },
+  "kasa": {
+    "image": "kasa.webp",
+    "small": "kasa-small.webp",
+    "fallback": "kasa.jpg",
+    "width": 263,
+    "height": 237,
+    "smallWidth": 263,
+    "alt": "KASA 与大画幅相机的肖像",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 18,
+      "xref": 107
+    }
+  },
+  "wangan": {
+    "image": "wangan.webp",
+    "small": "wangan-small.webp",
+    "fallback": "wangan.jpg",
+    "width": 379,
+    "height": 365,
+    "smallWidth": 379,
+    "alt": "王安的黑白肖像",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 43,
+      "xref": 285
+    }
+  },
+  "plant-bananas": {
+    "image": "plant-bananas.webp",
+    "small": "plant-bananas-small.webp",
+    "fallback": "plant-bananas.jpg",
+    "width": 1399,
+    "height": 1600,
+    "smallWidth": 560,
+    "alt": "成串香蕉组成的黑白图案",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 4,
+      "xref": 12
+    }
+  },
+  "plant-soil": {
+    "image": "plant-soil.webp",
+    "small": "plant-soil-small.webp",
+    "fallback": "plant-soil.jpg",
+    "width": 1053,
+    "height": 1404,
+    "smallWidth": 480,
+    "alt": "土壤中刚长出的幼苗",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 6,
+      "xref": 20
+    }
+  },
+  "plant-sign": {
+    "image": "plant-sign.webp",
+    "small": "plant-sign-small.webp",
+    "fallback": "plant-sign.jpg",
+    "width": 1053,
+    "height": 1404,
+    "smallWidth": 480,
+    "alt": "写有禁止偷土的标识",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 6,
+      "xref": 22
+    }
+  },
+  "plant-light": {
+    "image": "plant-light.webp",
+    "small": "plant-light-small.webp",
+    "fallback": "plant-light.jpg",
+    "width": 1475,
+    "height": 1600,
+    "smallWidth": 590,
+    "alt": "窗边杯中的幼苗",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 7,
+      "xref": 27
+    }
+  },
+  "plant-pigs": {
+    "image": "plant-pigs.webp",
+    "small": "plant-pigs-small.webp",
+    "fallback": "plant-pigs.jpg",
+    "width": 1047,
+    "height": 785,
+    "smallWidth": 640,
+    "alt": "栏杆后的小猪",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 8,
+      "xref": 36
+    }
+  },
+  "plant-detail": {
+    "image": "plant-detail.webp",
+    "small": "plant-detail-small.webp",
+    "fallback": "plant-detail.jpg",
+    "width": 1600,
+    "height": 1133,
+    "smallWidth": 640,
+    "alt": "细网与植物的局部",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 9,
+      "xref": 42
+    }
+  },
+  "travel-window": {
+    "image": "travel-window.webp",
+    "small": "travel-window-small.webp",
+    "fallback": "travel-window.jpg",
+    "width": 1600,
+    "height": 1135,
+    "smallWidth": 640,
+    "alt": "旅行途中，脚下向外展开的远景",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 12,
+      "xref": 63
+    }
+  },
+  "travel-street": {
+    "image": "travel-street.webp",
+    "small": "travel-street-small.webp",
+    "fallback": "travel-street.jpg",
+    "width": 1047,
+    "height": 601,
+    "smallWidth": 640,
+    "alt": "街口的人群与经过的车辆",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 13,
+      "xref": 68
+    }
+  },
+  "travel-shop": {
+    "image": "travel-shop.webp",
+    "small": "travel-shop-small.webp",
+    "fallback": "travel-shop.jpg",
+    "width": 1012,
+    "height": 759,
+    "smallWidth": 640,
+    "alt": "店面前的人和门口的陈设",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 13,
+      "xref": 70
+    }
+  },
+  "travel-cat": {
+    "image": "travel-cat.webp",
+    "small": "travel-cat-small.webp",
+    "fallback": "travel-cat.jpg",
+    "width": 1047,
+    "height": 785,
+    "smallWidth": 640,
+    "alt": "窗边看向镜头的猫",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 14,
+      "xref": 77
+    }
+  },
+  "travel-water": {
+    "image": "travel-water.webp",
+    "small": "travel-water-small.webp",
+    "fallback": "travel-water.jpg",
+    "width": 1051,
+    "height": 961,
+    "smallWidth": 640,
+    "alt": "水面的涟漪与一只水鸟",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 15,
+      "xref": 81
+    }
+  },
+  "travel-lane": {
+    "image": "travel-lane.webp",
+    "small": "travel-lane-small.webp",
+    "fallback": "travel-lane.jpg",
+    "width": 1053,
+    "height": 1295,
+    "smallWidth": 520,
+    "alt": "狭窄巷道中悬挂的标识",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 15,
+      "xref": 83
+    }
+  },
+  "travel-station": {
+    "image": "travel-station.webp",
+    "small": "travel-station-small.webp",
+    "fallback": "travel-station.jpg",
+    "width": 1191,
+    "height": 893,
+    "smallWidth": 640,
+    "alt": "站台与铁轨旁的列车",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 16,
+      "xref": 88
+    }
+  },
+  "travel-bridge": {
+    "image": "travel-bridge.webp",
+    "small": "travel-bridge-small.webp",
+    "fallback": "travel-bridge.jpg",
+    "width": 1191,
+    "height": 893,
+    "smallWidth": 640,
+    "alt": "走过木质通道的人",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 16,
+      "xref": 90
+    }
+  },
+  "five-city": {
+    "image": "five-city.webp",
+    "small": "five-city-small.webp",
+    "fallback": "five-city.jpg",
+    "width": 1048,
+    "height": 1008,
+    "smallWidth": 640,
+    "alt": "高处望去的城市屋顶与天际线",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 20,
+      "xref": 114
+    }
+  },
+  "five-window": {
+    "image": "five-window.webp",
+    "small": "five-window-small.webp",
+    "fallback": "five-window.jpg",
+    "width": 1047,
+    "height": 839,
+    "smallWidth": 640,
+    "alt": "胶片记录的窗边书本与光影",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 21,
+      "xref": 118
+    }
+  },
+  "five-reader": {
+    "image": "five-reader.webp",
+    "small": "five-reader-small.webp",
+    "fallback": "five-reader.jpg",
+    "width": 1047,
+    "height": 843,
+    "smallWidth": 640,
+    "alt": "窗前阅读的人",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 21,
+      "xref": 120
+    }
+  },
+  "five-portrait": {
+    "image": "five-portrait.webp",
+    "small": "five-portrait-small.webp",
+    "fallback": "five-portrait.jpg",
+    "width": 1049,
+    "height": 841,
+    "smallWidth": 640,
+    "alt": "读书的人与书页的细节",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 22,
+      "xref": 137
+    }
+  },
+  "five-building": {
+    "image": "five-building.webp",
+    "small": "five-building-small.webp",
+    "fallback": "five-building.jpg",
+    "width": 1049,
+    "height": 843,
+    "smallWidth": 640,
+    "alt": "明亮天井与环绕的建筑走廊",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 22,
+      "xref": 139
+    }
+  },
+  "five-door": {
+    "image": "five-door.webp",
+    "small": "five-door-small.webp",
+    "fallback": "five-door.jpg",
+    "width": 1600,
+    "height": 1137,
+    "smallWidth": 640,
+    "alt": "标有 D-22 的入口",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 23,
+      "xref": 144
+    }
+  },
+  "five-branches": {
+    "image": "five-branches.webp",
+    "small": "five-branches-small.webp",
+    "fallback": "five-branches.jpg",
+    "width": 1496,
+    "height": 1397,
+    "smallWidth": 640,
+    "alt": "窗外伸展的树枝",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 24,
+      "xref": 150
+    }
+  },
+  "five-library": {
+    "image": "five-library.webp",
+    "small": "five-library-small.webp",
+    "fallback": "five-library.jpg",
+    "width": 1047,
+    "height": 695,
+    "smallWidth": 640,
+    "alt": "阅览室的灯光与桌椅",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 26,
+      "xref": 171
+    }
+  },
+  "five-seat": {
+    "image": "five-seat.webp",
+    "small": "five-seat-small.webp",
+    "fallback": "five-seat.jpg",
+    "width": 1047,
+    "height": 1539,
+    "smallWidth": 435,
+    "alt": "坐在窗边的人与光影",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 27,
+      "xref": 180
+    }
+  },
+  "five-studio": {
+    "image": "five-studio.webp",
+    "small": "five-studio-small.webp",
+    "fallback": "five-studio.jpg",
+    "width": 1047,
+    "height": 1059,
+    "smallWidth": 633,
+    "alt": "堆放画作与书本的室内空间",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 30,
+      "xref": 211
+    }
+  },
+  "five-room": {
+    "image": "five-room.webp",
+    "small": "five-room-small.webp",
+    "fallback": "five-room.jpg",
+    "width": 1047,
+    "height": 1050,
+    "smallWidth": 638,
+    "alt": "有植物、绘画和家具的房间",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 31,
+      "xref": 220
+    }
+  },
+  "film-camera": {
+    "image": "film-camera.webp",
+    "small": "film-camera-small.webp",
+    "fallback": "film-camera.jpg",
+    "width": 1191,
+    "height": 746,
+    "smallWidth": 640,
+    "alt": "玛米亚 C220 双镜头相机的手绘结构图",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 42,
+      "xref": 278
+    }
+  },
+  "journey-map": {
+    "image": "journey-map.webp",
+    "small": "journey-map-small.webp",
+    "fallback": "journey-map.jpg",
+    "width": 1193,
+    "height": 1198,
+    "smallWidth": 637,
+    "alt": "手绘旅途路线图",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 45,
+      "xref": 298
+    }
+  },
+  "journey-list": {
+    "image": "journey-list.webp",
+    "small": "journey-list-small.webp",
+    "fallback": "journey-list.jpg",
+    "width": 1193,
+    "height": 1198,
+    "smallWidth": 637,
+    "alt": "旅程中到访地点的手写清单",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 45,
+      "xref": 300
+    }
+  },
+  "journey-road": {
+    "image": "journey-road.webp",
+    "small": "journey-road-small.webp",
+    "fallback": "journey-road.jpg",
+    "width": 874,
+    "height": 874,
+    "smallWidth": 640,
+    "alt": "在建筑前走过的一大一小两个身影",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 46,
+      "xref": 305
+    }
+  },
+  "journey-trees": {
+    "image": "journey-trees.webp",
+    "small": "journey-trees-small.webp",
+    "fallback": "journey-trees.jpg",
+    "width": 874,
+    "height": 856,
+    "smallWidth": 640,
+    "alt": "树下的步道与向前延伸的路",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 46,
+      "xref": 307
+    }
+  },
+  "journey-texas": {
+    "image": "journey-texas.webp",
+    "small": "journey-texas-small.webp",
+    "fallback": "journey-texas.jpg",
+    "width": 1600,
+    "height": 795,
+    "smallWidth": 640,
+    "alt": "用文字和路线记录德州的手绘地图",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 47,
+      "xref": 313
+    }
+  },
+  "journey-family": {
+    "image": "journey-family.webp",
+    "small": "journey-family-small.webp",
+    "fallback": "journey-family.jpg",
+    "width": 874,
+    "height": 874,
+    "smallWidth": 640,
+    "alt": "旅途中一家人在门前的合影",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 48,
+      "xref": 319
+    }
+  },
+  "journey-west": {
+    "image": "journey-west.webp",
+    "small": "journey-west-small.webp",
+    "fallback": "journey-west.jpg",
+    "width": 1600,
+    "height": 795,
+    "smallWidth": 640,
+    "alt": "一号公路旅程的手绘路线与地点",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 49,
+      "xref": 325
+    }
+  },
+  "journey-house": {
+    "image": "journey-house.webp",
+    "small": "journey-house-small.webp",
+    "fallback": "journey-house.jpg",
+    "width": 1047,
+    "height": 1047,
+    "smallWidth": 640,
+    "alt": "旅途中路过的街角房子",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 50,
+      "xref": 331
+    }
+  },
+  "journey-hands": {
+    "image": "journey-hands.webp",
+    "small": "journey-hands-small.webp",
+    "fallback": "journey-hands.jpg",
+    "width": 874,
+    "height": 874,
+    "smallWidth": 640,
+    "alt": "手里摆放的小物件",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 50,
+      "xref": 335
+    }
+  },
+  "journey-east": {
+    "image": "journey-east.webp",
+    "small": "journey-east-small.webp",
+    "fallback": "journey-east.jpg",
+    "width": 1600,
+    "height": 794,
+    "smallWidth": 640,
+    "alt": "美国东部旅途的手绘路线",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 51,
+      "xref": 339
+    }
+  },
+  "journey-campus": {
+    "image": "journey-campus.webp",
+    "small": "journey-campus-small.webp",
+    "fallback": "journey-campus.jpg",
+    "width": 1047,
+    "height": 1047,
+    "smallWidth": 640,
+    "alt": "登上校园台阶的孩子",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 52,
+      "xref": 347
+    }
+  },
+  "journey-bookshop": {
+    "image": "journey-bookshop.webp",
+    "small": "journey-bookshop-small.webp",
+    "fallback": "journey-bookshop.jpg",
+    "width": 502,
+    "height": 502,
+    "smallWidth": 502,
+    "alt": "一家书店门前的旅行记录",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 54,
+      "xref": 366
+    }
+  },
+  "journey-balloon": {
+    "image": "journey-balloon.webp",
+    "small": "journey-balloon-small.webp",
+    "fallback": "journey-balloon.jpg",
+    "width": 1047,
+    "height": 1047,
+    "smallWidth": 640,
+    "alt": "街边与气球合影的家人",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 55,
+      "xref": 377
+    }
+  },
+  "notebooks": {
+    "image": "notebooks.webp",
+    "small": "notebooks-small.webp",
+    "fallback": "notebooks.jpg",
+    "width": 1471,
+    "height": 1600,
+    "smallWidth": 588,
+    "alt": "九本由不同封面与装订方式制作的随身小本",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 56,
+      "xref": 385
+    }
+  },
+  "notebook-tools": {
+    "image": "notebook-tools.webp",
+    "small": "notebook-tools-small.webp",
+    "fallback": "notebook-tools.jpg",
+    "width": 1191,
+    "height": 1104,
+    "smallWidth": 640,
+    "alt": "随身背包与笔、本子等记录工具",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 57,
+      "xref": 404
+    }
+  },
+  "notebook-map": {
+    "image": "notebook-map.webp",
+    "small": "notebook-map-small.webp",
+    "fallback": "notebook-map.jpg",
+    "width": 445,
+    "height": 818,
+    "smallWidth": 348,
+    "alt": "手工本中绘制的路线地图",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 58,
+      "xref": 427
+    }
+  },
+  "notebook-writing": {
+    "image": "notebook-writing.webp",
+    "small": "notebook-writing-small.webp",
+    "fallback": "notebook-writing.jpg",
+    "width": 604,
+    "height": 265,
+    "smallWidth": 604,
+    "alt": "小本子上的手写记录",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 59,
+      "xref": 455
+    }
+  },
+  "notebook-coffee": {
+    "image": "notebook-coffee.webp",
+    "small": "notebook-coffee-small.webp",
+    "fallback": "notebook-coffee.jpg",
+    "width": 604,
+    "height": 266,
+    "smallWidth": 604,
+    "alt": "手工本中收集的文字、速写与贴纸",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 59,
+      "xref": 457
+    }
+  },
+  "notebook-photo": {
+    "image": "notebook-photo.webp",
+    "small": "notebook-photo-small.webp",
+    "fallback": "notebook-photo.jpg",
+    "width": 604,
+    "height": 273,
+    "smallWidth": 604,
+    "alt": "本子中粘贴的两张照片",
+    "source": "素材/2023 杂志 第一期.pdf",
+    "locator": {
+      "page": 59,
+      "xref": 463
+    }
+  },
+  "vinyl-cover": {
+    "image": "vinyl-cover.webp",
+    "small": "vinyl-cover-small.webp",
+    "fallback": "vinyl-cover.jpg",
+    "width": 1320,
+    "height": 840,
+    "smallWidth": 640,
+    "alt": "黑胶伴手本封面设计：唱机图形与 BEYOND THE NOTES 字样",
+    "source": "素材/文创 - 黑胶伴手本/黑胶书店伴手礼本设计-深烘咖啡版.pdf",
+    "locator": {
+      "page": 1,
+      "clip": [
+        160,
+        60,
+        820,
+        480
+      ]
+    }
+  },
+  "vinyl-label": {
+    "image": "vinyl-label.webp",
+    "small": "vinyl-label-small.webp",
+    "fallback": "vinyl-label.jpg",
+    "width": 1270,
+    "height": 810,
+    "smallWidth": 640,
+    "alt": "借用唱片内环形式的姓名与使用日期扉页",
+    "source": "素材/文创 - 黑胶伴手本/黑胶书店伴手礼本设计-深烘咖啡版.pdf",
+    "locator": {
+      "page": 3,
+      "clip": [
+        175,
+        55,
+        810,
+        460
+      ]
+    }
+  },
+  "vinyl-city-1": {
+    "image": "vinyl-city-1.webp",
+    "small": "vinyl-city-1-small.webp",
+    "fallback": "vinyl-city-1.jpg",
+    "width": 610,
+    "height": 774,
+    "smallWidth": 504,
+    "alt": "利物浦城市速写与唱片造型内页设计",
+    "source": "素材/文创 - 黑胶伴手本/黑胶书店伴手礼本设计-深烘咖啡版.pdf",
+    "locator": {
+      "page": 5,
+      "clip": [
+        180,
+        60,
+        485,
+        447
+      ]
+    }
+  },
+  "vinyl-city-2": {
+    "image": "vinyl-city-2.webp",
+    "small": "vinyl-city-2-small.webp",
+    "fallback": "vinyl-city-2.jpg",
+    "width": 610,
+    "height": 774,
+    "smallWidth": 504,
+    "alt": "阿姆斯特丹城市速写与唱片造型内页设计",
+    "source": "素材/文创 - 黑胶伴手本/黑胶书店伴手礼本设计-深烘咖啡版.pdf",
+    "locator": {
+      "page": 6,
+      "clip": [
+        180,
+        60,
+        485,
+        447
+      ]
+    }
+  },
+  "vinyl-city-3": {
+    "image": "vinyl-city-3.webp",
+    "small": "vinyl-city-3-small.webp",
+    "fallback": "vinyl-city-3.jpg",
+    "width": 610,
+    "height": 774,
+    "smallWidth": 504,
+    "alt": "柏林城市速写与唱片造型内页设计",
+    "source": "素材/文创 - 黑胶伴手本/黑胶书店伴手礼本设计-深烘咖啡版.pdf",
+    "locator": {
+      "page": 7,
+      "clip": [
+        180,
+        60,
+        485,
+        447
+      ]
+    }
+  },
+  "vinyl-city-4": {
+    "image": "vinyl-city-4.webp",
+    "small": "vinyl-city-4-small.webp",
+    "fallback": "vinyl-city-4.jpg",
+    "width": 610,
+    "height": 774,
+    "smallWidth": 504,
+    "alt": "布拉格城市速写与唱片造型内页设计",
+    "source": "素材/文创 - 黑胶伴手本/黑胶书店伴手礼本设计-深烘咖啡版.pdf",
+    "locator": {
+      "page": 8,
+      "clip": [
+        180,
+        60,
+        485,
+        447
+      ]
+    }
+  },
+  "vinyl-city-5": {
+    "image": "vinyl-city-5.webp",
+    "small": "vinyl-city-5-small.webp",
+    "fallback": "vinyl-city-5.jpg",
+    "width": 610,
+    "height": 774,
+    "smallWidth": 504,
+    "alt": "维也纳城市速写与唱片造型内页设计",
+    "source": "素材/文创 - 黑胶伴手本/黑胶书店伴手礼本设计-深烘咖啡版.pdf",
+    "locator": {
+      "page": 9,
+      "clip": [
+        180,
+        60,
+        485,
+        447
+      ]
+    }
+  },
+  "vinyl-city-6": {
+    "image": "vinyl-city-6.webp",
+    "small": "vinyl-city-6-small.webp",
+    "fallback": "vinyl-city-6.jpg",
+    "width": 610,
+    "height": 774,
+    "smallWidth": 504,
+    "alt": "米兰城市速写与唱片造型内页设计",
+    "source": "素材/文创 - 黑胶伴手本/黑胶书店伴手礼本设计-深烘咖啡版.pdf",
+    "locator": {
+      "page": 10,
+      "clip": [
+        180,
+        60,
+        485,
+        447
+      ]
+    }
+  },
+  "vinyl-city-7": {
+    "image": "vinyl-city-7.webp",
+    "small": "vinyl-city-7-small.webp",
+    "fallback": "vinyl-city-7.jpg",
+    "width": 610,
+    "height": 774,
+    "smallWidth": 504,
+    "alt": "巴黎城市速写与唱片造型内页设计",
+    "source": "素材/文创 - 黑胶伴手本/黑胶书店伴手礼本设计-深烘咖啡版.pdf",
+    "locator": {
+      "page": 11,
+      "clip": [
+        180,
+        60,
+        485,
+        447
+      ]
+    }
+  },
+  "vinyl-band": {
+    "image": "vinyl-band.webp",
+    "small": "vinyl-band-small.webp",
+    "fallback": "vinyl-band.jpg",
+    "width": 1070,
+    "height": 226,
+    "smallWidth": 640,
+    "alt": "腰封局部：旅行路线与跟着黑胶去旅行字样",
+    "source": "素材/文创 - 黑胶伴手本/黑胶书店伴手礼本设计-深烘咖啡版.pdf",
+    "locator": {
+      "page": 13,
+      "clip": [
+        280,
+        166,
+        815,
+        279
+      ]
+    }
+  },
+  "ucas-scroll": {
+    "image": "ucas-scroll.webp",
+    "small": "ucas-scroll-small.webp",
+    "fallback": "ucas-scroll.jpg",
+    "width": 1600,
+    "height": 305,
+    "smallWidth": 640,
+    "alt": "以校园建筑和题字组成的彩色校园长卷",
+    "source": "素材/文创 - 国科大礼品杯/国科大礼品咖啡杯设计.pdf",
+    "locator": {
+      "page": 1,
+      "clip": [
+        32,
+        270,
+        925,
+        440
+      ],
+      "productionLinesRemoved": false
+    }
+  },
+  "ucas-sketch": {
+    "image": "ucas-sketch.webp",
+    "small": "ucas-sketch-small.webp",
+    "fallback": "ucas-sketch.jpg",
+    "width": 1600,
+    "height": 355,
+    "smallWidth": 640,
+    "alt": "四组校园建筑的手绘线稿",
+    "source": "素材/文创 - 国科大礼品杯/国科大礼品咖啡杯设计.pdf",
+    "locator": {
+      "page": 2,
+      "clip": [
+        66,
+        290,
+        900,
+        475
+      ],
+      "productionLinesRemoved": false
+    }
+  },
+  "ucas-package": {
+    "image": "ucas-package.webp",
+    "small": "ucas-package-small.webp",
+    "fallback": "ucas-package.jpg",
+    "width": 1330,
+    "height": 450,
+    "smallWidth": 640,
+    "alt": "以校园建筑几何图形组成的包装设计局部",
+    "source": "素材/文创 - 国科大礼品杯/国科大礼品咖啡杯设计.pdf",
+    "locator": {
+      "page": 3,
+      "clip": [
+        140,
+        190,
+        805,
+        415
+      ],
+      "productionLinesRemoved": true
+    }
+  },
+  "ucas-cup": {
+    "image": "ucas-cup.webp",
+    "small": "ucas-cup-small.webp",
+    "fallback": "ucas-cup.jpg",
+    "width": 1420,
+    "height": 850,
+    "smallWidth": 640,
+    "alt": "国科大礼品杯正反面图案的平面设计方案",
+    "source": "素材/文创 - 国科大礼品杯/国科大礼品咖啡杯设计.pdf",
+    "locator": {
+      "page": 4,
+      "clip": [
+        170,
+        100,
+        880,
+        525
+      ],
+      "productionLinesRemoved": false
+    }
+  },
+  "cyanotype-process-1": {
+    "image": "cyanotype-process-1.webp",
+    "small": "cyanotype-process-1-small.webp",
+    "fallback": "cyanotype-process-1.jpg",
+    "width": 1440,
+    "height": 960,
+    "smallWidth": 640,
+    "alt": "从涂布到曝光、水洗的蓝晒手绘过程说明，第 1 部分",
+    "source": "素材/工坊 - 蓝晒工坊/蓝晒手绘说明.png",
+    "locator": {
+      "segment": 1,
+      "total": 3
+    }
+  },
+  "cyanotype-process-2": {
+    "image": "cyanotype-process-2.webp",
+    "small": "cyanotype-process-2-small.webp",
+    "fallback": "cyanotype-process-2.jpg",
+    "width": 1440,
+    "height": 1070,
+    "smallWidth": 640,
+    "alt": "从涂布到曝光、水洗的蓝晒手绘过程说明，第 2 部分",
+    "source": "素材/工坊 - 蓝晒工坊/蓝晒手绘说明.png",
+    "locator": {
+      "segment": 2,
+      "total": 3
+    }
+  },
+  "cyanotype-process-3": {
+    "image": "cyanotype-process-3.webp",
+    "small": "cyanotype-process-3-small.webp",
+    "fallback": "cyanotype-process-3.jpg",
+    "width": 1440,
+    "height": 1210,
+    "smallWidth": 640,
+    "alt": "从涂布到曝光、水洗的蓝晒手绘过程说明，第 3 部分",
+    "source": "素材/工坊 - 蓝晒工坊/蓝晒手绘说明.png",
+    "locator": {
+      "segment": 3,
+      "total": 3
+    }
+  },
+  "cyanotype-print-1": {
+    "image": "cyanotype-print-1.webp",
+    "small": "cyanotype-print-1-small.webp",
+    "fallback": "cyanotype-print-1.jpg",
+    "width": 694,
+    "height": 874,
+    "smallWidth": 508,
+    "alt": "蓝晒过程中植物影像从纸面显现的过程图，第 1 部分",
+    "source": "素材/工坊 - 蓝晒工坊/蓝晒.png",
+    "locator": {
+      "segment": 1,
+      "total": 1
+    }
+  },
+  "binding-process-1": {
+    "image": "binding-process-1.webp",
+    "small": "binding-process-1-small.webp",
+    "fallback": "binding-process-1.jpg",
+    "width": 1062,
+    "height": 1600,
+    "smallWidth": 425,
+    "alt": "缝线本、环装本、风琴本与照片、文字、印章的手绘说明，第 1 部分",
+    "source": "素材/工坊 - 手工本工坊/手工书工坊说明.png",
+    "locator": {
+      "segment": 1,
+      "total": 6
+    }
+  },
+  "binding-process-2": {
+    "image": "binding-process-2.webp",
+    "small": "binding-process-2-small.webp",
+    "fallback": "binding-process-2.jpg",
+    "width": 1245,
+    "height": 1600,
+    "smallWidth": 498,
+    "alt": "缝线本、环装本、风琴本与照片、文字、印章的手绘说明，第 2 部分",
+    "source": "素材/工坊 - 手工本工坊/手工书工坊说明.png",
+    "locator": {
+      "segment": 2,
+      "total": 6
+    }
+  },
+  "binding-process-3": {
+    "image": "binding-process-3.webp",
+    "small": "binding-process-3-small.webp",
+    "fallback": "binding-process-3.jpg",
+    "width": 1440,
+    "height": 1600,
+    "smallWidth": 576,
+    "alt": "缝线本、环装本、风琴本与照片、文字、印章的手绘说明，第 3 部分",
+    "source": "素材/工坊 - 手工本工坊/手工书工坊说明.png",
+    "locator": {
+      "segment": 3,
+      "total": 6
+    }
+  },
+  "binding-process-4": {
+    "image": "binding-process-4.webp",
+    "small": "binding-process-4-small.webp",
+    "fallback": "binding-process-4.jpg",
+    "width": 1440,
+    "height": 1260,
+    "smallWidth": 640,
+    "alt": "缝线本、环装本、风琴本与照片、文字、印章的手绘说明，第 4 部分",
+    "source": "素材/工坊 - 手工本工坊/手工书工坊说明.png",
+    "locator": {
+      "segment": 4,
+      "total": 6
+    }
+  },
+  "binding-process-5": {
+    "image": "binding-process-5.webp",
+    "small": "binding-process-5-small.webp",
+    "fallback": "binding-process-5.jpg",
+    "width": 1440,
+    "height": 1060,
+    "smallWidth": 640,
+    "alt": "缝线本、环装本、风琴本与照片、文字、印章的手绘说明，第 5 部分",
+    "source": "素材/工坊 - 手工本工坊/手工书工坊说明.png",
+    "locator": {
+      "segment": 5,
+      "total": 6
+    }
+  },
+  "binding-process-6": {
+    "image": "binding-process-6.webp",
+    "small": "binding-process-6-small.webp",
+    "fallback": "binding-process-6.jpg",
+    "width": 1405,
+    "height": 1600,
+    "smallWidth": 562,
+    "alt": "缝线本、环装本、风琴本与照片、文字、印章的手绘说明，第 6 部分",
+    "source": "素材/工坊 - 手工本工坊/手工书工坊说明.png",
+    "locator": {
+      "segment": 6,
+      "total": 6
+    }
+  }
+}

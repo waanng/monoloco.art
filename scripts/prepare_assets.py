@@ -9,7 +9,7 @@ import json
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / '12.四门集' / '门之四重奏.pptx'
+SOURCE = ROOT / '素材' / '12.四门集' / '门之四重奏.pptx'
 OUT = ROOT / 'docs/assets/images/four-doors'
 SELECTION = [
     (25, 30, '波士顿牛津街', '四幅门头并置：砖墙、深色木门与石砌入口。'),
@@ -44,7 +44,7 @@ def main():
                 variant.save(OUT / f'{slug}-{suffix}.webp', quality=86, method=6)
             works.append({
                 'id': slug, 'order': order, 'titleZh': title,
-                'sourceFile': '12.四门集/门之四重奏.pptx',
+                'sourceFile': '素材/12.四门集/门之四重奏.pptx',
                 'sourcePage': page, 'sourceImage': source_image,
                 'location': title, 'displayDate': None, 'credit': None,
                 'image': f'{slug}-large.webp', 'thumbnail': f'{slug}-small.webp',

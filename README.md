@@ -1,63 +1,77 @@
 # monoloco.art
 
-monoloco 三人艺术团体的摄影书风格网站 Demo。首个项目“四门集 / 门之四重奏”收录 12 组四联作品。
+monoloco 的艺术与生活实践网站。主网址：https://monoloco.art/
 
-主域名：https://monoloco.art/ （需完成域名 DNS 解析与 HTTPS 证书签发）。
+四个板块：**艺术项目 / 动手工坊 / 文创作品 / 关于我们**。
 
-## 本地浏览
+现有内容包括五个艺术项目、三个筹备中的工坊、两个文创设计案例和三位成员介绍，共 16 个静态页面（含首页、列表页与 404）。网页使用本地图片、字体回退和原生交互，无数据库或服务器应用。
+
+## 本地浏览与构建
 
 在仓库根目录运行：
 
-```sh
+~~~sh
+python3 scripts/build.py
+python3 scripts/check_site.py
 python3 -m http.server 8289
-```
+~~~
 
-打开 http://localhost:8289/docs/ 。首页、作品页、关于页为静态 HTML，不依赖在线接口或外部字体。
+打开 http://localhost:8289/docs/ 。构建只依赖 Python 标准库，浏览网站不依赖在线接口或外部字体。原始素材不在仓库中也可以用已提交的网页图片完成构建。
 
-## 更新作品
+## 内容维护
 
-1. 在 `content/works.json` 更新图片清单、地点与替代文本。
-2. 将处理好的图片放入 `docs/assets/images/four-doors/`。每组提供 JPEG 回退，以及 640px / 1080px WebP；保留四联构图，不放大超出原始分辨率。
-3. 运行 `python3 scripts/build.py` 重新生成页面。
-4. 运行 `python3 scripts/check_site.py` 检查链接与资源。
-5. 提交并推送到 main；Pages 从 `/docs` 发布。
+- 页面文字、项目、工坊、文创及成员：scripts/site_data.py。
+- 四门集清单：content/works.json。
+- 提取后的图片与来源定位：content/media.json。
+- 页面生成与公共布局：scripts/build.py。
+- 基础样式：docs/assets/css/site.css。
+- 四板块扩展样式：docs/assets/css/editorial.css。
+- 大图浏览：docs/assets/js/gallery.js。
 
-项目页选集数量由清单自动计算。生成页面的正文在 `scripts/build.py`，样式在 `docs/assets/css/site.css`，大图交互在 `docs/assets/js/gallery.js`。
+修改内容后重新构建，并运行链接检查。不要手工改生成的 HTML。构建也会刷新 opendesign/mockups/monoloco/ 预览副本与 manifest；本地预览目录不上传。
 
-`scripts/build.py` 只使用 Python 标准库。它也会生成本地 `opendesign/mockups/monoloco/` 预览副本和 manifest；该目录不上传。
+## 素材整理
 
-## 素材来源
+原始资料位于本地 素材/ 目录，已被忽略，不上传源 PDF、演示文稿、设计源文件或参考图集。
 
-初始图片从本地 `12.四门集/门之四重奏.pptx` 的相应页面直接提取，地点与图片对应关系记录在 `content/works.json`。
+拥有原始资料时，可安装 Pillow 和 PyMuPDF，再运行：
 
-有原始资料时，可安装 Pillow 后运行 `python3 scripts/prepare_assets.py` 重新导出。原始资料不上传公开仓库；没有原始资料也可以使用已提交的网页图片重新生成全部页面。
+~~~sh
+python3 scripts/prepare_assets.py
+python3 scripts/extract_content_assets.py
+python3 scripts/build.py
+~~~
 
-作品日期和作者署名未确认，公开页面不展示。三位成员姓名、个人履历和联系信息尚未提供，关于页仅展示已知团体信息。中英项目短语为本 Demo 的界面译文，不是作者确认的正式英文作品名。
+第一个脚本从 素材/12.四门集/门之四重奏.pptx 导出四门集；第二个脚本从杂志和设计资料导出精选图片及工坊手绘过程。媒体清单记录源文件、PDF 页序、图片对象或裁切区域。包装图形导出时移除红色生产辅助线。
 
-作品图片不附加开放使用许可；网站可公开浏览不等于图片获得再使用授权。
+公开图片清除 EXIF，提供 WebP 适配尺寸与 JPEG 回退。作品保留原始构图，刊物正文被重新编辑为可阅读的网页文字，未使用整刊截图代替网页。
 
-## 发布设置
+## 内容状态
 
-GitHub → Settings → Pages：
+- 工坊均标记筹备中，不提供虚构排期、费用或报名按钮。
+- 黑胶伴手本和国科大礼品杯以设计方案展示，不自动视为在售商品或实拍成品。
+- 成员使用来源中的 LZ、KASA、王安；KASA 与王可的对应关系尚待确认。
+- 四门集的摄影署名与具体日期仍待确认，不编造。
+- 社交账号显示提供资料中的平台及账号名，未生成未经确认的个人主页链接。
+- “旅途中的记录”为网页编辑标题，三人团体与家庭旅行中的三个人分别表述。
+
+详见[网站内容规划](网站内容规划.md)。原 Demo 的实现记录与版本演进见 [SPEC.md](SPEC.md)。
+
+## 发布
+
+GitHub Settings → Pages：
 
 - Source：Deploy from a branch
 - Branch：main
 - Folder：/docs
 
-`.nojekyll` 保证直接发布静态文件。所有普通页面使用相对路径，构建脚本根据 docs/CNAME 自动决定 404 基路径和分享图的域名。修改域名后重新构建即可。
-
-GitHub Pages 已设置自定义域名 monoloco.art，并保存于 docs/CNAME。DNSPod 中根域名 @ 应添加四条 A 记录：185.199.108.153、185.199.109.153、185.199.110.153、185.199.111.153；www 的 CNAME 指向 waanng.github.io。DNS 检查通过、证书可用后启用 Enforce HTTPS。
+推送 main 后由 GitHub Pages 发布。docs/CNAME 保存 monoloco.art；构建自动适配自定义域名或 GitHub 项目子路径。HTTPS 证书已批准并启用强制 HTTPS。
 
 ## 检查
 
-- `python3 scripts/build.py`
-- `python3 scripts/check_site.py`
-- `node --check docs/assets/js/gallery.js`
-- 在 375 / 768 / 1440px 浏览器中检查页面溢出、图片加载及大图上一组、下一组、首尾禁用、键盘箭头、Esc 和焦点恢复。
-- 关闭 JavaScript 时作品列表、正文和 JPEG 大图链接仍可用。
+~~~sh
+python3 scripts/check_site.py
+node --check docs/assets/js/gallery.js
+~~~
 
-不要手工编辑生成的 `index.html`；修改生成脚本后重新构建，以保持内容一致。
-
-下一版采用“艺术项目 / 动手工坊 / 文创作品 / 关于我们”四板块，详见[网站内容规划](网站内容规划.md)。杂志只提取图片与文字，分配到对应页面，不设置整刊入口。
-
-已有 Demo 的设计规格见 [SPEC.md](SPEC.md)。本项目不含服务器、联系表单或账号系统。
+另需在 375 / 768 / 1440px 浏览器检查页面、图片、大图切换、键盘方向键、Esc、首尾禁用和焦点恢复。关闭 JavaScript 后正文、列表和 JPEG 大图链接仍可用。网站不发布原始 PDF，也不含假预约、支付或账号系统。
