@@ -517,20 +517,6 @@
       "xref": 331
     }
   },
-  "journey-hands": {
-    "image": "journey-hands.webp",
-    "small": "journey-hands-small.webp",
-    "fallback": "journey-hands.jpg",
-    "width": 874,
-    "height": 874,
-    "smallWidth": 640,
-    "alt": "手里摆放的小物件",
-    "source": "素材/2023 杂志 第一期.pdf",
-    "locator": {
-      "page": 50,
-      "xref": 335
-    }
-  },
   "journey-east": {
     "image": "journey-east.webp",
     "small": "journey-east-small.webp",
@@ -599,20 +585,6 @@
     "locator": {
       "page": 56,
       "xref": 385
-    }
-  },
-  "notebook-tools": {
-    "image": "notebook-tools.webp",
-    "small": "notebook-tools-small.webp",
-    "fallback": "notebook-tools.jpg",
-    "width": 1191,
-    "height": 1104,
-    "smallWidth": 640,
-    "alt": "随身背包与笔、本子等记录工具",
-    "source": "素材/2023 杂志 第一期.pdf",
-    "locator": {
-      "page": 57,
-      "xref": 404
     }
   },
   "notebook-map": {
@@ -1036,48 +1008,6 @@
     "source": "素材/工坊 - 手工本工坊/手工书工坊说明.png",
     "locator": {
       "segment": 3,
-      "total": 6
-    }
-  },
-  "binding-process-4": {
-    "image": "binding-process-4.webp",
-    "small": "binding-process-4-small.webp",
-    "fallback": "binding-process-4.jpg",
-    "width": 1440,
-    "height": 1260,
-    "smallWidth": 640,
-    "alt": "缝线本、环装本、风琴本与照片、文字、印章的手绘说明，第 4 部分",
-    "source": "素材/工坊 - 手工本工坊/手工书工坊说明.png",
-    "locator": {
-      "segment": 4,
-      "total": 6
-    }
-  },
-  "binding-process-5": {
-    "image": "binding-process-5.webp",
-    "small": "binding-process-5-small.webp",
-    "fallback": "binding-process-5.jpg",
-    "width": 1440,
-    "height": 1060,
-    "smallWidth": 640,
-    "alt": "缝线本、环装本、风琴本与照片、文字、印章的手绘说明，第 5 部分",
-    "source": "素材/工坊 - 手工本工坊/手工书工坊说明.png",
-    "locator": {
-      "segment": 5,
-      "total": 6
-    }
-  },
-  "binding-process-6": {
-    "image": "binding-process-6.webp",
-    "small": "binding-process-6-small.webp",
-    "fallback": "binding-process-6.jpg",
-    "width": 1405,
-    "height": 1600,
-    "smallWidth": 562,
-    "alt": "缝线本、环装本、风琴本与照片、文字、印章的手绘说明，第 6 部分",
-    "source": "素材/工坊 - 手工本工坊/手工书工坊说明.png",
-    "locator": {
-      "segment": 6,
       "total": 6
     }
   }

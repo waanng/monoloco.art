@@ -35,8 +35,8 @@ def main():
       ('travel-window',12,63,'旅行途中，脚下向外展开的远景'),('travel-street',13,68,'街口的人群与经过的车辆'),('travel-shop',13,70,'店面前的人和门口的陈设'),('travel-cat',14,77,'窗边看向镜头的猫'),('travel-water',15,81,'水面的涟漪与一只水鸟'),('travel-lane',15,83,'狭窄巷道中悬挂的标识'),('travel-station',16,88,'站台与铁轨旁的列车'),('travel-bridge',16,90,'走过木质通道的人'),
       ('five-city',20,114,'高处望去的城市屋顶与天际线'),('five-window',21,118,'胶片记录的窗边书本与光影'),('five-reader',21,120,'窗前阅读的人'),('five-portrait',22,137,'读书的人与书页的细节'),('five-building',22,139,'明亮天井与环绕的建筑走廊'),('five-door',23,144,'标有 D-22 的入口'),('five-branches',24,150,'窗外伸展的树枝'),('five-library',26,171,'阅览室的灯光与桌椅'),('five-seat',27,180,'坐在窗边的人与光影'),('five-studio',30,211,'堆放画作与书本的室内空间'),('five-room',31,220,'有植物、绘画和家具的房间'),
       ('film-camera',42,278,'玛米亚 C220 双镜头相机的手绘结构图'),
-      ('journey-map',45,298,'手绘旅途路线图'),('journey-list',45,300,'旅程中到访地点的手写清单'),('journey-road',46,305,'在建筑前走过的一大一小两个身影'),('journey-trees',46,307,'树下的步道与向前延伸的路'),('journey-texas',47,313,'用文字和路线记录德州的手绘地图'),('journey-family',48,319,'旅途中一家人在门前的合影'),('journey-west',49,325,'一号公路旅程的手绘路线与地点'),('journey-house',50,331,'旅途中路过的街角房子'),('journey-hands',50,335,'手里摆放的小物件'),('journey-east',51,339,'美国东部旅途的手绘路线'),('journey-campus',52,347,'登上校园台阶的孩子'),('journey-bookshop',54,366,'一家书店门前的旅行记录'),('journey-balloon',55,377,'街边与气球合影的家人'),
-      ('notebooks',56,385,'九本由不同封面与装订方式制作的随身小本'),('notebook-tools',57,404,'随身背包与笔、本子等记录工具'),('notebook-map',58,427,'手工本中绘制的路线地图'),('notebook-writing',59,455,'小本子上的手写记录'),('notebook-coffee',59,457,'手工本中收集的文字、速写与贴纸'),('notebook-photo',59,463,'本子中粘贴的两张照片')
+      ('journey-map',45,298,'手绘旅途路线图'),('journey-list',45,300,'旅程中到访地点的手写清单'),('journey-road',46,305,'在建筑前走过的一大一小两个身影'),('journey-trees',46,307,'树下的步道与向前延伸的路'),('journey-texas',47,313,'用文字和路线记录德州的手绘地图'),('journey-family',48,319,'旅途中一家人在门前的合影'),('journey-west',49,325,'一号公路旅程的手绘路线与地点'),('journey-house',50,331,'旅途中路过的街角房子'),('journey-east',51,339,'美国东部旅途的手绘路线'),('journey-campus',52,347,'登上校园台阶的孩子'),('journey-bookshop',54,366,'一家书店门前的旅行记录'),('journey-balloon',55,377,'街边与气球合影的家人'),
+      ('notebooks',56,385,'九本由不同封面与装订方式制作的随身小本'),('notebook-map',58,427,'手工本中绘制的路线地图'),('notebook-writing',59,455,'小本子上的手写记录'),('notebook-coffee',59,457,'手工本中收集的文字、速写与贴纸'),('notebook-photo',59,463,'本子中粘贴的两张照片')
     ]
     for name,page,xref,alt in images:
         pix=fitz.Pixmap(magazine,xref)
@@ -81,9 +81,9 @@ def main():
        ('binding-process','素材/工坊 - 手工本工坊/手工书工坊说明.png','缝线本、环装本、风琴本与照片、文字、印章的手绘说明')]:
         im=Image.open(ROOT/path)
         # Export instructions in individual readable steps, avoiding very long images.
-        parts=6 if name=='binding-process' else (3 if name=='cyanotype-process' else 1)
+        parts=3 if name in ['binding-process','cyanotype-process'] else 1
         if name=='binding-process':
-            bounds=[920,3090,4940,6540,7800,8860,10500]
+            bounds=[920,3090,4940,6540]
         elif name=='cyanotype-process':
             bounds=[0,960,2030,3240]
         else:
