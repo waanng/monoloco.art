@@ -168,15 +168,17 @@ def workshop_detail(w):
 
 def object_detail(o):
     base='../../'
+    show_cover=o.get('show_cover',True)
+    opening=f'<div class="object-hero">{media_figure(o["cover"],base,o["subtitle"],True)}</div>' if show_cover else ''
     chapters=''
     for key,kicker,title,text in o['sections']:
-        chapters+=f'<section class="chapter object-chapter"><div class="chapter-heading"><div class="eyebrow accent">{kicker}</div><h2>{title}</h2><p>{text}</p></div>{media_figure(key,base,title)}</section>'
+        chapters+=f'<section class="chapter object-chapter"><div class="chapter-heading"><div class="eyebrow accent">{kicker}</div><h2>{title}</h2><p>{text}</p></div>{media_figure(key,base,title,not show_cover and key==o["sections"][0][0])}</section>'
     if o['slug']=='vinyl-notebook':
         cities=['利物浦','阿姆斯特丹','柏林','布拉格','维也纳','米兰','巴黎']
         cities_html=''.join(media_figure(f'vinyl-city-{i}',base,city) for i,city in enumerate(cities,1))
         chapters+=f'<section class="chapter"><div class="chapter-heading"><div class="eyebrow accent">03 / CITIES & NOTES</div><h2>七座城市，七段音乐记忆。</h2><p>城市速写进入唱片的圆形结构，与音乐主题一起构成内页。翻过图像，空白的纸面等待新的记录。</p></div><div class="city-grid">{cities_html}</div></section><section class="chapter object-chapter"><div class="chapter-heading"><div class="eyebrow accent">04 / DETAILS</div><h2>从封面延续到腰封。</h2><p>把旅行路线、主题文字与唱片的视觉线索放在一起，成为一本完整的伴手本。</p></div>{media_figure("vinyl-band",base,"腰封图形局部")}</section>'
     details=''.join(f'<div><dt>{label}</dt><dd>{value}</dd></div>' for label,value in o['details'])
-    body=f'<main id="main" class="wrap">{breadcrumb(base,"objects","文创作品")}{heading("DESIGNED OBJECT",o["title"],o["subtitle"],o["intro"])}<div class="gallery-bar"><span>{o["kind"]}</span><span>设计方案 / DESIGN STUDY</span></div><div class="object-hero">{media_figure(o["cover"],base,o["subtitle"],True)}</div>{chapters}<dl class="object-facts">{details}</dl><div class="project-end"><p>{o["closing"]}</p>{arrow_link(url("about/",base)+"#contact","交流设计合作")}</div></main>{viewer()}'
+    body=f'<main id="main" class="wrap">{breadcrumb(base,"objects","文创作品")}{heading("DESIGNED OBJECT",o["title"],o["subtitle"],o["intro"])}<div class="gallery-bar"><span>{o["kind"]}</span><span>设计方案 / DESIGN STUDY</span></div>{opening}{chapters}<dl class="object-facts">{details}</dl><div class="project-end"><p>{o["closing"]}</p>{arrow_link(url("about/",base)+"#contact","交流设计合作")}</div></main>{viewer()}'
     return page(f'{o["title"]} — monoloco',o['intro'],body,base,'objects',True)
 
 def about():
