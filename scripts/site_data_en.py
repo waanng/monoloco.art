@@ -200,7 +200,7 @@ OBJECT_COPY = {'vinyl-notebook': {'title': 'Vinyl Travel Notebook',
                     'subtitle': 'A travel notebook inspired by vinyl records',
                     'kind': 'Notebook design',
                     'intro': 'A record player becomes the starting point for a travel notebook. Turntable '
-                             'graphics, city sketches and space for personal notes bring music and travel '
+                             'graphics, urban sketches and space for personal notes bring music and travel '
                              'together on the page.',
                     'sections': [('vinyl-cover',
                                   '01 / COVER',
@@ -214,7 +214,7 @@ OBJECT_COPY = {'vinyl-notebook': {'title': 'Vinyl Travel Notebook',
                                   'A record’s centre label becomes a place for the owner’s name, notebook '
                                   'number and dates. The design sets the scene; the person using it writes '
                                   'the rest.')],
-                    'details': [('Inspired by', 'Music, travel and city sketches'),
+                    'details': [('Inspired by', 'Music, travel and urban sketches'),
                                 ('Design includes',
                                  'Cover, inside cover, seven city inserts and a paper wrap'),
                                 ('On this page', 'Design proposal in dark coffee brown')],
@@ -311,7 +311,7 @@ ALT = {
  'binding-process-3':'A hand-drawn accordion book: score the folds and fold the strip between covers.'
 }
 for i,city in enumerate(['Liverpool','Amsterdam','Berlin','Prague','Vienna','Milan','Paris'],1):
-    ALT[f'vinyl-city-{i}']=f'A city sketch of {city} arranged within a record-shaped notebook insert.'
+    ALT[f'vinyl-city-{i}']=f'An urban sketch of {city} arranged within a record-shaped notebook insert.'
 for i in range(1,20):
     ALT[f'qianmo-{i:02d}']=f'Qianmo field photograph {i:02d}: an open sketchbook held against the scene, with drawings, maps or stamps and postmarks on its pages.'
 

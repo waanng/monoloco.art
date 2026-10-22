@@ -16,3 +16,9 @@ The English site is an edition for English-speaking visitors, rather than a sent
 Project descriptions, workshop details and biographies live in `scripts/site_data_en.py`. Shared interface and page copy live in `scripts/site_i18n.py`. Paired family captions live in `scripts/family_content.py`. Preserve Chinese strings, shared image IDs and page addresses when editing English.
 
 Build both languages and run the site checks. Verify that Chinese output is unchanged and that longer English headings fit on a phone. Test language links and the image viewer before publishing. This is an editorial guide, not a claim of review by a native-speaking human editor.
+
+## Agreed terms and homepage line
+
+Use **Products** for the 文创作品 section, including navigation, page titles, breadcrumbs and section headings. Use **product design** for the discipline; keep “objects” where it refers to physical items, such as leaves placed on cyanotype paper. Keep the existing `/objects/` addresses so shared links remain valid.
+
+Use **urban sketches** and **urban sketching** for 城市速写, with **urban sketcher** for the person. The brand phrase is **Art in Everyday Life** (capitalisation may follow the page’s typographic style). The homepage invitation is **Find joy in the everyday. / Make something together.** It should suggest pleasure and curiosity, rather than an instruction to analyse or scrutinise daily life.
