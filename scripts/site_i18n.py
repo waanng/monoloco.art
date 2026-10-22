@@ -11,7 +11,7 @@ COPY = {
     'UPCOMING / 参与方式': 'UPCOMING / JOIN US',
     'monoloco — 艺术与生活实践': 'monoloco — Art & Everyday Life',
     'monoloco 从社区营造出发，走向策展、创作与文创设计。以影像可持续为线索，在记录与制作之间持续探索。': 'We began with community projects. Today we make photographs, drawings, exhibitions and everyday objects, finding new ways to share the things we notice.',
-    'monoloco 始于 2017 年，从社区营造出发，逐渐走向策展、文创设计与持续的艺术实践。': 'monoloco is a three-person art collective founded in 2017. We started with community projects and have since grown into exhibitions, workshops and object design.',
+    'monoloco 始于 2017 年，从社区营造出发，逐渐走向策展、文创设计与持续的艺术实践。': 'Founded in 2017, monoloco is a three-person art collective. We began with community projects and now work across exhibitions and object design. We’re also developing a series of hands-on workshops.',
     'monoloco 首页': 'monoloco home',
     '← 上一组': '← Previous',
     '《杯子在溜达》· CITYWALK 速写巡展': 'A Cup on the Move · CITYWALK travelling sketch exhibition',
