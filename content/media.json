@@ -574,74 +574,64 @@
     }
   },
   "notebooks": {
-    "image": "notebooks.webp",
-    "small": "notebooks-small.webp",
+    "image": "notebooks.jpg",
     "fallback": "notebooks.jpg",
-    "width": 1471,
-    "height": 1600,
-    "smallWidth": 588,
-    "alt": "九本由不同封面与装订方式制作的随身小本",
-    "source": "素材/2023 杂志 第一期.pdf",
+    "width": 3072,
+    "height": 3072,
+    "alt": "九本不同封面与装订方式的彩色手工本，摆在织物背景上。",
+    "source": "素材/工坊 - 手工本工坊/WechatIMG74.jpg",
     "locator": {
-      "page": 56,
-      "xref": 385
-    }
+      "file": "WechatIMG74.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
   },
   "notebook-map": {
-    "image": "notebook-map.webp",
-    "small": "notebook-map-small.webp",
+    "image": "notebook-map.jpg",
     "fallback": "notebook-map.jpg",
-    "width": 445,
-    "height": 818,
-    "smallWidth": 348,
-    "alt": "手工本中绘制的路线地图",
-    "source": "素材/2023 杂志 第一期.pdf",
+    "width": 1009,
+    "height": 1925,
+    "alt": "牛皮纸上用白线和粉红色路线手绘的地图。",
+    "source": "素材/工坊 - 手工本工坊/20231124153107.jpg",
     "locator": {
-      "page": 58,
-      "xref": 427
-    }
+      "file": "20231124153107.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
   },
   "notebook-writing": {
-    "image": "notebook-writing.webp",
-    "small": "notebook-writing-small.webp",
+    "image": "notebook-writing.jpg",
     "fallback": "notebook-writing.jpg",
-    "width": 604,
-    "height": 265,
-    "smallWidth": 604,
-    "alt": "小本子上的手写记录",
-    "source": "素材/2023 杂志 第一期.pdf",
+    "width": 1933,
+    "height": 1006,
+    "alt": "牛皮纸本内页上的手写文字、速写和贴入的照片。",
+    "source": "素材/工坊 - 手工本工坊/20231124153303(1).jpg",
     "locator": {
-      "page": 59,
-      "xref": 455
-    }
+      "file": "20231124153303(1).jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
   },
   "notebook-coffee": {
-    "image": "notebook-coffee.webp",
-    "small": "notebook-coffee-small.webp",
+    "image": "notebook-coffee.jpg",
     "fallback": "notebook-coffee.jpg",
-    "width": 604,
-    "height": 266,
-    "smallWidth": 604,
-    "alt": "手工本中收集的文字、速写与贴纸",
-    "source": "素材/2023 杂志 第一期.pdf",
+    "width": 1946,
+    "height": 992,
+    "alt": "手工本里收集的咖啡贴纸、手写文字和街景速写。",
+    "source": "素材/工坊 - 手工本工坊/20231124152733.jpg",
     "locator": {
-      "page": 59,
-      "xref": 457
-    }
+      "file": "20231124152733.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
   },
   "notebook-photo": {
-    "image": "notebook-photo.webp",
-    "small": "notebook-photo-small.webp",
+    "image": "notebook-photo.jpg",
     "fallback": "notebook-photo.jpg",
-    "width": 604,
-    "height": 273,
-    "smallWidth": 604,
-    "alt": "本子中粘贴的两张照片",
-    "source": "素材/2023 杂志 第一期.pdf",
+    "width": 1942,
+    "height": 1003,
+    "alt": "手工本内页贴入的建筑、单车与雕塑彩色照片。",
+    "source": "素材/工坊 - 手工本工坊/20231124153527(1).jpg",
     "locator": {
-      "page": 59,
-      "xref": 463
-    }
+      "file": "20231124153527(1).jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
   },
   "vinyl-cover": {
     "image": "vinyl-cover.webp",
@@ -1238,5 +1228,245 @@
       "file": "IMG_20260219_134819.jpg"
     },
     "verification": "Project meaning and authorship supplied by the artist; no location or date inferred from filenames."
+  },
+  "notebook-kit": {
+    "image": "notebook-kit.jpg",
+    "fallback": "notebook-kit.jpg",
+    "width": 3072,
+    "height": 3072,
+    "alt": "黄色随身包与摆放整齐的彩色笔、小本子和随身记录工具。",
+    "source": "素材/工坊 - 手工本工坊/1700812495944.jpg",
+    "locator": {
+      "file": "1700812495944.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-road": {
+    "image": "family-road.jpg",
+    "fallback": "family-road.jpg",
+    "width": 874,
+    "height": 874,
+    "alt": "家人在红砖建筑前的路面上并肩行走。",
+    "source": "素材/我们仨_原版/图片 2.jpg",
+    "locator": {
+      "file": "图片 2.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-florida-map": {
+    "image": "family-florida-map.jpg",
+    "fallback": "family-florida-map.jpg",
+    "width": 1741,
+    "height": 1733,
+    "alt": "牛皮纸上绘制的长途旅行地图，粉色路线延伸到佛罗里达。",
+    "source": "素材/我们仨_原版/20231122105908(1)(1).png",
+    "locator": {
+      "file": "20231122105908(1)(1).png"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-doorstep": {
+    "image": "family-doorstep.jpg",
+    "fallback": "family-doorstep.jpg",
+    "width": 874,
+    "height": 874,
+    "alt": "两位家人坐在建筑门前的台阶上。",
+    "source": "素材/我们仨_原版/图片 6.jpg",
+    "locator": {
+      "file": "图片 6.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-california-map": {
+    "image": "family-california-map.jpg",
+    "fallback": "family-california-map.jpg",
+    "width": 3455,
+    "height": 1717,
+    "alt": "牛皮纸上的加州一号公路手绘地图与地点清单。",
+    "source": "素材/我们仨_原版/20231122110653(1)(1).png",
+    "locator": {
+      "file": "20231122110653(1)(1).png"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-coast": {
+    "image": "family-coast.jpg",
+    "fallback": "family-coast.jpg",
+    "width": 2988,
+    "height": 2988,
+    "alt": "海岸边的树木和沙地上，大人和孩子一前一后走着。",
+    "source": "素材/我们仨_原版/IMG_20160316_232352.jpg",
+    "locator": {
+      "file": "IMG_20160316_232352.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-courtyard": {
+    "image": "family-courtyard.jpg",
+    "fallback": "family-courtyard.jpg",
+    "width": 1080,
+    "height": 1080,
+    "alt": "大人和孩子坐在校园庭院的桌旁，对着镜头微笑。",
+    "source": "素材/我们仨_原版/IMG_20160813_233549.jpg",
+    "locator": {
+      "file": "IMG_20160813_233549.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-park": {
+    "image": "family-park.jpg",
+    "fallback": "family-park.jpg",
+    "width": 1080,
+    "height": 1080,
+    "alt": "公园长椅上，大人和孩子相视微笑。",
+    "source": "素材/我们仨_原版/IMG_20160814_171603.jpg",
+    "locator": {
+      "file": "IMG_20160814_171603.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-japan-map": {
+    "image": "family-japan-map.jpg",
+    "fallback": "family-japan-map.jpg",
+    "width": 3471,
+    "height": 1732,
+    "alt": "牛皮纸上以蓝白线条绘制的日本行程地图。",
+    "source": "素材/我们仨_原版/20231122112238(1).jpg",
+    "locator": {
+      "file": "20231122112238(1).jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-lane": {
+    "image": "family-lane.jpg",
+    "fallback": "family-lane.jpg",
+    "width": 1899,
+    "height": 1899,
+    "alt": "孩子走在巷子前方，大人跟在身后。",
+    "source": "素材/我们仨_原版/IMG_20170805_175705_040.jpg",
+    "locator": {
+      "file": "IMG_20170805_175705_040.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-white-wall": {
+    "image": "family-white-wall.jpg",
+    "fallback": "family-white-wall.jpg",
+    "width": 2448,
+    "height": 2448,
+    "alt": "两位家人坐在街边白墙和盆栽旁。",
+    "source": "素材/我们仨_原版/IMG_20170806_171654_601.jpg",
+    "locator": {
+      "file": "IMG_20170806_171654_601.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-bench": {
+    "image": "family-bench.jpg",
+    "fallback": "family-bench.jpg",
+    "width": 2448,
+    "height": 2448,
+    "alt": "两位家人坐在画有动物图案的灰墙前的长椅上。",
+    "source": "素材/我们仨_原版/IMG_20170807_113200_464.jpg",
+    "locator": {
+      "file": "IMG_20170807_113200_464.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-meal": {
+    "image": "family-meal.jpg",
+    "fallback": "family-meal.jpg",
+    "width": 2378,
+    "height": 2180,
+    "alt": "饭桌前，大人和孩子靠在一起看手机。",
+    "source": "素材/我们仨_原版/IMG_20170809_152820_132.jpg",
+    "locator": {
+      "file": "IMG_20170809_152820_132.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-aquarium": {
+    "image": "family-aquarium.jpg",
+    "fallback": "family-aquarium.jpg",
+    "width": 2448,
+    "height": 2448,
+    "alt": "大人和孩子并肩站在明亮的水族箱前。",
+    "source": "素材/我们仨_原版/IMG_20170809_184002_316.jpg",
+    "locator": {
+      "file": "IMG_20170809_184002_316.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-flowers": {
+    "image": "family-flowers.jpg",
+    "fallback": "family-flowers.jpg",
+    "width": 2448,
+    "height": 2448,
+    "alt": "开满花的灌木旁，大人站在坐着的孩子身边。",
+    "source": "素材/我们仨_原版/IMG_20170810_132628_062.jpg",
+    "locator": {
+      "file": "IMG_20170810_132628_062.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-exhibition": {
+    "image": "family-exhibition.jpg",
+    "fallback": "family-exhibition.jpg",
+    "width": 2163,
+    "height": 2163,
+    "alt": "展厅的桌旁，孩子看着大人俯身阅读展品。",
+    "source": "素材/我们仨_原版/IMG_20170810_142005_604.jpg",
+    "locator": {
+      "file": "IMG_20170810_142005_604.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-balloons": {
+    "image": "family-balloons.jpg",
+    "fallback": "family-balloons.jpg",
+    "width": 2927,
+    "height": 2927,
+    "alt": "蓝色门窗前，大人和孩子坐在彩色气球下。",
+    "source": "素材/我们仨_原版/IMG_20180216_180319_086.jpg",
+    "locator": {
+      "file": "IMG_20180216_180319_086.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-street-seat": {
+    "image": "family-street-seat.jpg",
+    "fallback": "family-street-seat.jpg",
+    "width": 1080,
+    "height": 1080,
+    "alt": "街边的椅子上，大人和孩子靠在一起微笑。",
+    "source": "素材/我们仨_原版/IMG_20180930_223220_319.jpg",
+    "locator": {
+      "file": "IMG_20180930_223220_319.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-banyan": {
+    "image": "family-banyan.jpg",
+    "fallback": "family-banyan.jpg",
+    "width": 1080,
+    "height": 1080,
+    "alt": "粗大的树根和墙边栏杆之间，大人和孩子走在狭窄的小路上。",
+    "source": "素材/我们仨_原版/IMG_20181003_210328_759.jpg",
+    "locator": {
+      "file": "IMG_20181003_210328_759.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
+  },
+  "family-boardwalk": {
+    "image": "family-boardwalk.jpg",
+    "fallback": "family-boardwalk.jpg",
+    "width": 1080,
+    "height": 1080,
+    "alt": "绿色树林里的木栈道上，孩子在前、大人在后。",
+    "source": "素材/我们仨_原版/IMG_20181004_212708_309.jpg",
+    "locator": {
+      "file": "IMG_20181004_212708_309.jpg"
+    },
+    "verification": "Selected by reviewing supplied originals. Colour and composition preserved; no date or location inferred from filenames."
   }
 }

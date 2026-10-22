@@ -185,7 +185,13 @@ COPY = {'/ 门之四重奏': '/ A Quartet of Doorways',
  '风琴本': 'Accordion book',
  '首页': 'home',
  '上一组作品': 'Previous image',
- '下一组作品': 'Next image'}
+ '下一组作品': 'Next image',
+ '看看我们仨的旅途': 'Explore The Three of Us',
+ '带上它，去记录。': 'Take it with you. Keep a record.',
+ '一个随身包，几支笔，一本小本子，再带上顺手的记录工具。不必准备得很复杂，出门就能把眼前的日常留下来。': 'A shoulder bag, a few pens, a small notebook and the '
+                                                       'tools you enjoy using. Keep it simple: take them '
+                                                       'outside and start recording everyday life.',
+ '包包、纸笔与随身记录工具。': 'A bag, pens, paper and portable tools for keeping a record.'}
 MISSING=set()
 def translate(text):
     stripped=text.strip()

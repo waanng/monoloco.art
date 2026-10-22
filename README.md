@@ -86,3 +86,9 @@ node --check docs/assets/js/gallery.js
 中文网址保持原样，英文版位于 `/en/`，两种语言共用图片与样式。页首“中文 / EN”链接切换到当前页面的对应版本，并保留章节位置；浏览内部链接时保持当前语言。手写字、地图和邮戳保留作品原貌，英文图注和说明帮助阅读。不会发布原始杂志。
 
 英文内容在 `scripts/site_data_en.py`，界面和通用文案在 `scripts/site_i18n.py`；中文内容仍在 `scripts/site_data.py` 与页面模板中。执行 `python3 scripts/build.py` 会同时生成两种语言。未收录的中文界面文字会使构建报错，避免新页面漏译。每页包含自身 canonical 以及成对的中英文 hreflang。修改图片说明时请同步更新英文 alt。
+
+## 彩色原片与《我们仨》
+
+手工本工坊的封面、四组内页及随身包工具照片来自“素材/工坊 - 手工本工坊”的彩色原片。《我们仨》以家庭出游与陪伴为主题，选取“素材/我们仨_原版”中的16张彩色照片和3张代表性地图；保留原 `projects/journey-notes/` 地址，避免已有链接失效，英文题名为 The Three of Us。
+
+选片、双语图注及来源对应保存在 `scripts/family_content.py`。运行 `python3 scripts/prepare_family_updates.py` 后再执行构建，即可从原片重建这些图片与轻量预览；原素材不改动，公开图不保留 EXIF。若重新运行旧杂志提取程序，请随后运行此脚本以恢复彩色版本。

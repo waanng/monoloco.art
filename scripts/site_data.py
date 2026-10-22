@@ -1,4 +1,5 @@
 """Edited website copy, kept separate from the source magazine layout."""
+from family_content import FAMILY_SELECTION
 PROJECTS = [
  {'slug':'four-doors','title':'四门集','subtitle':'门之四重奏','author':'monoloco 项目档案','kind':'摄影 / Photography','cover':'doors',
   'intro':'门，连接着建筑的内部与外部。在不同的地方，四张门头被放在一起：形式各异，又有相通的风格与主题。以一组影像，记住一个地方。'},
@@ -24,11 +25,12 @@ PROJECTS = [
   'quote':'照片留下的，是“曾经在那里”。',
   'paragraphs':['有时，记忆不是按地点排列的。它可能是一家店面前的人，一条巷子里遇到的猫，或一次在水边停留的片刻。','这些影像不急着讲完一段旅程。让彼此无关的画面相邻，也让那些偶然的相遇继续发生。'],
   'media':[('travel-window','旅行中的身体与远景。'),('travel-street','街口的一瞬。'),('travel-shop','门口的人与物。'),('travel-cat','一只回望的猫。'),('travel-water','水面泛起涟漪。'),('travel-lane','走进另一条巷子。'),('travel-station','沿着铁轨继续出发。'),('travel-bridge','旅途中经过的路。')]},
- {'slug':'journey-notes','title':'旅途中的记录','subtitle':'和家人一起，把路走进记忆','author':'王安','kind':'摄影 / 手绘地图 / 文字','cover':'journey-road',
-  'intro':'和家人在各地旅行，总能遇到不同的风景。把路线画下来，把相遇拍下来，也把那些一起走过的片刻留在本子里。',
-  'quote':'走过的路，慢慢成为一本自己的地图。',
-  'paragraphs':['第一次长途自驾，去到最南端的西礁岛。旅程里有路过的教堂、跨入新一年的夜晚，也有地图上一个个被记下的名字。','德州的校园、一号公路的海风、路过城市里的大学与书店，都与家人的身影一起进入照片。记录不只是到过哪里，也是在路上如何彼此陪伴。'],
-  'media':[('journey-map','第一次长途旅行的路线。'),('journey-list','手写下到访的地方。'),('journey-road','和家人走在路上。'),('journey-trees','树下的步道。'),('journey-texas','德州旅程的地图。'),('journey-family','把家人的笑容留在照片里。'),('journey-west','沿着一号公路向北。'),('journey-house','旅途中遇到的街角。'),('journey-east','东部旅程的路线记录。'),('journey-campus','路过一所大学，坐下来看看。'),('journey-bookshop','寻找路上的书店。'),('journey-balloon','那些一起微笑的片刻。')],
+ {'slug':'journey-notes','title':'我们仨','subtitle':'一家人的出游与陪伴','author':'王安','kind':'摄影 / 手绘地图 / 文字','cover':'family-road',
+  'intro':'我们仨，是一家人在路上的记录。走进不同的城市，在街边休息、一起吃饭、追着气球奔跑。照片留下彼此陪伴的片刻，手绘地图串起一起走过的路。',
+  'quote':'一直在路上，可以相互依靠。',
+  'paragraphs':['一直在路上，追逐奔跑，坐下来休息，对视微笑。未来的路还长，可以相互依靠。','从海岸、公园和校园，到街巷、书店和展厅，我们把旅行过成一家人共同的日常。镜头里的两个人，与镜头后的那个人，一起构成“我们仨”。','地图记下路线，照片记下相处。不急着列出每一个目的地，更想留下那些走在一起、停在一起的时刻。'],
+  'media':[(key,caption) for key,file,caption,en in FAMILY_SELECTION],
+  'source_note':'照片与地图选自《我们仨》原始素材，序言摘自同名家庭影集。摄影与记录：王安。',
   'related':('workshops/handmade-books/','把旅途装进一本手工本')}
 ]
 
