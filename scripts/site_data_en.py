@@ -2,31 +2,274 @@
 from copy import deepcopy
 from family_content import FAMILY_SELECTION, WORKSHOP_PHOTOS, FAMILY_ALT
 
-PROJECT_COPY = {
- 'four-doors':dict(title='Four Doors',subtitle='A Quartet of Doorways',author='monoloco project archive',kind='Photography',intro='A door connects the inside of a building with the world outside. Four doorways from one place sit together: different in form, yet linked by a shared character. Each quartet holds a memory of being there.'),
- 'qianmo':dict(title='Qianmo',subtitle='Where Time and Place Meet',author='waanng',kind='On-site drawing / Maps / Stamps & postmarks',intro='I stop to draw wherever I travel, placing the scene and a hand-drawn map on the same page. A postage stamp and a local postmark from that day give the moment its place and date. One sheet holds both a view and a record of being there.',quote='Paths cross. Time and place meet on the page.',paragraphs=['The drawing carries a feeling; the map locates it. Stamps and postmarks anchor that pause to a particular place and day. Held up against the scene itself, the sketchbook records both an encounter and the person who stood there.','Qianmo refers to intersecting paths through fields. Here, it also evokes the crossing of time and space, feeling and reason: colour and the trace of a hand meet maps, locations and dates. Small pauses along a journey become an archive that can be held and revisited.'],captions=[f'Field record {i:02d} · A drawing, a map and traces of a journey.' for i in range(1,20)],source_note='Drawings and field photographs by waanng. Project text adapted from the artist’s account.',related_label='Keep your own journeys in a handmade notebook'),
- 'planters-notes':dict(title='A Gardener’s Notes',subtitle='Finding our way back to the soil',author='LZ',kind='Photography / Everyday observations',intro='A packet of seeds becomes a small experiment in everyday life. Soil, insects, compost and the patient wait for something to grow all leave their traces in these photographs.',quote='Coffee grounds and eggshells become something more.',paragraphs=['It began with trying out different seeds. The harvest was not always what I imagined, but insects and plant diseases brought new questions: what do worms like to eat, and how can soil become healthier?','These notes follow small, recurring observations. Kitchen scraps become compost and seeds become plants, making our relationship with the ground tangible again.'],captions=['Food carries a story of the soil.','Waiting for a seedling to emerge.','A little everyday humour: a sign asking visitors not to take soil.','Looking after a little growth by the window.','An encounter beyond the vegetable patch.','Looking closer at a small detail.']),
- 'five-kilometers':dict(title='Five Kilometers',subtitle='Beginning close to home',author='KASA',kind='Urban photography',intro='They say that what happens more than five kilometres from home no longer concerns you. This series starts nearby, looking at the connections between a city’s ring roads, buildings, interiors and people.',quote='Look again at the places you think you know.',paragraphs=['As a city grows, the radius of everyday life changes with it. Familiar street life sits alongside new spaces. Buildings, roads and people make up a landscape that is always shifting.','Pause at a window, a reading room or a street corner. The photographs hold the distances, light and quiet that are easily overlooked in familiar places.'],captions=['The city stretches into the distance.','A book and the light beside a window.','A moment of stillness.','Close to someone reading.','Another space within a building.','Passing an entrance.','Branches beyond the window.','An ordinary day in a reading room.','Where the light falls.','A room shared by art and daily life.','A room as a small cross-section of a life.']),
- 'traveler':dict(title='The Traveler',subtitle='Fragments of memory, held in photographs',author='LZ',kind='Travel photography',intro='Snapshots from a journey become fragments of memory. A street corner, a station, a cat or ripples on water may not identify a landmark, yet each can bring back the feeling of having been there.',quote='A photograph keeps the feeling of “I was there.”',paragraphs=['Memory does not always arrange itself by place. It might return as someone outside a shop, a cat in an alley or a pause beside the water.','These images do not hurry to tell the whole journey. Unrelated scenes become neighbours, leaving room for their chance encounters to continue.'],captions=['A body and a view along the journey.','A moment at a street corner.','People and objects outside a shop.','A cat looks back.','Ripples on the water.','Into another alley.','Following the tracks onward.','A path crossed along the way.']),
- 'journey-notes':dict(title='The Three of Us',subtitle='Family journeys, shared moments',author='waanng',kind='Colour photography / Hand-drawn maps',intro='The Three of Us is a family’s record of life on the road. New cities, a rest beside the street, a shared meal or a run beneath balloons: photographs hold moments of companionship, while hand-drawn maps connect the roads we have travelled together.',quote='Always on the road, with one another to lean on.',paragraphs=['We keep travelling. Running ahead, sitting down to rest, looking at each other and smiling. There is a long road ahead. We can lean on one another.','From coasts, parks and campuses to streets, bookshops and galleries, travel becomes part of our shared family life. The two people in front of the lens and the person behind it together make up the three of us.','Maps hold the routes; photographs hold our time together. Rather than listing every destination, we want to keep the moments when we walked together and paused together.'],captions=[en for key,file,zh,en in FAMILY_SELECTION],source_note='Selected from the original photographs and travel maps for The Three of Us. Opening words adapted from the family album’s preface. Photography and records by waanng.',related_label='Make a notebook for your journeys')
-}
+PROJECT_COPY = {'four-doors': {'title': 'Four Doors',
+                'subtitle': 'A study in doorways',
+                'author': 'monoloco archive',
+                'kind': 'Photography',
+                'intro': 'Four doorways, one place. Seen together, their differences become as striking as '
+                         'the details they share. Each set offers a small portrait of a place through its '
+                         'entrances.'},
+ 'qianmo': {'title': 'Qianmo',
+            'subtitle': 'Drawing a place, marking a moment',
+            'author': 'waanng',
+            'kind': 'Travel sketches / Maps / Postmarks',
+            'intro': 'Wherever I travel, I stop to draw. A sketch and a map share the page; a stamp, '
+                     'postmarked locally that day, fixes it to a time and place. Each page becomes a record '
+                     'of where I was and what caught my eye.',
+            'quote': 'A place on the map. A moment on the page.',
+            'paragraphs': ['The sketch captures an impression; the map gives it a location. A stamp and a '
+                           'dated postmark add another kind of record. Photographed against the scene, the '
+                           'open sketchbook brings the drawing back into the world that prompted it.',
+                           'Qianmo is a Chinese word for the paths that crisscross fields. For me, '
+                           'those crossings suggest other meeting points: time and place, intuition and '
+                           'reason. A drawing made in the moment sits beside the precision of a map and a '
+                           'date. Together, they offer different ways of remembering the same journey.'],
+            'captions': ['Travel sketch 01',
+                         'Travel sketch 02',
+                         'Travel sketch 03',
+                         'Travel sketch 04',
+                         'Travel sketch 05',
+                         'Travel sketch 06',
+                         'Travel sketch 07',
+                         'Travel sketch 08',
+                         'Travel sketch 09',
+                         'Travel sketch 10',
+                         'Travel sketch 11',
+                         'Travel sketch 12',
+                         'Travel sketch 13',
+                         'Travel sketch 14',
+                         'Travel sketch 15',
+                         'Travel sketch 16',
+                         'Travel sketch 17',
+                         'Travel sketch 18',
+                         'Travel sketch 19'],
+            'source_note': 'Drawings and photographs by waanng. Text based on the artist’s account.',
+            'related_label': 'Make a notebook for your own travels'},
+ 'planters-notes': {'title': 'A Gardener’s Notes',
+                    'subtitle': 'Getting to know the soil',
+                    'author': 'LZ',
+                    'kind': 'Photography / Gardening',
+                    'intro': 'Growing things begins with a packet of seeds—and soon leads to questions about '
+                             'soil, insects and compost. These photographs follow the small discoveries, '
+                             'surprises and setbacks of tending a garden.',
+                    'quote': 'Coffee grounds, eggshells, a little patience.',
+                    'paragraphs': ['I started by trying different seeds. The results were not always what I '
+                                   'had hoped for, but pests and plant diseases gave me more to investigate. '
+                                   'What do earthworms eat? What makes good soil?',
+                                   'The photographs grew out of paying attention, day after day. Kitchen '
+                                   'scraps turn into compost; seedlings take root. Gardening offers a '
+                                   'practical way to feel more connected to the ground beneath us.'],
+                    'captions': ['A harvest begins in the soil.',
+                                 'A seedling breaks through.',
+                                 'A sign with a simple request: please don’t take the soil.',
+                                 'A little growth on the windowsill.',
+                                 'Beyond the vegetable patch.',
+                                 'A closer look.']},
+ 'five-kilometers': {'title': 'Five Kilometres',
+                     'subtitle': 'A closer look at familiar places',
+                     'author': 'KASA',
+                     'kind': 'Urban photography',
+                     'intro': 'How much do we notice within five kilometres of home? Starting with familiar '
+                              'surroundings, this series looks at the roads, buildings, rooms and people '
+                              'that shape daily life in the city.',
+                     'quote': 'Look again at the places you know.',
+                     'paragraphs': ['As the city grows, our daily routes change. Familiar streets give way '
+                                    'to new spaces, and the places we thought we knew begin to look '
+                                    'different.',
+                                    'A window, a reading room, a doorway: these photographs pause over the '
+                                    'light and quiet of places we might otherwise pass without a second '
+                                    'glance.'],
+                     'captions': ['The city, seen from above.',
+                                  'A book by the window.',
+                                  'A quiet moment.',
+                                  'Absorbed in a book.',
+                                  'Inside the building.',
+                                  'At the entrance.',
+                                  'Branches beyond the glass.',
+                                  'An ordinary day in the reading room.',
+                                  'A seat in the light.',
+                                  'A room for art and everyday life.',
+                                  'A life glimpsed through a room.']},
+ 'traveler': {'title': 'The Traveller',
+              'subtitle': 'What stays with us',
+              'author': 'LZ',
+              'kind': 'Travel photography',
+              'intro': 'A street corner, a station, a cat, a ripple on the water. The things we remember '
+                       'from a trip are not always its landmarks. These photographs return to the smaller '
+                       'encounters that make a place stay with us.',
+              'quote': 'Something of being there stays in the photograph.',
+              'paragraphs': ['Travel memories rarely arrive in order. One place comes back as a face outside '
+                             'a shop; another as a cat in an alley or a few minutes spent beside the water.',
+                             'These photographs leave the journey open-ended. Scenes from different places '
+                             'sit alongside one another, connected by the act of looking.'],
+              'captions': ['A view from where I sit.',
+                           'At the crossing.',
+                           'Outside the shop.',
+                           'A cat looks back.',
+                           'Ripples on the water.',
+                           'Down another alley.',
+                           'At the platform.',
+                           'A crossing along the way.']},
+ 'journey-notes': {'title': 'The Three of Us',
+                   'subtitle': 'Our family, on the road',
+                   'author': 'waanng',
+                   'kind': 'Photography / Travel maps',
+                   'intro': 'The Three of Us is a family album made along the way: a walk through a new '
+                            'city, a shared meal, a place to sit, a handful of balloons. Photographs '
+                            'remember our time together; hand-drawn maps trace the journeys.',
+                   'quote': 'A long road ahead. Each other to lean on.',
+                   'paragraphs': ['We keep going. Sometimes we run ahead; sometimes we stop to rest. We look '
+                                  'at each other and smile. There is a long road ahead, and we have each '
+                                  'other to lean on.',
+                                  'Coasts and campuses, parks and backstreets, bookshops and galleries: the '
+                                  'setting changes, but we are still us. Two people in front of the camera, '
+                                  'one behind it. The three of us.',
+                                  'The maps show where we went. The photographs remember what it was like to '
+                                  'be there together. This is less a list of destinations than an album of '
+                                  'the moments in between.'],
+                   'source_note': 'Photographs and travel maps from The Three of Us, a family album by '
+                                  'waanng. The opening passage is adapted from its preface.',
+                   'related_label': 'Make a notebook for your travels'}}
 
-WORKSHOP_COPY = {
- 'handmade-books':dict(title='Bookbinding Workshop',subtitle='Make a small notebook. Give everyday life a place.',tag='Reused paper / Binding / Everyday records',intro='Start with used wrapping paper and materials close at hand. Stitch or bind loose pages into a light, portable notebook, then fill it with photographs, sketches and words.',stages=[('01','Begin with used paper','Find wrapping paper and cover materials worth using again. Prepare them for a small notebook you can carry with you.'),('02','Make a notebook of your own','Explore stitched, ring-bound and accordion structures. The binding method for each session will be described when it is announced.'),('03','How will you fill it?','Begin with a photograph, a route or a sentence. You do not have to wait until you can draw well: everyday life is already worth recording.')],outcome='A notebook made by your own hands, and a way to keep noticing and recording everyday life.',preparation='You can start collecting paper, packaging and photographs you like. Tools and materials will be specified for each session.'),
- 'cyanotype':dict(title='Cyanotype Workshop',subtitle='Let light leave a shape.',tag='Sunlight / Plants / Image-making',intro='Bring light, objects and paper together. Cyanotype is a photographic printing process that produces blue images. Use silhouettes, shadows and your own arrangement to make a print.',stages=[('01','Meet the cyanotype','Begin with the blue image and explore how light and a light-sensitive surface work together.'),('02','Arrange and wait','Choose objects, experiment with shadows and open space, and observe how the image changes in the light.'),('03','Watch the print appear','See the image emerge through washing and turn an experiment into a print of your own.')],outcome='An encounter with light and shape, and a cyanotype print of your own.',preparation='Surfaces, materials and working arrangements depend on the session. Activities take place with on-site guidance.'),
- 'film-developing':dict(title='Film Developing Workshop',subtitle='Watch a photographed moment slowly appear.',tag='Black-and-white film / Hands-on practice / Time',intro='Between pressing the shutter and seeing a photograph, there is a process worth experiencing by hand. We plan to begin with black-and-white film and explore how a latent image becomes visible.',stages=[('01','Begin with film','Get to know film and cameras, and explore how a photograph is recorded.'),('02','Approach the developing process','Learn about the main stages, equipment and working methods of black-and-white film development. The scope of hands-on participation will be specified for each session.'),('03','See the photograph again','Consider the relationship between photographs, negatives and memory. Whether scanning or enlarging is included will depend on the session.')],outcome='An understanding of the journey from exposure to a developed black-and-white negative. Hands-on activities and take-home results will be specified for each session.',preparation='This workshop is in preparation. Equipment, film requirements, intended participants and venue details will be announced with each session.')
-}
+WORKSHOP_COPY = {'handmade-books': {'title': 'Bookbinding Workshop',
+                    'subtitle': 'Make a notebook. Make it yours.',
+                    'tag': 'Reclaimed paper / Bookbinding / Journalling',
+                    'intro': 'Give saved wrapping paper and other everyday materials a second life. Turn '
+                             'loose sheets into a small notebook, ready for your photographs, sketches and '
+                             'notes.',
+                    'stages': [('01',
+                                'Start with what you have',
+                                'Look for paper and packaging you would like to use again. Choose a cover '
+                                'and gather pages for a notebook you can take anywhere.'),
+                               ('02',
+                                'Put the pages together',
+                                'Try a stitched, ring-bound or accordion book. We’ll announce the binding '
+                                'method and materials for each session in advance.'),
+                               ('03',
+                                'Make the first mark',
+                                'A photograph, a line on a map, a few words: start anywhere. You don’t need '
+                                'to be able to draw to keep a notebook.')],
+                    'outcome': 'Leave with a notebook you’ve made yourself, and plenty of ideas for filling '
+                               'it.',
+                    'preparation': 'Save any paper, packaging or photographs you’d like to use. We’ll share '
+                                   'a materials list when each session is announced.'},
+ 'cyanotype': {'title': 'Cyanotype Workshop',
+               'subtitle': 'Make a print with sunlight.',
+               'tag': 'Sunlight / Plants / Photography',
+               'intro': 'Cyanotype uses light-sensitive paper to make distinctive blue prints. Arrange '
+                        'leaves or other objects on the surface, expose it to sunlight, then wash the paper '
+                        'to reveal your image.',
+               'stages': [('01',
+                           'Discover cyanotype',
+                           'Find out how light-sensitive paper produces the process’s characteristic blue.'),
+                          ('02',
+                           'Arrange your image',
+                           'Choose your objects and play with shapes, shadows and the spaces between them '
+                           'before exposing the paper.'),
+                          ('03',
+                           'Reveal the print',
+                           'Wash the paper and watch the image emerge. Each print is a little experiment in '
+                           'light and timing.')],
+               'outcome': 'Make a cyanotype print and discover a hands-on approach to photography.',
+               'preparation': 'Materials and activities will vary by session. We’ll provide details in '
+                              'advance and guide you through the process on the day.'},
+ 'film-developing': {'title': 'Film Developing Workshop',
+                     'subtitle': 'From the shutter to the negative.',
+                     'tag': 'Black-and-white film / Darkroom processes',
+                     'intro': 'What happens between taking a photograph and seeing it? This workshop will '
+                              'introduce black-and-white film development, following the steps that turn an '
+                              'exposed roll into negatives.',
+                     'stages': [('01',
+                                 'Get to know film',
+                                 'Explore how a camera records an image on film and what happens after the '
+                                 'shutter closes.'),
+                                ('02',
+                                 'Inside the developing process',
+                                 'Learn about the equipment and main stages of black-and-white development. '
+                                 'We’ll explain the hands-on activities when each session is announced.'),
+                                ('03',
+                                 'Read the negative',
+                                 'Look at the developed film and consider how it becomes a photograph. '
+                                 'Scanning or printing may be included, depending on the session.')],
+                     'outcome': 'Learn what happens to a roll of film after it leaves the camera. Hands-on '
+                                'activities and take-home materials will be confirmed for each session.',
+                     'preparation': 'We’re still planning this workshop. We’ll announce who it’s for, what '
+                                    'to bring and where it will take place when the details are confirmed.'}}
 
-OBJECT_COPY = {
- 'vinyl-notebook':dict(title='Vinyl Travel Notebook',subtitle='Follow the record. Go somewhere new.',kind='Notebook & paper goods design',intro='Carry the lines of a city and the memory of a piece of music in a notebook. Starting with the form of a record player, this design brings travel, music and personal notes together on paper.',sections=[('vinyl-cover','01 / COVER','From record player to notebook','Simple shapes reinterpret the turntable, tonearm and controls. In the deep-coffee colour study, BEYOND THE NOTES plays on both musical notes and the notes a person writes.'),('vinyl-label','02 / OPENING PAGE','Leave a place for the person using it','The centre label of a record becomes a space for a name, series number and dates of use. It opens the notebook while leaving its story for the owner to complete.')],details=[('Theme','Music, city journeys and personal notes'),('Elements','Cover, opening page, seven city inserts and a wraparound band'),('Shown here','A deep-coffee colour design study')],closing='A notebook to hold one journey, with room for the next.'),
- 'ucas-cup':dict(title='UCAS Campus Cup',subtitle='Hold a memory of campus in your hands.',kind='Cup graphics & packaging design',intro='A hand-drawn campus scroll becomes an everyday object. Scenes from the Yuquanlu, Zhongguancun and Yanqihu campuses of the University of Chinese Academy of Sciences (UCAS) find a new setting on a cup and its packaging.',sections=[('ucas-scroll','01 / BEGINNINGS','A return to campus','Years after graduating, waanng returned to three UCAS campuses and recorded their buildings and scenery in a long painted scroll. Familiar architecture and paths became the starting point for this design.'),('ucas-sketch','02 / TRANSLATION','Bringing buildings out of the scroll','Distinctive buildings are selected and redrawn, translating a continuous campus landscape into graphics that can be read around a cup.'),('ucas-cup','03 / CUP','An everyday object, carrying a memory','Architectural images and text meet on the cup. The material direction uses coffee grounds, connecting campus memories with a theme of reuse.'),('ucas-package','04 / PACKAGING','Three campuses, one continuous landscape','Campus buildings become a continuous sequence of geometric forms, extending the way a scroll is viewed into the packaging. This image shows a detail of the packaging artwork.')],details=[('Starting point','waanng’s campus scroll and architectural sketches'),('Elements','Cup graphics and packaging visuals'),('Shown here','A flat graphic design study for a gift cup')],closing='Let a memory of campus find a place in daily life.')
-}
+OBJECT_COPY = {'vinyl-notebook': {'title': 'Vinyl Travel Notebook',
+                    'subtitle': 'A travel notebook inspired by vinyl records',
+                    'kind': 'Notebook design',
+                    'intro': 'A record player becomes the starting point for a travel notebook. Turntable '
+                             'graphics, city sketches and space for personal notes bring music and travel '
+                             'together on the page.',
+                    'sections': [('vinyl-cover',
+                                  '01 / COVER',
+                                  'A record player, reimagined',
+                                  'The turntable, tonearm and controls become a simple graphic composition. '
+                                  'BEYOND THE NOTES connects the notes we hear with the notes we write. '
+                                  'Shown here in a dark coffee-brown colourway.'),
+                                 ('vinyl-label',
+                                  '02 / INSIDE COVER',
+                                  'This one belongs to…',
+                                  'A record’s centre label becomes a place for the owner’s name, notebook '
+                                  'number and dates. The design sets the scene; the person using it writes '
+                                  'the rest.')],
+                    'details': [('Inspired by', 'Music, travel and city sketches'),
+                                ('Design includes',
+                                 'Cover, inside cover, seven city inserts and a paper wrap'),
+                                ('On this page', 'Design proposal in dark coffee brown')],
+                    'closing': 'For the journey you’re on, and the one still to come.'},
+ 'ucas-cup': {'title': 'UCAS Campus Cup',
+              'subtitle': 'A little of campus, taken home',
+              'kind': 'Cup & packaging design',
+              'intro': 'A hand-painted campus panorama becomes a cup and its packaging. The design draws on '
+                       'the Yuquanlu, Zhongguancun and Yanqihu campuses of the University of Chinese Academy '
+                       'of Sciences (UCAS).',
+              'sections': [('ucas-scroll',
+                            '01 / THE STARTING POINT',
+                            'Back on campus',
+                            'Years after graduating, waanng returned to three UCAS campuses to paint their '
+                            'buildings and grounds as a long, continuous panorama. That return became the '
+                            'starting point for the cup.'),
+                           ('ucas-sketch',
+                            '02 / FROM PAPER TO CUP',
+                            'Finding the right lines',
+                            'Selected buildings are redrawn as a set of illustrations, taking them from the '
+                            'continuous panorama to the curved surface of a cup.'),
+                           ('ucas-cup',
+                            '03 / THE CUP',
+                            'A familiar view, every day',
+                            'Building illustrations and text bring familiar places into daily use. The '
+                            'proposal uses recycled coffee grounds as a material for the cup.'),
+                           ('ucas-package',
+                            '04 / THE PACKAGING',
+                            'Three campuses, one skyline',
+                            'The packaging brings buildings from all three campuses into a continuous, '
+                            'geometric skyline—a new way to unfold the panorama. Shown here is a detail of '
+                            'the packaging design.')],
+              'details': [('Based on', 'waanng’s campus panorama and architectural sketches'),
+                          ('Design includes', 'Cup illustrations and packaging'),
+                          ('On this page', 'Graphic design proposal for a campus gift cup')],
+              'closing': 'A reminder of campus, with every cup.'}}
 
-MEMBER_COPY = {
- 'lz':dict(name='LZ',line='Travel, film and growing things',bio='With a background in media, LZ enjoys the local cultures encountered while travelling, especially markets. Film photography records those meetings, while gardening, composting and permaculture offer ways to explore a closer relationship with everyday life and the land.'),
- 'kasa':dict(name='KASA',line='On the road and close to home',bio='A photographer who takes the frame seriously, and a keen cyclist. KASA observes changes in city spaces and the landscapes passed along the way, leaving room for humour and the lighter side of daily life.'),
- 'wangan':dict(name='waanng',line='An urban sketcher, drawing along the way',bio='An urban sketcher who learned by doing: walking, drawing and noticing what happens around the next corner. Photographs, sketches and handmade notebooks keep everyday life and family journeys close, while drawings also find their way onto useful objects.')
-}
+MEMBER_COPY = {'lz': {'name': 'LZ',
+        'line': 'Film, travel and things that grow',
+        'bio': 'LZ comes from a media background and loves exploring a place through its everyday '
+               'life—especially its markets. Film photography is a way to remember those encounters. Closer '
+               'to home, gardening, composting and permaculture feed a growing interest in the land and how '
+               'we care for it.'},
+ 'kasa': {'name': 'KASA',
+          'line': 'A camera, a bicycle, an eye for the city',
+          'bio': 'KASA is a photographer and keen cyclist, attentive to the frame and to the city beyond it. '
+                 'The work follows changing urban spaces and scenes along the road, with an eye for the '
+                 'humour in everyday life.'},
+ 'wangan': {'name': 'waanng',
+            'line': 'Walking, looking, drawing',
+            'bio': 'A self-taught urban sketcher, waanng draws whatever catches the eye along the way. '
+                   'Sketches, photographs and handmade notebooks become a record of everyday life and family '
+                   'travels. Some drawings go on to become objects people can use.'}}
+
+PROJECT_COPY['journey-notes']['captions'] = [en for key,file,zh,en in FAMILY_SELECTION]
 
 DOOR_TITLES = ['Oxford Street, Boston','Stanford University','289 Art Park, Guangzhou','Rice University','University of Washington','University of Utah','Freedom Trail, Boston','University of Pennsylvania','SMU','Baylor University','Zhijiang campus, Zhejiang University','Xiangshan campus, China Academy of Art']
 

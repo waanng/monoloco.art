@@ -138,7 +138,7 @@ def home():
     people=''.join(f'<a class="people-preview" href="./about/index.html#{p["image"]}">{image(p["image"],base)}<span>{p["name"]}</span></a>' for p in MEMBERS)
     body=f'''<main id="main">
 <section class="hero hero-four wrap"><div class="hero-copy"><div class="eyebrow">MONOLOCO / 艺术与生活实践</div><h1>看见日常，<br>一起创造<span class="stop">。</span></h1><p>用摄影与速写记录观察，<br>以手作和设计，让创作进入生活。</p>{arrow_link('./projects/index.html','浏览艺术项目')}</div><figure class="hero-art"><a class="art-link" href="./projects/four-doors/index.html" aria-label="进入四门集">{image('doors',base,True)}</a><figcaption><span>四门集 <span class="muted">/ 门之四重奏</span></span><span>SELECTED PROJECT</span></figcaption></figure></section>
-<div class="hero-meta wrap"><span>影像可持续 / IMAGE & EVERYDAY</span><span class="intro">三个人，从观察、记录到共同制作。</span><span>向下浏览 ↓</span></div>
+<div class="hero-meta wrap"><span>{"ART IN EVERYDAY LIFE" if LANG=="en" else "影像可持续 / IMAGE & EVERYDAY"}</span><span class="intro">三个人，从观察、记录到共同制作。</span><span>向下浏览 ↓</span></div>
 <section class="section featured wrap" id="works">{section_top('01','ART PROJECTS','艺术项目','./projects/index.html','全部项目')}<div class="cards-three">{art}</div></section>
 <section class="workshop-home"><div class="wrap section">{section_top('02','HANDS-ON WORKSHOPS','动手工坊','./workshops/index.html','了解工坊')}<p class="section-intro">从观看到动手。一起做一本本子，让光留下影子，走近胶片显影的过程。</p><div class="cards-three">{workshops}</div></div></section>
 <section class="section wrap">{section_top('03','DESIGNED OBJECTS','文创作品','./objects/index.html','查看作品')}<p class="section-intro">让一幅画、一段旅程，成为可以带进日常的物件。</p><div class="cards-two">{objects}</div></section>
