@@ -141,7 +141,7 @@ def home():
 <div class="hero-meta wrap"><span>{"ART IN EVERYDAY LIFE" if LANG=="en" else "影像可持续 / IMAGE & EVERYDAY"}</span><span class="intro">三个人，从观察、记录到共同制作。</span><span>向下浏览 ↓</span></div>
 <section class="section featured wrap" id="works">{section_top('01','ART PROJECTS','艺术项目','./projects/index.html','全部项目')}<div class="cards-three">{art}</div></section>
 <section class="workshop-home"><div class="wrap section">{section_top('02','HANDS-ON WORKSHOPS','动手工坊','./workshops/index.html','了解工坊')}<p class="section-intro">从观看到动手。一起做一本本子，让光留下影子，走近胶片显影的过程。</p><div class="cards-three">{workshops}</div></div></section>
-<section class="section wrap">{section_top('03','DESIGNED OBJECTS','文创作品','./objects/index.html','查看作品')}<p class="section-intro">让一幅画、一段旅程，成为可以带进日常的物件。</p><div class="cards-two">{objects}</div></section>
+<section class="section wrap">{section_top('03','PRODUCTS','文创作品','./objects/index.html','查看作品')}<p class="section-intro">让一幅画、一段旅程，成为可以带进日常的物件。</p><div class="cards-two">{objects}</div></section>
 <section class="collective-home"><div class="wrap collective-grid"><div><div class="eyebrow accent">04 / ABOUT US</div><h2>三个人，<br>共同的目光。</h2><p>monoloco 从社区营造出发，走向策展、创作与文创设计。以影像可持续为线索，在记录与制作之间持续探索。</p>{arrow_link('./about/index.html','认识我们')}</div><div class="people-previews">{people}</div></div></section>
 </main>'''
     return page('monoloco — 艺术与生活实践','艺术项目、动手工坊与文创作品。monoloco 以摄影、速写、手工本和设计，记录日常并共同创造。',body)
@@ -209,7 +209,7 @@ def object_detail(o):
         cities_html=''.join(media_figure(f'vinyl-city-{i}',base,city) for i,city in enumerate(cities,1))
         chapters+=f'<section class="chapter"><div class="chapter-heading"><div class="eyebrow accent">03 / CITIES & NOTES</div><h2>七座城市，七段音乐记忆。</h2><p>城市速写进入唱片的圆形结构，与音乐主题一起构成内页。翻过图像，空白的纸面等待新的记录。</p></div><div class="city-grid">{cities_html}</div></section><section class="chapter object-chapter"><div class="chapter-heading"><div class="eyebrow accent">04 / DETAILS</div><h2>从封面延续到腰封。</h2><p>把旅行路线、主题文字与唱片的视觉线索放在一起，成为一本完整的伴手本。</p></div>{media_figure("vinyl-band",base,"腰封图形局部")}</section>'
     details=''.join(f'<div><dt>{label}</dt><dd>{value}</dd></div>' for label,value in o['details'])
-    body=f'<main id="main" class="wrap">{breadcrumb(base,"objects","文创作品")}{heading("DESIGNED OBJECT",o["title"],o["subtitle"],o["intro"])}<div class="gallery-bar"><span>{o["kind"]}</span><span>设计方案 / DESIGN STUDY</span></div>{opening}{chapters}<dl class="object-facts">{details}</dl><div class="project-end"><p>{o["closing"]}</p>{arrow_link(url("about/",base)+"#contact","交流设计合作")}</div></main>{viewer()}'
+    body=f'<main id="main" class="wrap">{breadcrumb(base,"objects","文创作品")}{heading("PRODUCT DESIGN",o["title"],o["subtitle"],o["intro"])}<div class="gallery-bar"><span>{o["kind"]}</span><span>设计方案 / DESIGN STUDY</span></div>{opening}{chapters}<dl class="object-facts">{details}</dl><div class="project-end"><p>{o["closing"]}</p>{arrow_link(url("about/",base)+"#contact","交流设计合作")}</div></main>{viewer()}'
     return page(f'{o["title"]} — monoloco',o['intro'],body,base,'objects',True)
 
 def about():
@@ -226,7 +226,7 @@ def render_locale():
     emit('index.html', lambda: home())
     emit('projects/index.html', lambda: index_page('projects','艺术项目','ART PROJECTS','观察，记录，留下片刻。','从门头、土壤、城市与旅途出发，用摄影、速写和文字，留下与世界相遇的方式。',PROJECTS))
     emit('workshops/index.html', lambda: index_page('workshops','动手工坊','HANDS-ON WORKSHOPS','从观看，到一起动手。','把创作的方法带到一起。做一本手工本，尝试蓝晒，走近胶片显影，让自己的日常成为作品的起点。',WORKSHOPS))
-    emit('objects/index.html', lambda: index_page('objects','文创作品','DESIGNED OBJECTS','让创作，进入日常。','从城市速写到随身本，从校园长卷到礼品杯。让创作离开纸面，在日常物件中继续生长。',OBJECTS))
+    emit('objects/index.html', lambda: index_page('objects','文创作品','PRODUCTS','让创作，进入日常。','从城市速写到随身本，从校园长卷到礼品杯。让创作离开纸面，在日常物件中继续生长。',OBJECTS))
     for p in PROJECTS:emit(f'projects/{p["slug"]}/index.html', lambda: project_detail(p))
     for w in WORKSHOPS:emit(f'workshops/{w["slug"]}/index.html', lambda: workshop_detail(w))
     for o in OBJECTS:emit(f'objects/{o["slug"]}/index.html', lambda: object_detail(o))
