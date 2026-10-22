@@ -4,6 +4,10 @@ from html import escape as esc
 from datetime import datetime, timezone
 import json
 import shutil
+import posixpath
+from copy import deepcopy
+from site_data_en import localized_content, ALT
+from site_i18n import translate_html, MISSING
 from site_data import PROJECTS, WORKSHOPS, OBJECTS, MEMBERS
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,6 +20,14 @@ BASE_PATH = '/' if DOMAIN else '/monoloco.art/'
 PUBLIC_URL = f'https://{DOMAIN}' if DOMAIN else 'https://waanng.github.io/monoloco.art'
 NAV = [('projects','艺术项目','Projects'),('workshops','动手工坊','Workshops'),('objects','文创作品','Objects'),('about','关于我们','About')]
 OUTPUTS = {}
+LANG = 'zh-CN'
+CURRENT_PATH = 'index.html'
+ZH_CONTENT = deepcopy((PROJECTS, WORKSHOPS, OBJECTS, MEMBERS, DOORS))
+
+def assets(base):
+    if LANG != 'en':return base
+    return BASE_PATH if base.startswith('/') else '../'+base
+
 ARROW = '<span class="arrow" aria-hidden="true">↗</span>'
 
 def url(path, base):
@@ -23,7 +35,7 @@ def url(path, base):
 
 def preview_picture(group,key,base,alt,width,height,attrs,sizes):
     preview=PREVIEWS[f'{group}/{key}']
-    folder=base+f'assets/images/{group}/'
+    folder=assets(base)+f'assets/images/{group}/'
     candidates=', '.join(f'{folder}{v["file"]} {v["width"]}w' for v in preview['sources'])
     return f'<picture><source type="image/webp" srcset="{candidates}" sizes="{sizes}"><img src="{folder}{preview["fallback"]}" alt="{esc(alt)}" width="{width}" height="{height}" {attrs} decoding="async"></picture>'
 
@@ -33,7 +45,7 @@ def image(key, base, eager=False, sizes='(max-width: 600px) calc(100vw - 40px), 
         w=DOORS[0]
         return preview_picture('four-doors',w['id'],base,w['altZh'],w['width'],w['height'],attrs,sizes)
     m=MEDIA[key]
-    return preview_picture('editorial',key,base,m['alt'],m['width'],m['height'],attrs,sizes)
+    return preview_picture('editorial',key,base,ALT[key] if LANG=='en' else m['alt'],m['width'],m['height'],attrs,sizes)
 
 def arrow_link(href, text):
     return f'<a class="arrow-link" href="{href}">{esc(text)} {ARROW}</a>'
@@ -42,30 +54,48 @@ def page(title, description, body, base='./', current='', gallery=False):
     nav=''
     for slug,zh,en in NAV:
         active=' aria-current="page"' if current==slug else ''
-        nav+=f'<a href="{url(slug+"/",base)}"{active}>{zh} <small>{en}</small></a>'
+        nav+=f'<a href="{url(slug+"/",base)}"{active}>{en if LANG=="en" else zh}{"" if LANG=="en" else " <small>"+en+"</small>"}</a>'
     footnav=''.join(f'<a href="{url(slug+"/",base)}">{zh}</a>' for slug,zh,en in NAV)
-    script=f'<script src="{base}assets/js/gallery.js" defer></script>' if gallery else ''
+    asset_base=assets(base)
+    script=f'<script src="{asset_base}assets/js/gallery.js" defer></script>' if gallery else ''
+    local_path=('en/' if LANG=='en' else '')+CURRENT_PATH
+    counterpart=('' if LANG=='en' else 'en/')+CURRENT_PATH
+    switch=posixpath.relpath(counterpart,posixpath.dirname(local_path) or '.')
+    if CURRENT_PATH=='404.html':switch=BASE_PATH+counterpart
+    self_link=BASE_PATH+local_path if CURRENT_PATH=='404.html' else posixpath.basename(CURRENT_PATH)
+    robots='<meta name="robots" content="noindex">' if CURRENT_PATH=='404.html' else ''
+    canonical=PUBLIC_URL+'/'+local_path.removesuffix('index.html')
+    zh_url=PUBLIC_URL+'/'+CURRENT_PATH.removesuffix('index.html')
+    en_url=PUBLIC_URL+'/en/'+CURRENT_PATH.removesuffix('index.html')
+    language_links=f'''<div class="language-switch" aria-label="Language"><a href="{switch if LANG=="en" else self_link}" lang="zh-CN"{' aria-current="true"' if LANG!="en" else ' data-language="zh-CN"'}>中文</a><span aria-hidden="true">/</span><a href="{self_link if LANG=="en" else switch}" lang="en"{' aria-current="true"' if LANG=="en" else ' data-language="en"'}>EN</a></div>'''
     return f'''<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="{LANG}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f5f3ee">
+{robots}
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(description)}">
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(description)}">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale" content="{'en_US' if LANG=='en' else 'zh_CN'}">
+<link rel="canonical" href="{canonical}">
+<link rel="alternate" hreflang="zh-CN" href="{zh_url}">
+<link rel="alternate" hreflang="en" href="{en_url}">
+<link rel="alternate" hreflang="x-default" href="{zh_url}">
 <meta property="og:image" content="{PUBLIC_URL}/assets/images/four-doors/doors-01.jpg">
-<link rel="icon" href="{base}assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="{base}assets/css/site.css">
-<link rel="stylesheet" href="{base}assets/css/editorial.css">
+<link rel="icon" href="{asset_base}assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="{asset_base}assets/css/site.css">
+<link rel="stylesheet" href="{asset_base}assets/css/editorial.css">
+<link rel="stylesheet" href="{asset_base}assets/css/i18n.css">
+<script src="{asset_base}assets/js/language.js" defer></script>
 {script}
 </head>
 <body id="top">
 <a class="skip" href="#main">跳到正文</a>
-<header class="masthead wrap"><a class="wordmark" href="{base}index.html" aria-label="monoloco 首页">monoloco<span>.</span></a><nav aria-label="主导航">{nav}</nav></header>
+<header class="masthead wrap"><a class="wordmark" href="{base}index.html" aria-label="monoloco 首页">monoloco<span>.</span></a><div class="header-links"><nav aria-label="主导航">{nav}</nav>{language_links}</div></header>
 {body}
 <footer class="footer-four wrap"><div class="footer-top"><a class="footer-brand" href="{base}index.html">monoloco.</a><nav aria-label="页脚导航">{footnav}</nav></div><div class="footer-bottom"><span>观察 · 记录 · 制作 · 分享</span><a href="#top">回到顶部 ↑</a></div></footer>
 </body>
@@ -83,8 +113,8 @@ def viewer():
 
 def media_figure(key,base,caption='',eager=False,cls=''):
     m=MEDIA[key]
-    title=caption or m['alt']
-    return f'<figure class="work {cls}"><a href="{base}assets/images/editorial/{m["fallback"]}" data-work="{key}" data-title="{esc(title)}" aria-label="放大观看：{esc(title)}">{image(key,base,eager)}<span class="open-label" aria-hidden="true">放大观看 ↗</span></a><figcaption>{esc(caption)}</figcaption></figure>'
+    title=caption or (ALT[key] if LANG=='en' else m['alt'])
+    return f'<figure class="work {cls}"><a href="{assets(base)}assets/images/editorial/{m["fallback"]}" data-work="{key}" data-title="{esc(title)}" aria-label="放大观看：{esc(title)}">{image(key,base,eager)}<span class="open-label" aria-hidden="true">放大观看 ↗</span></a><figcaption>{esc(caption)}</figcaption></figure>'
 
 def card(item,section,base,index=None):
     path=url(f'{section}/{item["slug"]}/',base)
@@ -131,7 +161,7 @@ def project_detail(project):
     figures=''
     if is_doors:
         for i,w in enumerate(DOORS):
-            folder=base+'assets/images/four-doors/'
+            folder=assets(base)+'assets/images/four-doors/'
             pic=preview_picture('four-doors',w['id'],base,w['altZh'],w['width'],w['height'],f'loading="{"eager" if i<2 else "lazy"}"','(max-width:600px) calc(100vw - 40px), 640px')
             figures+=f'<figure class="work" id="{w["id"]}"><a href="{folder}{w["fallback"]}" data-work="{w["id"]}" data-title="{esc(w["titleZh"])}" aria-label="放大观看：{esc(w["titleZh"])}">{pic}<span class="open-label" aria-hidden="true">放大观看 ↗</span></a><figcaption><span class="index">{i+1:02d}</span><span>{esc(w["titleZh"])}</span><small>门之四重奏</small></figcaption></figure>'
         content=f'<section class="gallery" aria-label="四门集作品">{figures}</section>'
@@ -185,26 +215,45 @@ def about():
     base='../'
     people=''
     for p in MEMBERS:
-        people+=f'<article class="member" id="{p["image"]}"><div class="member-image">{image(p["image"],base)}</div><div class="eyebrow accent">{p["line"]}</div><h3>{p["name"]}</h3><p>{p["bio"]}</p><p class="member-handle">小红书 · {p["handle"]}</p>{arrow_link(url("projects/"+p["project"]+"/",base),"查看相关作品")}</article>'
+        instagram='<p class="member-handle"><a href="https://www.instagram.com/waanng/">Instagram · @waanng ↗</a></p>' if p['image']=='wangan' else ''
+        people+=f'<article class="member" id="{p["image"]}"><div class="member-image">{image(p["image"],base)}</div><div class="eyebrow accent">{p["line"]}</div><h3>{p["name"]}</h3><p>{p["bio"]}</p><p class="member-handle">小红书 · {p["handle"]}</p>{instagram}{arrow_link(url("projects/"+p["project"]+"/",base),"查看相关作品")}</article>'
     history=''.join(f'<li>{x}</li>' for x in ['白塔寺街区 · 旧物改造花园与“药局”','胡同美术馆 · 插画展','《杯子在溜达》· CITYWALK 速写巡展','宣武门胡同 · monoloco 快闪咖啡馆'])
     body=f'''<main id="main" class="wrap"><section class="about-head"><div><div class="eyebrow accent">ABOUT MONOLOCO / 关于我们</div><h1>三个人，<br>共同的目光<span class="accent">。</span></h1></div><div class="about-copy"><p>monoloco 始于 2017 年，从社区营造出发，逐渐走向策展、文创设计与持续的艺术实践。</p><p>我们用胶片、速写和手工本记录城市，也通过共同制作，让创作进入日常。影像可持续，是连接这些探索的一条线索。</p></div></section><section class="members" aria-label="三位成员">{people}</section><section class="chapter about-practice"><div class="chapter-heading"><div class="eyebrow accent">OUR PRACTICE</div><h2>从街区出发，<br>让创作继续发生。</h2><p>我们曾在胡同里做花园、办展览、记录行走，也尝试用一间快闪咖啡馆让人相遇。那些实践留下的线索，继续进入今天的作品、工坊与物件。</p></div><ul class="history-list">{history}</ul></section><section class="contact-section" id="contact"><div><div class="eyebrow accent">LET'S MAKE SOMETHING</div><h2>一起做些有意思的事。</h2><p>欢迎交流工坊邀请、文化空间合作、展览与文创设计。</p></div><div class="contact-handles"><div><span>小红书</span><strong>MONOLOCO</strong></div><div><span>微博</span><strong>MONOLOCO生活实验</strong></div><p>可在相应平台搜索以上账号名，与我们联系。</p></div></section></main>'''
     return page('关于我们 — monoloco','认识 LZ、KASA 和王安。monoloco 从社区营造出发，以摄影、速写、动手工坊与文创设计持续探索。',body,base,'about')
 
+def render_locale():
+    emit('index.html', lambda: home())
+    emit('projects/index.html', lambda: index_page('projects','艺术项目','ART PROJECTS','观察，记录，留下片刻。','从门头、土壤、城市与旅途出发，用摄影、速写和文字，留下与世界相遇的方式。',PROJECTS))
+    emit('workshops/index.html', lambda: index_page('workshops','动手工坊','HANDS-ON WORKSHOPS','从观看，到一起动手。','把创作的方法带到一起。做一本手工本，尝试蓝晒，走近胶片显影，让自己的日常成为作品的起点。',WORKSHOPS))
+    emit('objects/index.html', lambda: index_page('objects','文创作品','DESIGNED OBJECTS','让创作，进入日常。','从城市速写到随身本，从校园长卷到礼品杯。让创作离开纸面，在日常物件中继续生长。',OBJECTS))
+    for p in PROJECTS:emit(f'projects/{p["slug"]}/index.html', lambda: project_detail(p))
+    for w in WORKSHOPS:emit(f'workshops/{w["slug"]}/index.html', lambda: workshop_detail(w))
+    for o in OBJECTS:emit(f'objects/{o["slug"]}/index.html', lambda: object_detail(o))
+    emit('about/index.html', lambda: about())
+    body=f'<main id="main" class="wrap error-page"><div class="eyebrow accent">404 / PAGE NOT FOUND</div><h1>走到了另一扇门。</h1><p>这个页面暂时不存在。回到作品，继续浏览。</p>{arrow_link((BASE_PATH+"en/" if LANG=="en" else BASE_PATH)+"index.html","返回首页")}</main>'
+    emit('404.html', lambda: page('页面未找到 — monoloco','回到 monoloco 作品与共同实践。',body,BASE_PATH+('en/' if LANG=='en' else '')))
+
+def emit(path, render):
+    global CURRENT_PATH
+    CURRENT_PATH=path
+    content=render()
+    OUTPUTS[('en/' if LANG=='en' else '')+path]=translate_html(content) if LANG=='en' else content
+
 def build():
-    OUTPUTS['index.html']=home()
-    OUTPUTS['projects/index.html']=index_page('projects','艺术项目','ART PROJECTS','观察，记录，留下片刻。','从门头、土壤、城市与旅途出发，用摄影、速写和文字，留下与世界相遇的方式。',PROJECTS)
-    OUTPUTS['workshops/index.html']=index_page('workshops','动手工坊','HANDS-ON WORKSHOPS','从观看，到一起动手。','把创作的方法带到一起。做一本手工本，尝试蓝晒，走近胶片显影，让自己的日常成为作品的起点。',WORKSHOPS)
-    OUTPUTS['objects/index.html']=index_page('objects','文创作品','DESIGNED OBJECTS','让创作，进入日常。','从城市速写到随身本，从校园长卷到礼品杯。让创作离开纸面，在日常物件中继续生长。',OBJECTS)
-    for p in PROJECTS:OUTPUTS[f'projects/{p["slug"]}/index.html']=project_detail(p)
-    for w in WORKSHOPS:OUTPUTS[f'workshops/{w["slug"]}/index.html']=workshop_detail(w)
-    for o in OBJECTS:OUTPUTS[f'objects/{o["slug"]}/index.html']=object_detail(o)
-    OUTPUTS['about/index.html']=about()
-    body=f'<main id="main" class="wrap error-page"><div class="eyebrow accent">404 / PAGE NOT FOUND</div><h1>走到了另一扇门。</h1><p>这个页面暂时不存在。回到作品，继续浏览。</p>{arrow_link(BASE_PATH+"index.html","返回首页")}</main>'
-    OUTPUTS['404.html']=page('页面未找到 — monoloco','回到 monoloco 作品与共同实践。',body,BASE_PATH)
+    global LANG, PROJECTS, WORKSHOPS, OBJECTS, MEMBERS, DOORS
+    OUTPUTS.clear()
+    MISSING.clear()
+    for LANG in ['zh-CN','en']:
+        PROJECTS,WORKSHOPS,OBJECTS,MEMBERS,DOORS=deepcopy(ZH_CONTENT) if LANG=='zh-CN' else localized_content(*ZH_CONTENT)
+        render_locale()
+    if MISSING:raise ValueError('Missing English translations: '+repr(sorted(MISSING)))
     for name,content in OUTPUTS.items():
         path=DOCS/name
         path.parent.mkdir(parents=True,exist_ok=True)
         path.write_text(content)
+    sitemap=''.join('<url><loc>'+PUBLIC_URL+'/'+name.removesuffix('index.html')+'</loc></url>' for name in OUTPUTS if not name.endswith('404.html'))
+    (DOCS/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+sitemap+'</urlset>\n')
+    (DOCS/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+PUBLIC_URL+'/sitemap.xml\n')
     preview=ROOT/'opendesign/mockups/monoloco'
     shutil.copytree(DOCS,preview,dirs_exist_ok=True)
     sections=[]

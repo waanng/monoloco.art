@@ -51,7 +51,7 @@
     if (!caption.querySelector('[data-error]')) {
       const note = document.createElement('span');
       note.dataset.error = '';
-      note.textContent = '图片暂时无法加载';
+      note.textContent = error.textContent;
       caption.append(note);
     }
   }));

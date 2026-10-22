@@ -1,0 +1,19 @@
+/* Language controls share the existing quiet editorial typography. */
+.header-links{display:flex;align-items:center;gap:clamp(20px,3vw,48px)}
+.language-switch{display:flex;align-items:center;gap:8px;font-size:12px;white-space:nowrap;letter-spacing:.04em}
+.language-switch a{color:var(--muted,#777)}
+.language-switch [aria-current]{color:var(--ink,#252522);text-decoration:underline;text-underline-offset:5px}
+.language-switch a:focus-visible{outline:2px solid currentColor;outline-offset:5px}
+html[lang=en] .hero-copy h1{font-size:clamp(36px,4.6vw,70px);line-height:1.08;letter-spacing:-.035em}
+html[lang=en] .project-head h1{font-size:clamp(40px,5.5vw,78px);line-height:1.05;letter-spacing:-.03em;overflow-wrap:anywhere}
+html[lang=en] .about-head h1,html[lang=en] .collective-grid h2{font-size:clamp(32px,4.4vw,64px);line-height:1.12;letter-spacing:-.025em}
+html[lang=en] .section-title{font-size:clamp(28px,3.8vw,48px);letter-spacing:-.025em}
+html[lang=en] .card-caption h3{font-size:clamp(23px,2.8vw,38px);line-height:1.15;letter-spacing:-.02em}
+html[lang=en] .chapter-heading h2,html[lang=en] .participation h2,html[lang=en] .contact-section h2{line-height:1.15;letter-spacing:-.025em}
+html[lang=en] .stop,html[lang=en] .project-head h1>.accent,html[lang=en] .about-head h1>.accent{display:none}
+html[lang=en] .card-kind{line-height:1.55}
+html[lang=en] .statement,html[lang=en] .about-copy,html[lang=en] .member p{line-height:1.8}
+@media(max-width:700px){.masthead{position:relative}.header-links{width:100%;display:block}.language-switch{position:absolute;right:0;top:24px}.header-links nav{width:100%}html[lang=en] .masthead nav{gap:18px}html[lang=en] .masthead nav a{font-size:13px}html[lang=en] .hero-copy h1{font-size:clamp(36px,9vw,54px)}html[lang=en] .viewer-bottom{gap:8px}html[lang=en] .viewer-bottom button{font-size:12px}html[lang=en] .viewer-info{min-width:0;overflow-wrap:anywhere}}
+.language-hint{display:flex;align-items:center;justify-content:flex-end;gap:20px;font-size:12px;padding-block:8px;border-bottom:1px solid var(--line)}
+.language-hint a{text-decoration:underline;text-underline-offset:4px}
+.language-hint button{border:0;background:transparent;font-size:20px;min-width:32px;min-height:32px;cursor:pointer}
