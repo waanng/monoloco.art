@@ -54,7 +54,7 @@ def page(title, description, body, base='./', current='', gallery=False):
     nav=''
     for slug,zh,en in NAV:
         active=' aria-current="page"' if current==slug else ''
-        nav+=f'<a href="{url(slug+"/",base)}"{active}>{en if LANG=="en" else zh}{"" if LANG=="en" else " <small>"+en+"</small>"}</a>'
+        nav+=f'<a href="{url(slug+"/",base)}"{active}>{en if LANG=="en" else zh}</a>'
     footnav=''.join(f'<a href="{url(slug+"/",base)}">{zh}</a>' for slug,zh,en in NAV)
     asset_base=assets(base)
     script=f'<script src="{asset_base}assets/js/gallery.js" defer></script>' if gallery else ''
