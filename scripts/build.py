@@ -170,8 +170,7 @@ def project_detail(project):
         for i,(key,caption) in enumerate(project['media']):
             figures+=media_figure(key,base,caption,i<2)
         paragraphs=''.join(f'<p>{p}</p>' for p in project['paragraphs'])
-        source_note=project.get('source_note','图文整理自《忽独》第一期，影像与原文分别保留作者署名。')
-        content=f'<div class="reading-intro"><p class="quote">{project["quote"]}</p><div>{paragraphs}</div></div><section class="gallery narrative-gallery" aria-label="{project["title"]}作品">{figures}</section><p class="source-note">{source_note}</p>'
+        content=f'<div class="reading-intro"><p class="quote">{project["quote"]}</p><div>{paragraphs}</div></div><section class="gallery narrative-gallery" aria-label="{project["title"]}作品">{figures}</section>'
     related=project.get('related')
     if related:
         ending=arrow_link(url(related[0],base),related[1])
