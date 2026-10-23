@@ -8,6 +8,7 @@ import posixpath
 from copy import deepcopy
 from site_data_en import localized_content, ALT
 from site_i18n import translate_html, MISSING
+from site_zh import localize_chinese_html
 from site_data import PROJECTS, WORKSHOPS, OBJECTS, MEMBERS
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -238,7 +239,7 @@ def emit(path, render):
     global CURRENT_PATH
     CURRENT_PATH=path
     content=render()
-    OUTPUTS[('en/' if LANG=='en' else '')+path]=translate_html(content) if LANG=='en' else content
+    OUTPUTS[('en/' if LANG=='en' else '')+path]=translate_html(content) if LANG=='en' else localize_chinese_html(content)
 
 def build():
     global LANG, PROJECTS, WORKSHOPS, OBJECTS, MEMBERS, DOORS
